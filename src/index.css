@@ -1,3 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .primary-nav {
+    @apply hidden sm:flex justify-between list-none items-center;
+    /* @apply flex gap-[3rem] max-sm:flex-col max-sm:fixed max-sm:top-[7rem] max-sm:left-[50%] max-sm:translate-x-[-50%] max-sm:leading-3 max-sm:rounded-md max-sm:shadow-lg max-sm:py-[3rem] max-sm:px-[6rem] max-sm:gap-[2rem] max-sm:z-50; */
+  }
+}
