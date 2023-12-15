@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { navLinks } from "../../constants";
-import { Logo } from "../../assets/images";
-import JoinCommunityButton from "../JoinCommunityButton";
+import { MdOutlineMenuOpen } from "react-icons/md";
+import JoinCommunityButton from "../Buttons/JoinCommunityButton";
 
 const NavLink = ({ link, title }) => (
   <li className="cursor-pointer">
@@ -26,15 +26,13 @@ const HamburgerMenu = () => {
 
       {/* Mobile navbar */}
       <div className="md:hidden flex flex-1 justify-end items-center">
-        <img
-          src={Logo}
-          alt=""
-          className="w-35 h-35 cursor-pointer"
+        <MdOutlineMenuOpen
+          className="w-[2rem] h-[2rem]"
           onClick={() => setIsOpen((prev) => !prev)}
         />
         <ul
           id="primary-navigation"
-          className={`flex gap-4 flex-col items-center absolute top-[7rem] left-1/2 -translate-x-[50%] px-[3.5rem] pt-[3rem] pb-[2.5rem] min-w-[300px] rounded-xl shadow-lg ${
+          className={`bg-white flex gap-4 flex-col items-center absolute top-[8rem] left-1/2 -translate-x-[50%] px-[3.5rem] pt-[3rem] pb-[2.5rem] min-w-[300px] rounded-xl shadow-2xl ${
             isOpen ? "flex" : "hidden"
           }`}
         >

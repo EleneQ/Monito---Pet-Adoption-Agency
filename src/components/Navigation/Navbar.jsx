@@ -1,7 +1,7 @@
 // import { useRef } from "react";
 import NavLinks from "./NavLinks";
-import JoinCommunityButton from "../JoinCommunityButton";
-import { Logo } from "../../assets/images";
+import JoinCommunityButton from "../Buttons/JoinCommunityButton";
+import { Logo } from "../../images";
 
 // className="flex gap-[3.5rem]"
 const Navbar = () => {
@@ -10,18 +10,17 @@ const Navbar = () => {
   // const showNavBar = () => {
   //   navRef.current.classList.toggle("responsive_nav");
   // };
-
+  // style={{border: "black", borderStyle: "solid", borderWidth: "1px"}}
   return (
-    <header className="flex items-center justify-between py-7 px-p-x-md lg:px-p-x-lg font-roboto text-primary-blue-9 font-semibold">
+    <header className="primary-nav | flex items-center justify-between py-7 px-p-x-md lg:px-p-x-lg font-roboto text-primary-blue-9 font-semibold absolute z-40 w-full">
       <div>
         <img src={Logo} alt="monito logo" />
       </div>
-      {/* <HamburgerMenu /> */}
       <nav>
         <NavLinks />
       </nav>
       <div className="hidden md:block">
-        <JoinCommunityButton primary={true} />
+        <JoinCommunityButton secondary={true} />
       </div>
     </header>
   );
