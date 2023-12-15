@@ -1,6 +1,7 @@
 // import { useRef } from "react";
 import NavLinks from "./NavLinks";
-import JoinCommunityButton from "../Buttons/JoinCommunityButton";
+import { Button } from "../";
+// import JoinCommunityButton from "../Buttons/JoinCommunityButton";
 import { Logo } from "../../images";
 
 // className="flex gap-[3.5rem]"
@@ -12,7 +13,7 @@ const Navbar = () => {
   // };
   // style={{border: "black", borderStyle: "solid", borderWidth: "1px"}}
   return (
-    <header className="primary-nav | flex items-center justify-between py-7 px-p-x-md lg:px-p-x-lg font-roboto text-primary-blue-9 font-semibold absolute z-40 w-full">
+    <header className="primary-nav | flex items-center justify-between py-7 px-p-x-xs sm:px-p-x-md lg:px-p-x-lg font-roboto text-primary-blue-9 font-semibold absolute z-40 w-full">
       <div>
         <img src={Logo} alt="monito logo" />
       </div>
@@ -20,7 +21,7 @@ const Navbar = () => {
         <NavLinks />
       </nav>
       <div className="hidden md:block">
-        <JoinCommunityButton secondary={true} />
+        <Button primary={true}>Join the community</Button>
       </div>
     </header>
   );

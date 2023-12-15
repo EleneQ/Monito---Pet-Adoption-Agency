@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { navLinks } from "../../constants";
+import { navLinks } from "../../constants/data";
 import { MdOutlineMenuOpen } from "react-icons/md";
-import JoinCommunityButton from "../Buttons/JoinCommunityButton";
+import { Button } from "../";
+// import JoinCommunityButton from "../Buttons/JoinCommunityButton";
 
 const NavLink = ({ link, title }) => (
-  <li className="cursor-pointer">
+  <li className="cursor-pointer hover:border-b-[3px] hover:border-primary-blue-9">
     <a href={link}>{title}</a>
   </li>
 );
@@ -40,7 +41,7 @@ const HamburgerMenu = () => {
             <NavLink key={index} {...nav} />
           ))}
           <div className="mt-3">
-            <JoinCommunityButton secondary={true} />
+            <Button outline={true}>Join the community</Button>
           </div>
         </ul>
       </div>
