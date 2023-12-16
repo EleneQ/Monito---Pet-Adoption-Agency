@@ -43,10 +43,7 @@ const DogsShowcase = () => {
           </Card>
         ))}
       </div>
-      <Button
-        className={"more-btn-stretch mt-5 flex-1 sm:hidden"}
-        outline={true}
-      >
+      <Button className={"more-btn-stretch mt-5 flex-1 sm:hidden"} outline>
         View More
         <IoIosArrowForward />
       </Button>

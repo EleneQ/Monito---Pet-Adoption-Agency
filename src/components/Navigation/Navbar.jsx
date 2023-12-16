@@ -21,7 +21,7 @@ const Navbar = () => {
         <NavLinks />
       </nav>
       <div className="hidden md:block">
-        <Button primary={true}>Join the community</Button>
+        <Button primary>Join the community</Button>
       </div>
     </header>
   );

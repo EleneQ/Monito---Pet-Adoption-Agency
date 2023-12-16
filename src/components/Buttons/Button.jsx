@@ -1,7 +1,7 @@
 import classNames from "classnames";
 
 function Button({ children, primary, secondary, outline, className, ...rest }) {
-  const buttonClasses = classNames(
+  const classes = classNames(
     className,
     "rounded-[60px] px-5 py-2 font-medium text-primary-blue-9 inline-flex items-center justify-center gap-3",
     {
@@ -15,7 +15,7 @@ function Button({ children, primary, secondary, outline, className, ...rest }) {
   );
 
   return (
-    <button {...rest} className={buttonClasses}>
+    <button {...rest} className={classes}>
       {children}
     </button>
   );

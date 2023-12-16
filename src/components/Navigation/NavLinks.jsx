@@ -41,7 +41,7 @@ const HamburgerMenu = () => {
             <NavLink key={index} {...nav} />
           ))}
           <div className="mt-3">
-            <Button outline={true}>Join the community</Button>
+            <Button outline>Join the community</Button>
           </div>
         </ul>
       </div>

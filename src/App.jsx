@@ -1,4 +1,4 @@
-import { Navbar, Hero, DogsShowcase } from "./components";
+import { Navbar, Hero, DogsShowcase, CTABanner } from "./components";
 
 const App = () => {
   return (
@@ -6,6 +6,7 @@ const App = () => {
       <Navbar />
       <Hero />
       <DogsShowcase />
+      <CTABanner />
     </>
   );
 };
