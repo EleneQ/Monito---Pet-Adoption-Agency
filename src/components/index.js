@@ -4,3 +4,4 @@ export { default as Button } from "./Buttons/Button";
 export { default as DogsShowcase } from "./DogsShowcase";
 export { default as OneMoreFriend } from "./OneMoreFriend";
 export { default as CTABanner } from "./CTABanner";
+export { default as ProductDisplay } from "./ProductDisplay";

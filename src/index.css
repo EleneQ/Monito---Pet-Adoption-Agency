@@ -17,6 +17,10 @@
 
 /*TODO: make more concise styles for common things like the max width */
 
+body {
+  background-color: #fdfdfd;
+}
+
 /*! Background Images */
 
 .primary-nav {
@@ -39,7 +43,7 @@
     left: -20px;
     top: 0;
     width: 100%;
-    aspect-ratio: 1 / 1.02;
+    aspect-ratio: 1 / 1.15;
     background-image: url("./images/Hero/MediumRectangleBeige.png"),
       url("./images/Hero/BottomBeigeRectangle.png");
     background-repeat: no-repeat;
@@ -103,24 +107,94 @@
   }
 }
 
-/** Dog Showcase */
+/** Card Grid */
 
-.dogs-showcase__cards {
+.card__grid {
   grid-template-columns: repeat(auto-fill, minmax(8rem, 9.4rem));
   column-gap: 1rem;
   justify-content: center;
 }
 
 @media (min-width: 500px) {
-  .dogs-showcase__cards {
+  .card__grid {
     grid-template-columns: repeat(3, minmax(9rem, 16rem));
     justify-content: space-between;
   }
 }
 
 @media (min-width: 1200px) {
-  .dogs-showcase__cards {
+  .card__grid {
     grid-template-columns: repeat(4, minmax(14rem, 16.3rem));
     justify-content: space-between;
   }
+}
+
+/** CTA Banner */
+
+/* .cta-banner__container {
+  position: relative;
+  overflow: hidden;
+  background-image: url("./images/CTABanner/RectangleBlue.svg");
+  background-repeat: no-repeat;
+  background-position: bottom -180px left;
+} */
+
+/* .cta-banner__container::before {
+  content: "";
+  position: absolute;
+  width: 190%;
+  height: 100%;
+  top: -300px;
+  left: -50%;
+  z-index: -1;
+  border-radius: 75px;
+  background-image: url("./images/CTABanner/RectangleBeige.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top right;
+  transform: rotate(100deg);
+} */
+
+/* @media (min-width: 600px) {
+  .cta-banner__container {
+    background-position: bottom -30px left;
+  }
+
+  .cta-banner__container::before {
+    height: 120%;
+    top: -48%;
+    left: -20%;
+     transform: rotate(100deg);
+  }
+} */
+
+/* @media (min-width: 700px) {
+  .cta-banner__container::before {
+    width: 130%;
+    top: -70%;
+    left: -20%;
+  }
+} */
+
+@media (min-width: 1020px) {
+  /* .cta-banner__container {
+    background-position: bottom -100px left;
+  }
+
+  .cta-banner__container::before {
+    width: 130%;
+    top: -48%;
+    left: -25%;
+  } */
+
+  /* .cta-banner__container {
+    background-image: url("./images/CTABanner/RectangleBlue.svg"),
+      url("./images/CTABanner/RectangleBeige.svg");
+    background-size: auto, cover;
+    background-position: bottom -45px left, bottom left 200px;
+  } */
+  /* 
+  .cta-banner__container::before {
+    all: unset;
+  } */
 }
