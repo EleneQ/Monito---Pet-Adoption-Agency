@@ -3,7 +3,7 @@
 // import { HeroImg, BigRectangleBeige, BigRectangleBlue } from "../images";
 // import ViewButton from "./Buttons/ViewButton";
 import { OneMoreFriend } from "./";
-// import HeroImg from "../images/Hero/Hero.png";
+import HeroImg from "../images/Hero/Hero.png";
 
 // const Hero = () => {
 //   return (
@@ -41,10 +41,20 @@ const Hero = () => {
   return (
     <section className="bg-primary-beige-gradient pt-[6rem] h-[650px] overflow-hidden rounded-ee-[40px] rounded-es-[40px]">
       {/** the max-width is so that the content doesn't go too far apart on bigger screens */}
-      <div className="hero-section__container | flex h-full px-p-x-xs sm:px-p-x-md lg:px-p-x-lg max-w-max-width mx-auto">
+      <div className="hero-section__container | h-full px-p-x-xs sm:px-p-x-md lg:px-p-x-lg max-w-max-width mx-auto">
         <OneMoreFriend
-          className={"hero-section_content | mt-3 sm:mt-[4rem] absolute z-10"}
+          className={
+            "hero-section_content | md:min-w-[25rem] mt-3 sm:mt-[2rem] md:mt-[4rem]"
+          }
         />
+        <div className="hero-img">
+          <img
+            className=""
+            src={HeroImg}
+            alt="a woman holding a cute dog and smiling"
+            loading="lazy"
+          />
+        </div>
       </div>
     </section>
   );
