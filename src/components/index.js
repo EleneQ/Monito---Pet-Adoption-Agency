@@ -7,4 +7,4 @@ export { default as OneMoreFriend } from "./OneMoreFriend";
 export { default as CTABanner } from "./CTABanner";
 export { default as ProductDisplay } from "./ProductDisplay";
 export { default as CTAAdoption } from "./CTAAdoption";
-export { default as PetKnowledgeCarousel } from "./PetKnowledgeCarousel";
+export { default as PetKnowledgeCarousel } from "./PetKnowledgeCarousel/PetKnowledgeCarousel";

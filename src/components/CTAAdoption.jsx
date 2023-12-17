@@ -32,7 +32,7 @@ const CTAAdoption = () => {
             Adopt a pet and give it a home, it will be love you back
             unconditionally.
           </p>
-          <div className="mt-5 md:mt-7">
+          <div className="mt-4 md:mt-6">
             <Button className={"mr-2 sm:mr-5"} outline>
               View Intro
               <FaRegCirclePlay />

@@ -1,0 +1,72 @@
+.carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3) - 12px);
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: 0;
+}
+
+/* making the scrollbar dissapear on chromium based browsers */
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* 
+  removing the smooth scroll behaviour when scrolling.
+*/
+.carousel.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+
+.carousel.dragging .card {
+  cursor: grab;
+  user-select: none; /* so that the text in the card can't be selected when dragging */
+}
+
+.carousel .card {
+  min-height: 20rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 56.25em) {
+  .carousel {
+    grid-auto-columns: calc((100% / 2) - 9px);
+  }
+}
+
+@media screen and (max-width: 37.5em) {
+  .carousel {
+    grid-auto-columns: 100%;
+  }
+
+  .carousel .card {
+    scroll-snap-align: start; /* this makes the cards move by their entire width */
+  }
+}
+
+.cutoff-text {
+  --max-lines: 3;
+  --line-height: 1.4;
+
+  max-height: calc(var(--max-lines) * 1em * var(--line-height));
+  line-height: var(--line-height);
+
+  overflow: hidden;
+  position: relative;
+}
+
+.cutoff-text::after {
+  content: "";
+  position: absolute;
+  /* so that the effect is only 1 line tall */
+  height: calc(1em * var(--line-height));
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent, white);
+}
