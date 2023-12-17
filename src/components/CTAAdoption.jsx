@@ -7,7 +7,7 @@ const CTAAdoption = () => {
     <section className="hidden md:block px-p-x-xs sm:px-p-x-md lg:px-p-x-lg max-w-max-width mx-auto my-12">
       <div
         className="cta-adoption__container | grid grid-cols-2 
-      md:gap-3 bg-[#FFB775] px-[1rem] md:px-[1.5rem] lg:px-[5rem] rounded-2xl"
+      md:gap-3 bg-[#FFB775] px-[1rem] md:px-[1.5rem] lg:px-[5rem] rounded-tl-[70px] rounded-br-[70px]"
       >
         <div className="text-primary-blue-10 pb-[3.5rem] pt-10 sm:pt-[3.5rem] z-10">
           <h2 className="flex items-center gap-3 font-extrabold text-4xl md:text-5xl">

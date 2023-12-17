@@ -1,12 +1,45 @@
+.carousel-container {
+  position: relative;
+}
+
+.arrow-btn {
+  position: absolute;
+  top: 50%;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  text-align: center;
+  line-height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+  z-index: 10;
+}
+
+.arrow-btn#left {
+  left: -40px;
+}
+
+.arrow-btn#right {
+  right: -40px;
+}
+
 .carousel {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: calc((100% / 3) - 12px);
-  gap: 1rem;
+  grid-auto-columns: calc((100% / 3) - 32px);
+  gap: 3rem;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   scrollbar-width: 0;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+
+  margin-bottom: 7rem;
 }
 
 /* making the scrollbar dissapear on chromium based browsers */
@@ -24,32 +57,45 @@
 
 .carousel.dragging .card {
   cursor: grab;
-  user-select: none; /* so that the text in the card can't be selected when dragging */
+  user-select: none;
 }
 
 .carousel .card {
   min-height: 20rem;
+  max-height: 30rem;
+  overflow-y: hidden;
   cursor: pointer;
+  transition: transform 200ms ease-in-out;
 }
 
-@media screen and (max-width: 56.25em) {
+.carousel .card:hover {
+  transform: translateY(-10px);
+}
+
+.carousel.dragging .card {
+  transform: translateY(0);
+}
+
+@media screen and (max-width: 60em) {
   .carousel {
+    gap: 1rem;
     grid-auto-columns: calc((100% / 2) - 9px);
   }
 }
 
-@media screen and (max-width: 37.5em) {
+@media screen and (max-width: 30em) {
   .carousel {
     grid-auto-columns: 100%;
   }
 
   .carousel .card {
-    scroll-snap-align: start; /* this makes the cards move by their entire width */
+    /* this makes the cards move by their entire width */
+    scroll-snap-align: start;
   }
 }
 
 .cutoff-text {
-  --max-lines: 3;
+  --max-lines: 4;
   --line-height: 1.4;
 
   max-height: calc(var(--max-lines) * 1em * var(--line-height));
