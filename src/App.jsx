@@ -4,6 +4,8 @@ import {
   DogsShowcase,
   CTABanner,
   ProductDisplay,
+  CTAAdoption,
+  PetKnowledgeCarousel,
 } from "./components";
 
 const App = () => {
@@ -14,6 +16,8 @@ const App = () => {
       <DogsShowcase />
       <CTABanner />
       <ProductDisplay />
+      <CTAAdoption />
+      <PetKnowledgeCarousel />
     </>
   );
 };

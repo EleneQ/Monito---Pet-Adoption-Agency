@@ -20,6 +20,7 @@ const DogsShowcase = () => {
 
   return (
     <section className="dogs-showcase | font-roboto capitalize px-p-x-xs sm:px-p-x-md lg:px-p-x-lg mt-12 md:mt-[4.5rem] max-w-max-width mx-auto flex flex-col md:block">
+      <p className="normal-case">Who's new?</p>
       <div className="flex items-center justify-between mb-5 md:mb-8">
         <h2 className="text-primary-blue-10 text-[1.2rem] sm:text-2xl font-bold">
           Take a look at some of our pets
