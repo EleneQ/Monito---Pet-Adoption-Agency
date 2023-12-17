@@ -8,3 +8,4 @@ export { default as CTABanner } from "./CTABanner";
 export { default as ProductDisplay } from "./ProductDisplay";
 export { default as CTAAdoption } from "./CTAAdoption";
 export { default as PetKnowledgeCarousel } from "./PetKnowledgeCarousel/PetKnowledgeCarousel";
+export { default as Footer } from "./Footer";

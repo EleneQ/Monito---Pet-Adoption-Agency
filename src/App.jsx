@@ -6,6 +6,7 @@ import {
   ProductDisplay,
   CTAAdoption,
   PetKnowledgeCarousel,
+  Footer,
 } from "./components";
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
       <ProductDisplay />
       <CTAAdoption />
       <PetKnowledgeCarousel />
+      <Footer />
     </>
   );
 };

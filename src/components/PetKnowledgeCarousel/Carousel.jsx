@@ -1,42 +1,25 @@
-import React, { useRef, useEffect, useState, forwardRef } from "react";
+import { useRef, useEffect } from "react";
+import { Card } from "..";
 import { IoIosArrowRoundForward, IoIosArrowRoundBack } from "react-icons/io";
 import { petKnowledge } from "../../constants/data";
 import "./carousel.css";
 
-const Card = forwardRef(({ children, className }, ref) => {
-  return (
-    <div ref={ref} className={`card ${className}`}>
-      {children}
-    </div>
-  );
-});
-
 const Carousel = () => {
   const carouselRef = useRef();
-  const cardRefs = useRef([]);
-  const [firstCardWidth, setFirstCardWidth] = useState(0);
 
   useEffect(() => {
     const carousel = carouselRef.current;
     const arrowBtns = document.querySelectorAll(".arrow-btn");
+    const firstCardWidth = carousel.querySelector(".card").offsetWidth;
 
-    const calculateFirstCardWidth = () => {
-      if (cardRefs.current.length > 0) {
-        setFirstCardWidth(cardRefs.current[0].offsetWidth);
-      }
-    };
-
-    calculateFirstCardWidth();
-
-    window.addEventListener("resize", calculateFirstCardWidth);
+    const computedStyles = window.getComputedStyle(carousel);
+    const gap = parseInt(computedStyles.gap);
 
     let isDragging = false,
       startX,
       startScrollLeft;
 
-    const computedStyles = window.getComputedStyle(carousel);
-    const gap = parseInt(computedStyles.gap);
-
+    // arrow buttons
     arrowBtns.forEach((btn) => {
       btn.addEventListener("click", () => {
         const scrollAmount =
@@ -49,6 +32,7 @@ const Carousel = () => {
       });
     });
 
+    // scrolling behaviour
     const dragStart = (e) => {
       isDragging = true;
       carousel.classList.add("dragging");
@@ -72,8 +56,6 @@ const Carousel = () => {
     document.addEventListener("mouseup", dragStop);
 
     return () => {
-      window.removeEventListener("resize", calculateFirstCardWidth);
-
       arrowBtns.forEach((btn) => {
         btn.removeEventListener("click", () => {});
       });
@@ -82,18 +64,14 @@ const Carousel = () => {
       carousel.removeEventListener("mousemove", dragging);
       document.removeEventListener("mouseup", dragStop);
     };
-  }, [firstCardWidth]);
+  }, []);
 
   return (
     <div className="carousel-container">
       <IoIosArrowRoundBack id="left" className="arrow-btn" size={20} />
       <ul ref={carouselRef} className="carousel rounded-3xl">
-        {petKnowledge.map((knowledge, index) => (
-          <Card
-            key={knowledge.id}
-            className={"h-full"}
-            ref={(el) => (cardRefs.current[index] = el)}
-          >
+        {petKnowledge.map((knowledge) => (
+          <Card className={"card h-full"} key={knowledge.id}>
             <li>
               <img
                 className="w-full rounded-lg"
