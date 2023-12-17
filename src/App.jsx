@@ -7,19 +7,25 @@ import {
   CTAAdoption,
   PetKnowledgeCarousel,
   Footer,
+  CTADogs,
+  FilterOptions,
 } from "./components";
 
 const App = () => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar className={"primary-nav | absolute z-10"} />
       <Hero />
       <DogsShowcase />
       <CTABanner />
       <ProductDisplay />
       <CTAAdoption />
       <PetKnowledgeCarousel />
-      <Footer />
+      <Footer /> */}
+      <Navbar />
+      <CTADogs />
+      <FilterOptions />
+      {/* <Footer /> */}
     </>
   );
 };

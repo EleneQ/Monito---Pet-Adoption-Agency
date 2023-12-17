@@ -9,3 +9,5 @@ export { default as ProductDisplay } from "./ProductDisplay";
 export { default as CTAAdoption } from "./CTAAdoption";
 export { default as PetKnowledgeCarousel } from "./PetKnowledgeCarousel/PetKnowledgeCarousel";
 export { default as Footer } from "./Footer";
+export { default as CTADogs } from "./CTADogs";
+export { default as FilterOptions } from "./Filter/FilterOptions";
