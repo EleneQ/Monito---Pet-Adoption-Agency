@@ -1,17 +1,42 @@
-const GenderOptions = () => {
+import { dogs } from "../../constants/data";
+
+const GenderOptions = ({ setFilter, setDogList }) => {
+  const handleFilter = (e) => {
+    setFilter(e.target.value);
+    console.log(e.target.value);
+
+    setDogList(
+      dogs.filter(
+        (dog) => dog.gender.toLowerCase() === e.target.value.toLowerCase()
+      )
+    );
+  };
+
   return (
     <div>
       <h3>Gender</h3>
       <ul>
         <li>
           <label htmlFor="male">
-            <input id="male" type="radio" name="gender" value="Male" />
+            <input
+              id="male"
+              type="radio"
+              name="gender"
+              value="Male"
+              onClick={handleFilter}
+            />
             Male
           </label>
         </li>
         <li>
           <label htmlFor="female">
-            <input id="female" type="radio" name="gender" value="Female" />
+            <input
+              id="female"
+              type="radio"
+              name="gender"
+              value="Female"
+              onClick={handleFilter}
+            />
             Female
           </label>
         </li>
@@ -20,9 +45,20 @@ const GenderOptions = () => {
   );
 };
 
+// const CheckboxCircle = ({ color }) => {
+//   const style = {
+//     "--color": color || "#ffb672",
+//   };
+//   return <span className="checkbox-circle" style={style}></span>;
+// };
+
+const CheckboxCircle = ({ style }) => (
+  <span className="checkbox-circle" style={style}></span>
+);
+
 const ColorOptions = () => {
   return (
-    <div>
+    <div className="color-options">
       <h3>Color</h3>
       <ul>
         <li>
@@ -33,14 +69,18 @@ const ColorOptions = () => {
               name="apricot"
               value="Apricot"
             />
-            <span className="checkbox-circle"></span>
+            <CheckboxCircle style={{ backgroundColor: "#FFB672" }} />
             Apricot
           </label>
         </li>
         <li>
           <label htmlFor="black">
             <input id="black" type="checkbox" name="black" value="Black" />
-            <span className="checkbox-circle" style={{backgroundColor: "#242B33"}}></span>
+            <CheckboxCircle
+              style={{
+                backgroundColor: "#242B33",
+              }}
+            />
             Black
           </label>
         </li>
@@ -52,21 +92,34 @@ const ColorOptions = () => {
               name="black-and-white"
               value="Black And White"
             />
-            <span className="checkbox-circle"></span>
+            <CheckboxCircle
+              style={{
+                backgroundImage:
+                  "linear-gradient(90deg, #242B33 0%, #242B33 52.59%, #D7D7D7 52.6%, #D2D2D2 100%)",
+              }}
+            />
             Black And White
           </label>
         </li>
         <li>
           <label htmlFor="silver">
             <input id="silver" type="checkbox" name="silver" value="Silver" />
-            <span className="checkbox-circle"></span>
+            <CheckboxCircle
+              style={{
+                backgroundColor: "#CECECE",
+              }}
+            />
             Silver
           </label>
         </li>
         <li>
           <label htmlFor="tan">
             <input id="tan" type="checkbox" name="tan" value="Black" />
-            <span className="checkbox-circle"></span>
+            <CheckboxCircle
+              style={{
+                backgroundColor: "#FFF7CE",
+              }}
+            />
             Tan
           </label>
         </li>
@@ -103,11 +156,11 @@ const SizeOptions = () => {
   );
 };
 
-const FilterOptions = () => {
+const FilterOptions = ({ setFilter, setDogList }) => {
   return (
-    <section className="px-p-x-xs sm:px-p-x-md lg:px-p-x-lg max-w-max-width mx-auto mt-[3rem]">
+    <section>
       <h2>Filter</h2>
-      <GenderOptions />
+      <GenderOptions setFilter={setFilter} setDogList={setDogList} />
       <hr />
       <ColorOptions />
       <hr />

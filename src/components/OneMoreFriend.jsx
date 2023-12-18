@@ -3,12 +3,12 @@ import { Button } from "./";
 import { FaRegCirclePlay } from "react-icons/fa6";
 
 const OneMoreFriend = ({ className }) => {
-  const classes = classNames(className, "max-w-[27rem] mx-auto text-white");
+  const classes = classNames(className, "max-w-[27rem] mx-auto");
 
   //changed the breakpoints from sm to
   return (
     <div className={classes}>
-      <h1 className="font-extrabold flex flex-col text text-white capitalize">
+      <h1 className="font-extrabold flex flex-col text capitalize">
         One more friend
         <span className="text-sms font-bold">Thousands more fun!</span>
       </h1>
@@ -18,7 +18,7 @@ const OneMoreFriend = ({ className }) => {
         can meet your needs!
       </p>
       <div className="mt-5 md:mt-7">
-        <Button className={"mr-2 md:mr-6"} outline>
+        <Button className={"mr-2 md:mr-6"} outline primary>
           View Intro
           <FaRegCirclePlay />
         </Button>

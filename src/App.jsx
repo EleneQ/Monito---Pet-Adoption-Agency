@@ -8,7 +8,7 @@ import {
   PetKnowledgeCarousel,
   Footer,
   CTADogs,
-  FilterOptions,
+  Filter,
 } from "./components";
 
 const App = () => {
@@ -24,8 +24,8 @@ const App = () => {
       <Footer /> */}
       <Navbar />
       <CTADogs />
-      <FilterOptions />
-      {/* <Footer /> */}
+      <Filter />
+      <Footer />
     </>
   );
 };

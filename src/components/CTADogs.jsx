@@ -13,7 +13,7 @@ const CTADogs = () => {
           />
         </div>
         <OneMoreFriend
-          className={"text-center md:text-right my-3 sm:mb-[2rem] md:mb-[4rem]"}
+          className={"text-center md:text-right my-3 sm:mb-[2rem] md:mb-[4rem] text-white"}
         />
       </div>
     </section>
