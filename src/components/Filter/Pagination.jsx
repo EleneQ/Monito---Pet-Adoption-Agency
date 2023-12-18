@@ -1,12 +1,15 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
-const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
-  const pageNumbers = [];
+const Pagination = ({ postsPerPage, totalPosts, dogList, paginate }) => {
+  const [pageNumbers, setPageNumbers] = useState([]);
 
   //get page numbers
-  for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
-    pageNumbers.push(i);
-  }
+  useEffect(() => {
+    const totalPages = Math.ceil(totalPosts / postsPerPage);
+    const numbers = Array.from({ length: totalPages }, (_, index) => index + 1);
+    setPageNumbers(numbers);
+    console.log(totalPosts);
+  }, [dogList.length]);
 
   useEffect(() => {
     window.scrollTo(0, 400);

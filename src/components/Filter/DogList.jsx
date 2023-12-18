@@ -1,24 +1,14 @@
-import Card from "../Card";
-import { Button } from "../";
-import { IoIosArrowForward } from "react-icons/io";
+import SortDogs from "./SortDogs";
 import Pagination from "./Pagination";
+import DogCardGrid from "../DogCardGrid";
 
-const DogList = ({ postsPerPage, allDogs, dogList, setCurrentPage }) => {
-  //calculate age by birthdate
-  const calculateAge = (birthdate) => {
-    const birthDate = new Date(birthdate);
-    const currentDate = new Date();
-
-    // Adjust age if the birthday hasn't occurred yet this year
-    if (currentDate.getMonth() > birthDate.getMonth()) {
-      const ageInMonths = currentDate.getMonth() - birthDate.getMonth();
-      return `${ageInMonths} month${ageInMonths > 1 ? "s" : ""}`;
-    }
-    const age = currentDate.getFullYear() - birthDate.getFullYear();
-    return `${age} years`;
-  };
-
-  //change page
+const DogList = ({
+  postsPerPage,
+  currentPosts,
+  setCurrentPage,
+  dogList,
+  setDogList,
+}) => {
   const paginate = (pageNum) => setCurrentPage(pageNum);
 
   return (
@@ -27,28 +17,13 @@ const DogList = ({ postsPerPage, allDogs, dogList, setCurrentPage }) => {
         <h2 className="text-primary-blue-10 text-[1.2rem] sm:text-2xl font-bold">
           Small Dog
         </h2>
-        <Button className={"hidden sm:flex"} outline={true}>
-          Sort by
-          <IoIosArrowForward />
-        </Button>
+        <SortDogs dogList={dogList} setDogList={setDogList} />
       </div>
-      <div className="dog-list__card-grid | grid gap-y-4 md:grid-y-6">
-        {dogList.map((dog) => (
-          <Card key={dog.id}>
-            <div className="mb-4">
-              <img className="max-w-full" src={dog.img} alt="" loading="lazy" />
-            </div>
-            <h3 className="font-bold mb-2 text-sm md:text-[17px]">{`${dog.name} - ${dog.breed}`}</h3>
-            <p className="text-slate-500 text-[13px] md:text-base flex flex-col sm:block">
-              {`Gender: ${dog.gender} \u00B7 `}
-              <span>{`Age: ${calculateAge(dog.birthdate)}`}</span>
-            </p>
-          </Card>
-        ))}
-      </div>
+      <DogCardGrid dogs={currentPosts} className={"dog-list__card-grid"} />
       <Pagination
         postsPerPage={postsPerPage}
-        totalPosts={allDogs.length}
+        totalPosts={dogList.length}
+        dogList={dogList}
         paginate={paginate}
       />
     </section>

@@ -1,15 +1,43 @@
-import { dogs } from "../../constants/data";
+const applyFilters = (filters, setDogList, dogs) => {
+  let filteredDogs = [...dogs];
 
-const GenderOptions = ({ setFilter, setDogList }) => {
-  const handleFilter = (e) => {
-    setFilter(e.target.value);
-    console.log(e.target.value);
-
-    setDogList(
-      dogs.filter(
-        (dog) => dog.gender.toLowerCase() === e.target.value.toLowerCase()
-      )
+  // Apply gender filter
+  if (filters.gender) {
+    filteredDogs = filteredDogs.filter(
+      (dog) => dog.gender.toLowerCase() === filters.gender.toLowerCase()
     );
+  }
+
+  //Apply color filters
+  if (filters.colors && filters.colors.length > 0) {
+    filteredDogs = filteredDogs.filter((dog) =>
+      filters.colors.every((color) => dog.colors.includes(color.toLowerCase()))
+    );
+  }
+
+  // Apply size filter
+  if (filters.size) {
+    filteredDogs = filteredDogs.filter(
+      (dog) => dog.size.toLowerCase() === filters.size.toLowerCase()
+    );
+  }
+
+  setDogList(filteredDogs);
+};
+
+const GenderOptions = ({
+  setGenderFilter,
+  setDogList,
+  dogs,
+  setCurrentPage,
+}) => {
+  const handleGenderFilter = (e) => {
+    const selectedGender = e.target.value;
+    setGenderFilter(selectedGender);
+
+    // Apply filtering based on all selected options
+    applyFilters({ gender: selectedGender }, setDogList, dogs);
+    setCurrentPage(1);
   };
 
   return (
@@ -23,7 +51,7 @@ const GenderOptions = ({ setFilter, setDogList }) => {
               type="radio"
               name="gender"
               value="Male"
-              onClick={handleFilter}
+              onClick={handleGenderFilter}
             />
             Male
           </label>
@@ -35,7 +63,7 @@ const GenderOptions = ({ setFilter, setDogList }) => {
               type="radio"
               name="gender"
               value="Female"
-              onClick={handleFilter}
+              onClick={handleGenderFilter}
             />
             Female
           </label>
@@ -45,18 +73,35 @@ const GenderOptions = ({ setFilter, setDogList }) => {
   );
 };
 
-// const CheckboxCircle = ({ color }) => {
-//   const style = {
-//     "--color": color || "#ffb672",
-//   };
-//   return <span className="checkbox-circle" style={style}></span>;
-// };
-
 const CheckboxCircle = ({ style }) => (
   <span className="checkbox-circle" style={style}></span>
 );
 
-const ColorOptions = () => {
+const ColorOptions = ({
+  setColorFilters,
+  setDogList,
+  dogs,
+  setCurrentPage,
+}) => {
+  const handleColorFilter = (e) => {
+    const selectedColor = e.target.value;
+
+    setColorFilters((prevFilters) => {
+      let colorFilters = [];
+
+      if (prevFilters.includes(selectedColor)) {
+        colorFilters = prevFilters.filter((color) => color !== selectedColor);
+      } else {
+        colorFilters = [...prevFilters, selectedColor];
+      }
+
+      // Apply filtering based on all selected options
+      applyFilters({ colors: colorFilters }, setDogList, dogs);
+      setCurrentPage(1);
+      return colorFilters;
+    });
+  };
+
   return (
     <div className="color-options">
       <h3>Color</h3>
@@ -68,6 +113,7 @@ const ColorOptions = () => {
               type="checkbox"
               name="apricot"
               value="Apricot"
+              onClick={handleColorFilter}
             />
             <CheckboxCircle style={{ backgroundColor: "#FFB672" }} />
             Apricot
@@ -75,22 +121,25 @@ const ColorOptions = () => {
         </li>
         <li>
           <label htmlFor="black">
-            <input id="black" type="checkbox" name="black" value="Black" />
-            <CheckboxCircle
-              style={{
-                backgroundColor: "#242B33",
-              }}
+            <input
+              id="black"
+              type="checkbox"
+              name="black"
+              value="Black"
+              onClick={handleColorFilter}
             />
+            <CheckboxCircle style={{ backgroundColor: "#242B33" }} />
             Black
           </label>
         </li>
         <li>
-          <label htmlFor="black-and-white">
+          <label htmlFor="tricolor">
             <input
-              id="black-and-white"
+              id="tricolor"
               type="checkbox"
-              name="black-and-white"
-              value="Black And White"
+              name="tricolor"
+              value="Tricolor"
+              onClick={handleColorFilter}
             />
             <CheckboxCircle
               style={{
@@ -98,28 +147,32 @@ const ColorOptions = () => {
                   "linear-gradient(90deg, #242B33 0%, #242B33 52.59%, #D7D7D7 52.6%, #D2D2D2 100%)",
               }}
             />
-            Black And White
+            Tricolor
           </label>
         </li>
         <li>
           <label htmlFor="silver">
-            <input id="silver" type="checkbox" name="silver" value="Silver" />
-            <CheckboxCircle
-              style={{
-                backgroundColor: "#CECECE",
-              }}
+            <input
+              id="silver"
+              type="checkbox"
+              name="silver"
+              value="Silver"
+              onClick={handleColorFilter}
             />
+            <CheckboxCircle style={{ backgroundColor: "#CECECE" }} />
             Silver
           </label>
         </li>
         <li>
           <label htmlFor="tan">
-            <input id="tan" type="checkbox" name="tan" value="Black" />
-            <CheckboxCircle
-              style={{
-                backgroundColor: "#FFF7CE",
-              }}
+            <input
+              id="tan"
+              type="checkbox"
+              name="tan"
+              value="Tan"
+              onClick={handleColorFilter}
             />
+            <CheckboxCircle style={{ backgroundColor: "#FFF7CE" }} />
             Tan
           </label>
         </li>
@@ -128,26 +181,53 @@ const ColorOptions = () => {
   );
 };
 
-const SizeOptions = () => {
+const SizeOptions = ({ setSizeFilter, setDogList, dogs, setCurrentPage }) => {
+  const handleSizeFilter = (e) => {
+    const selectedSize = e.target.value;
+    setSizeFilter(selectedSize);
+
+    // Apply filtering based on all selected options
+    applyFilters({ size: selectedSize }, setDogList, dogs);
+    setCurrentPage(1);
+  };
+
   return (
     <div>
       <h3>Size</h3>
       <ul>
         <li>
           <label htmlFor="small">
-            <input id="small" type="radio" name="size" value="Small" />
+            <input
+              id="small"
+              type="radio"
+              name="size"
+              value="Small"
+              onClick={handleSizeFilter}
+            />
             Small
           </label>
         </li>
         <li>
           <label htmlFor="medium">
-            <input id="medium" type="radio" name="size" value="Medium" />
+            <input
+              id="medium"
+              type="radio"
+              name="size"
+              value="Medium"
+              onClick={handleSizeFilter}
+            />
             Medium
           </label>
         </li>
         <li>
           <label htmlFor="large">
-            <input id="large" type="radio" name="size" value="Large" />
+            <input
+              id="large"
+              type="radio"
+              name="size"
+              value="Large"
+              onClick={handleSizeFilter}
+            />
             Large
           </label>
         </li>
@@ -156,15 +236,37 @@ const SizeOptions = () => {
   );
 };
 
-const FilterOptions = ({ setFilter, setDogList }) => {
+const FilterOptions = ({
+  setGenderFilter,
+  setColorFilters,
+  setSizeFilter,
+  setDogList,
+  dogs,
+  setCurrentPage,
+}) => {
   return (
     <section>
       <h2>Filter</h2>
-      <GenderOptions setFilter={setFilter} setDogList={setDogList} />
+      <GenderOptions
+        setGenderFilter={setGenderFilter}
+        setDogList={setDogList}
+        dogs={dogs}
+        setCurrentPage={setCurrentPage}
+      />
       <hr />
-      <ColorOptions />
+      <ColorOptions
+        setColorFilters={setColorFilters}
+        setDogList={setDogList}
+        dogs={dogs}
+        setCurrentPage={setCurrentPage}
+      />
       <hr />
-      <SizeOptions />
+      <SizeOptions
+        setSizeFilter={setSizeFilter}
+        setDogList={setDogList}
+        dogs={dogs}
+        setCurrentPage={setCurrentPage}
+      />
       <hr />
     </section>
   );

@@ -52,7 +52,7 @@ export const dogs = [
     gender: "male",
     birthdate: new Date("2023-10-30"),
     size: "small",
-    color: "white",
+    colors: ["silver"],
   },
   {
     id: "23sd12",
@@ -62,7 +62,7 @@ export const dogs = [
     gender: "female",
     birthdate: new Date("2023-10-25"),
     size: "small",
-    color: "tan",
+    colors: ["tan"],
   },
   {
     id: "12vdd12",
@@ -72,7 +72,7 @@ export const dogs = [
     gender: "male",
     birthdate: new Date("2023-11-14"),
     size: "small",
-    color: "brown",
+    colors: ["apricot"],
   },
   {
     id: "90967",
@@ -82,7 +82,7 @@ export const dogs = [
     gender: "male",
     birthdate: new Date("2023-09-19"),
     size: "large",
-    color: "black and white",
+    colors: ["black", "white"],
   },
   {
     id: "lkolk00",
@@ -92,7 +92,7 @@ export const dogs = [
     gender: "male",
     birthdate: new Date("2023-10-15"),
     size: "medium",
-    color: "brown and white",
+    colors: ["brown", "white"],
   },
   {
     id: "lssdsd9",
@@ -102,7 +102,7 @@ export const dogs = [
     gender: "female",
     birthdate: new Date("2023-09-29"),
     size: "medium",
-    color: "tricolor",
+    colors: ["tricolor", "white", "silver", "black"],
   },
   {
     id: "knnmn6",
@@ -112,7 +112,7 @@ export const dogs = [
     gender: "female",
     birthdate: new Date("2023-11-10"),
     size: "small",
-    color: "tricolor",
+    colors: ["tricolor", "white", "silver", "apricot"],
   },
   {
     id: "lsmxm3",
@@ -122,7 +122,7 @@ export const dogs = [
     gender: "male",
     birthdate: new Date("2023-10-24"),
     size: "small",
-    color: "black and white",
+    colors: ["black", "white"],
   },
 ];
 
