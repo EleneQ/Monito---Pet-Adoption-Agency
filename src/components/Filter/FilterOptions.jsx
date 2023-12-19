@@ -1,5 +1,12 @@
-const applyFilters = (filters, setDogList, dogs) => {
-  let filteredDogs = [...dogs];
+//replace with the states
+let filters = {
+  gender: null,
+  colors: [],
+  size: null,
+};
+
+const applyFilters = (filters, setDogList, allDogs) => {
+  let filteredDogs = [...allDogs];
 
   // Apply gender filter
   if (filters.gender) {
@@ -28,15 +35,19 @@ const applyFilters = (filters, setDogList, dogs) => {
 const GenderOptions = ({
   setGenderFilter,
   setDogList,
-  dogs,
+  allDogs,
   setCurrentPage,
 }) => {
   const handleGenderFilter = (e) => {
     const selectedGender = e.target.value;
-    setGenderFilter(selectedGender);
+
+    // Check if the selected filter is the same as the current filter
+    filters.gender = selectedGender === filters.gender ? null : selectedGender;
+
+    setGenderFilter(filters.gender);
 
     // Apply filtering based on all selected options
-    applyFilters({ gender: selectedGender }, setDogList, dogs);
+    applyFilters(filters, setDogList, allDogs);
     setCurrentPage(1);
   };
 
@@ -80,26 +91,24 @@ const CheckboxCircle = ({ style }) => (
 const ColorOptions = ({
   setColorFilters,
   setDogList,
-  dogs,
+  allDogs,
   setCurrentPage,
 }) => {
   const handleColorFilter = (e) => {
     const selectedColor = e.target.value;
 
-    setColorFilters((prevFilters) => {
-      let colorFilters = [];
+    if (filters.colors.includes(selectedColor)) {
+      filters.colors = filters.colors.filter(
+        (color) => color !== selectedColor
+      );
+    } else {
+      filters.colors = [...filters.colors, selectedColor];
+    }
 
-      if (prevFilters.includes(selectedColor)) {
-        colorFilters = prevFilters.filter((color) => color !== selectedColor);
-      } else {
-        colorFilters = [...prevFilters, selectedColor];
-      }
+    setColorFilters(filters.colors);
 
-      // Apply filtering based on all selected options
-      applyFilters({ colors: colorFilters }, setDogList, dogs);
-      setCurrentPage(1);
-      return colorFilters;
-    });
+    applyFilters(filters, setDogList, allDogs);
+    setCurrentPage(1);
   };
 
   return (
@@ -181,13 +190,21 @@ const ColorOptions = ({
   );
 };
 
-const SizeOptions = ({ setSizeFilter, setDogList, dogs, setCurrentPage }) => {
+const SizeOptions = ({
+  setSizeFilter,
+  setDogList,
+  allDogs,
+  setCurrentPage,
+}) => {
   const handleSizeFilter = (e) => {
     const selectedSize = e.target.value;
-    setSizeFilter(selectedSize);
+
+    filters.size = selectedSize === filters.size ? null : selectedSize;
+
+    setSizeFilter(filters.size);
 
     // Apply filtering based on all selected options
-    applyFilters({ size: selectedSize }, setDogList, dogs);
+    applyFilters(filters, setDogList, allDogs);
     setCurrentPage(1);
   };
 
@@ -241,7 +258,7 @@ const FilterOptions = ({
   setColorFilters,
   setSizeFilter,
   setDogList,
-  dogs,
+  allDogs,
   setCurrentPage,
 }) => {
   return (
@@ -250,21 +267,21 @@ const FilterOptions = ({
       <GenderOptions
         setGenderFilter={setGenderFilter}
         setDogList={setDogList}
-        dogs={dogs}
+        allDogs={allDogs}
         setCurrentPage={setCurrentPage}
       />
       <hr />
       <ColorOptions
         setColorFilters={setColorFilters}
         setDogList={setDogList}
-        dogs={dogs}
+        allDogs={allDogs}
         setCurrentPage={setCurrentPage}
       />
       <hr />
       <SizeOptions
         setSizeFilter={setSizeFilter}
         setDogList={setDogList}
-        dogs={dogs}
+        allDogs={allDogs}
         setCurrentPage={setCurrentPage}
       />
       <hr />

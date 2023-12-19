@@ -1,15 +1,20 @@
 import { useState } from "react";
-import { dogs } from "../../constants/data";
+import { dogs as allDogs } from "../../constants/data";
 import FilterOptions from "./FilterOptions";
 import DogList from "./DogList";
 import "./Filter.css";
 
 const Filter = () => {
+  // const [fitlers, setFilters] = useState({
+  //   gender: null,
+  //   colors: [],
+  //   size: null,
+  // });
   const [genderFilter, setGenderFilter] = useState(null);
   const [colorFilters, setColorFilters] = useState([]);
   const [sizeFilter, setSizeFilter] = useState(null);
 
-  const [dogList, setDogList] = useState(dogs);
+  const [dogList, setDogList] = useState(allDogs);
 
   //for pagination
   const [currentPage, setCurrentPage] = useState(1);
@@ -27,7 +32,7 @@ const Filter = () => {
         setColorFilters={setColorFilters}
         setSizeFilter={setSizeFilter}
         setDogList={setDogList}
-        dogs={dogs}
+        allDogs={allDogs}
         setCurrentPage={setCurrentPage}
       />
       <DogList
@@ -36,6 +41,7 @@ const Filter = () => {
         dogList={dogList}
         setCurrentPage={setCurrentPage}
         setDogList={setDogList}
+        allDogs={allDogs}
       />
     </section>
   );

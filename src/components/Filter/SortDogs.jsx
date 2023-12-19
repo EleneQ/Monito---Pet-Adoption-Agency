@@ -2,11 +2,12 @@ import { useState, useEffect, useRef } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 
 const options = [
+  { label: "All", value: "all" },
   { label: "Oldest", value: "oldest" },
   { label: "Youngest", value: "youngest" },
 ];
 
-function SortDogs({ dogList, setDogList }) {
+function SortDogs({ dogList, setDogList, allDogs }) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(false);
   const divEl = useRef();
@@ -36,8 +37,10 @@ function SortDogs({ dogList, setDogList }) {
     setIsOpen(false);
     setSelectedOption(option);
 
-    const sortedDogList = [...dogList];
-    if (option.value === "oldest") {
+    let sortedDogList = [...dogList];
+    if (option.value === "all") {
+      sortedDogList = [...allDogs];
+    } else if (option.value === "oldest") {
       sortedDogList.sort((a, b) => a.birthdate - b.birthdate);
     } else if (option.value === "youngest") {
       sortedDogList.sort((a, b) => b.birthdate - a.birthdate);
@@ -61,7 +64,7 @@ function SortDogs({ dogList, setDogList }) {
     <div ref={divEl} className="relative cursor-pointer">
       <div className="flex justify-between items-center gap-[0.8rem] text-primary-blue-9 border-[1.5px] border-primary-blue-9 rounded-3xl px-4 py-1">
         <p onClick={handleClick}>
-          {`Sort by: ${selectedOption?.label}` || "Sort by"}
+          {selectedOption ? `Sort by: ${selectedOption.label}` : "Sort by"}
         </p>
         <IoIosArrowForward />
       </div>

@@ -8,16 +8,17 @@ const DogList = ({
   setCurrentPage,
   dogList,
   setDogList,
+  allDogs,
 }) => {
   const paginate = (pageNum) => setCurrentPage(pageNum);
 
   return (
     <section className="dog-list | font-roboto capitalize flex flex-col md:block pb-5">
       <div className="flex items-center justify-between mb-2 md:mb-3">
-        <h2 className="text-primary-blue-10 text-[1.2rem] sm:text-2xl font-bold">
+        <h2 className="text-primary-blue-9 text-[1.2rem] sm:text-2xl font-bold">
           Small Dog
         </h2>
-        <SortDogs dogList={dogList} setDogList={setDogList} />
+        <SortDogs dogList={dogList} setDogList={setDogList} allDogs={allDogs} />
       </div>
       <DogCardGrid dogs={currentPosts} className={"dog-list__card-grid"} />
       <Pagination

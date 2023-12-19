@@ -22,7 +22,7 @@ const OneMoreFriend = ({ className }) => {
           View Intro
           <FaRegCirclePlay />
         </Button>
-        <Button secondary>Explore Now</Button>
+        <Button tertiary>Explore Now</Button>
       </div>
     </div>
   );

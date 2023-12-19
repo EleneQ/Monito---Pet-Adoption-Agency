@@ -82,7 +82,7 @@ export const dogs = [
     gender: "male",
     birthdate: new Date("2023-09-19"),
     size: "large",
-    colors: ["black", "white"],
+    colors: ["black", "silver", "white", "tricolor"],
   },
   {
     id: "lkolk00",
