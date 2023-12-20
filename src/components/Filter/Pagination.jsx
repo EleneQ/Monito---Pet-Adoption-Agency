@@ -1,13 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { DogDataContext } from "../../context/DogDataContext";
 
-const Pagination = ({
-  postsPerPage,
-  totalPosts,
-  dogList,
-  paginate,
-  currentPage,
-}) => {
+const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
   const [pageNumbers, setPageNumbers] = useState([]);
+  //context
+  const { dogList } = useContext(DogDataContext);
 
   //get page numbers
   useEffect(() => {

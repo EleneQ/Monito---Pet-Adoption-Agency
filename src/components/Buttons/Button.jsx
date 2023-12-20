@@ -22,7 +22,7 @@ function Button({
       "bg-white text-primary-blue-9 hover:text-white hover:bg-[#F7DCBF]":
         tertiary,
       "border-white border-[1.6px] hover:bg-white hover:text-pink-400":
-        outline && primary,
+        primary && outline,
     }
   );
 

@@ -1,5 +1,7 @@
-import { useState, useEffect, useRef } from "react";
-import useOutsideClickHandler from "../../context/useOutsideClickHandler";
+import { useState, useEffect, useRef, useContext } from "react";
+import { FiltersContext } from "../../context/FiltersContext";
+import { DogDataContext } from "../../context/DogDataContext";
+import useOutsideClickHandler from "../../hooks/useOutsideClickHandler";
 import { IoIosArrowForward } from "react-icons/io";
 
 const options = [
@@ -7,10 +9,14 @@ const options = [
   { label: "Youngest", value: "youngest" },
 ];
 
-function SortDogs({ dogList, setDogList, filters }) {
+function SortDogs() {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(false);
   const divEl = useRef();
+
+  //context
+  const { filters } = useContext(FiltersContext);
+  const { dogList, setDogList } = useContext(DogDataContext);
 
   useOutsideClickHandler(divEl, () => {
     setIsOpen(false);

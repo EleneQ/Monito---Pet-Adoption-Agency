@@ -1,18 +1,28 @@
+import { useState, useEffect, useContext } from "react";
+import { DogDataContext } from "../../context/DogDataContext";
+import { FiltersContext } from "../../context/FiltersContext";
 import SortDogs from "./SortDogs";
 import Pagination from "./Pagination";
 import DogCardGrid from "../DogCardGrid";
 
-const DogList = ({
-  postsPerPage,
-  currentPosts,
-  setCurrentPage,
-  dogList,
-  setDogList,
-  allDogs,
-  currentPage,
-  filters,
-}) => {
+const DogList = () => {
+  const { dogList } = useContext(DogDataContext);
+  const { filters } = useContext(FiltersContext);
+
+  //pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  let postsPerPage = 4;
+
+  //get current posts
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = dogList.slice(indexOfFirstPost, indexOfLastPost);
   const paginate = (pageNum) => setCurrentPage(pageNum);
+
+  useEffect(() => {
+    setCurrentPage(1);
+    console.log("dklskdlds");
+  }, [filters]);
 
   return (
     <section className="dog-list | font-roboto capitalize flex flex-col md:block pb-5">
@@ -25,18 +35,12 @@ const DogList = ({
             dogList.length === 1 ? "puppy" : "puppies"
           }`}</p>
         </div>
-        <SortDogs
-          dogList={dogList}
-          setDogList={setDogList}
-          allDogs={allDogs}
-          filters={filters}
-        />
+        <SortDogs />
       </div>
       <DogCardGrid dogs={currentPosts} className={"dog-list__card-grid"} />
       <Pagination
         postsPerPage={postsPerPage}
         totalPosts={dogList.length}
-        dogList={dogList}
         paginate={paginate}
         currentPage={currentPage}
       />

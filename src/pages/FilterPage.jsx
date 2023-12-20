@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FiltersContext } from "../context/FiltersContext";
 import { Navbar, CTADogs, Filter, Footer } from "../components";
 
 const FilterPage = () => {
@@ -15,15 +16,17 @@ const FilterPage = () => {
 
   return (
     <>
-      <Navbar />
-      <main>
-        <p className="px-p-x-xs sm:px-p-x-md lg:px-p-x-lg max-w-max-width mx-auto text-gray-500 mb-3">{`Home > ${filterValues.join(
-          " > "
-        )}`}</p>
-        <CTADogs />
-        <Filter filters={filters} setFilters={setFilters} />
-      </main>
-      <Footer />
+      <FiltersContext.Provider value={{ filters, setFilters }}>
+        <Navbar />
+        <main>
+          <p className="px-p-x-xs sm:px-p-x-md lg:px-p-x-lg max-w-max-width mx-auto text-gray-500 mb-3">{`Home > ${filterValues.join(
+            " > "
+          )}`}</p>
+          <CTADogs />
+          <Filter />
+        </main>
+        <Footer />
+      </FiltersContext.Provider>
     </>
   );
 };

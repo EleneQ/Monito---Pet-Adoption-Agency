@@ -226,3 +226,16 @@ export const petKnowledge = [
       "Dividing a dog's diet may seem simple at first, but there are some rules you should know so that your dog can easily absorb the nutrients in the diet. For those who are just starting to raise dogs, especially newborn puppies with relatively weak resistance.",
   },
 ];
+
+export const filterOptions = {
+  genders: ["male", "female"],
+  colors: {
+    apricot: "#FFB672",
+    black: "#242B33",
+    tricolor:
+      "linear-gradient(90deg, #242B33 0%, #242B33 52.59%, #D7D7D7 52.6%, #D2D2D2 100%)",
+    silver: "#CECECE",
+    tan: "#FFF7CE",
+  },
+  sizes: ["small", "medium", "large"],
+};
