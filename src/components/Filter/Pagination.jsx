@@ -3,7 +3,6 @@ import { DogDataContext } from "../../context/DogDataContext";
 
 const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
   const [pageNumbers, setPageNumbers] = useState([]);
-  //context
   const { dogList } = useContext(DogDataContext);
 
   //get page numbers
@@ -13,19 +12,19 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
     setPageNumbers(numbers);
   }, [dogList.length]);
 
-  // useEffect(() => {
-  //   window.scrollTo(0, 400);
-  // }, [paginate]);
+  useEffect(() => {
+    window.scrollTo(0, 400);
+  }, [paginate]);
 
   return (
-    <nav>
-      <ul className="flex justify-center items-center gap-5">
+    <nav className="mt-[3rem] font-semibold">
+      <ul className="flex justify-center items-center gap-2">
         {pageNumbers.map((pageNum) => (
           <li
-            className={`cursor-pointer ${
+            className={`cursor-pointer px-3 py-1 rounded-lg ${
               pageNum === currentPage
-                ? "bg-primary-blue-9 text-white px-3 py-1 rounded-lg"
-                : "text-primary-blue-9"
+                ? "bg-primary-blue-9 text-white"
+                : "text-primary-blue-9 hover:bg-[#F7DCBF]"
             }`}
             key={pageNum}
             onClick={() => paginate(pageNum)}

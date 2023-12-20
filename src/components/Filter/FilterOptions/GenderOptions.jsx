@@ -30,7 +30,7 @@ const GenderOptions = ({ applyFilters }) => {
 
   return (
     <div>
-      <h3>Gender</h3>
+      <h3 className="font-bold">Gender</h3>
       <ul>
         {filterOptions.genders.map((gender) => (
           <li className="capitalize" key={gender}>

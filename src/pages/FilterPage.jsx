@@ -19,7 +19,7 @@ const FilterPage = () => {
       <FiltersContext.Provider value={{ filters, setFilters }}>
         <Navbar />
         <main>
-          <p className="px-p-x-xs sm:px-p-x-md lg:px-p-x-lg max-w-max-width mx-auto text-gray-500 mb-3">{`Home > ${filterValues.join(
+          <p className="capitalize px-p-x-xs sm:px-p-x-md lg:px-p-x-lg max-w-max-width mx-auto text-gray-500 mb-3">{`Home > ${filterValues.join(
             " > "
           )}`}</p>
           <CTADogs />

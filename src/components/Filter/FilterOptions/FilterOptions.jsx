@@ -36,13 +36,13 @@ const FilterOptions = () => {
   // }, [filters]);
   return (
     <section>
-      <h2>Filter</h2>
+      <h2 className="text-2xl text-primary-blue-9 font-bold mb-3">Filters</h2>
       <GenderOptions applyFilters={applyFilters} />
-      <hr />
+      <hr className="my-3" />
       <ColorOptions applyFilters={applyFilters} />
-      <hr />
+      <hr className="my-3" />
       <SizeOptions applyFilters={applyFilters} />
-      <hr />
+      <hr className="my-3" />
     </section>
   );
 };

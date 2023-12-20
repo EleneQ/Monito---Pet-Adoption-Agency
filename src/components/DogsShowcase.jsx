@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { dogs } from "../constants/data";
 import Card from "./Card";
 import { Button } from "./";
@@ -5,18 +6,22 @@ import { IoIosArrowForward } from "react-icons/io";
 
 const DogsShowcase = () => {
   //calculate age by birthdate
-  const calculateAge = (birthdate) => {
-    const birthDate = new Date(birthdate);
-    const currentDate = new Date();
+  const cachedAge = useMemo(
+    () => (birthdate) => {
+      const birthDate = new Date(birthdate);
+      const currentDate = new Date();
 
-    // Adjust age if the birthday hasn't occurred yet this year
-    if (currentDate.getMonth() > birthDate.getMonth()) {
-      const ageInMonths = currentDate.getMonth() - birthDate.getMonth();
-      return `${ageInMonths} month${ageInMonths > 1 ? "s" : ""}`;
-    }
-    const age = currentDate.getFullYear() - birthDate.getFullYear();
-    return `${age} years`;
-  };
+      // Adjust age if the birthday hasn't occurred yet this year
+      if (currentDate.getMonth() > birthDate.getMonth()) {
+        const ageInMonths = currentDate.getMonth() - birthDate.getMonth();
+        return `${ageInMonths} month${ageInMonths > 1 ? "s" : ""}`;
+      }
+
+      const age = currentDate.getFullYear() - birthDate.getFullYear();
+      return `${age} years`;
+    },
+    []
+  );
 
   return (
     <section className="dogs-showcase | font-roboto capitalize px-p-x-xs sm:px-p-x-md lg:px-p-x-lg mt-12 md:mt-[4.5rem] max-w-max-width mx-auto flex flex-col md:block">
@@ -31,7 +36,7 @@ const DogsShowcase = () => {
         </Button>
       </div>
       <div className="card__grid | grid gap-y-4 md:grid-y-6">
-        {dogs.map((dog) => (
+        {dogs.slice(0, 8).map((dog) => (
           <Card key={dog.id}>
             <div className="mb-4">
               <img
@@ -44,7 +49,7 @@ const DogsShowcase = () => {
             <h3 className="font-bold mb-2 text-sm md:text-[17px]">{`${dog.name} - ${dog.breed}`}</h3>
             <p className="text-slate-500 text-[13px] md:text-base flex flex-col sm:block">
               {`Gender: ${dog.gender} \u00B7 `}
-              <span>{`Age: ${calculateAge(dog.birthdate)}`}</span>
+              <span>{`Age: ${cachedAge(dog.birthdate)}`}</span>
             </p>
           </Card>
         ))}

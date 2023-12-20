@@ -11,7 +11,7 @@ const DogList = () => {
 
   //pagination
   const [currentPage, setCurrentPage] = useState(1);
-  let postsPerPage = 4;
+  let postsPerPage = 15;
 
   //get current posts
   const indexOfLastPost = currentPage * postsPerPage;
@@ -21,12 +21,11 @@ const DogList = () => {
 
   useEffect(() => {
     setCurrentPage(1);
-    console.log("dklskdlds");
   }, [filters]);
 
   return (
     <section className="dog-list | font-roboto capitalize flex flex-col md:block pb-5">
-      <div className="flex items-center justify-between mb-2 md:mb-3">
+      <div className="flex items-center justify-between mb-3 md:mb-6">
         <div className="flex items-center gap-3">
           <h2 className="text-primary-blue-9 text-[1.2rem] sm:text-2xl font-bold">
             {dogList.length <= 1 ? "Dog" : "Dogs"}

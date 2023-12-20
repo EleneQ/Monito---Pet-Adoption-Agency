@@ -62,10 +62,11 @@ function SortDogs() {
 
   return (
     <div ref={divEl} className="relative cursor-pointer">
-      <div className="flex justify-between items-center gap-[0.8rem] text-primary-blue-9 border-[1.5px] border-primary-blue-9 rounded-3xl px-4 py-1">
-        <p onClick={handleClick}>
-          {selectedOption ? `Sort by: ${selectedOption.label}` : "Sort by"}
-        </p>
+      <div
+        className="flex justify-between items-center gap-[0.8rem] text-primary-blue-9 border-[1.5px] border-primary-blue-9 rounded-3xl px-4 py-1 shadow-xl hover:shadow-orange-shadow"
+        onClick={handleClick}
+      >
+        <p>{selectedOption ? `Sort by: ${selectedOption.label}` : "Sort by"}</p>
         <IoIosArrowForward />
       </div>
       {isOpen && (

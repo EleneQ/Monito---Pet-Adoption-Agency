@@ -31,7 +31,7 @@ const ColorOptions = ({ applyFilters }) => {
 
   return (
     <div className="color-options">
-      <h3>Color</h3>
+      <h3 className="font-bold">Color</h3>
       <ul>
         {Object.keys(filterOptions.colors).map((color) => (
           <li className="capitalize" key={color}>

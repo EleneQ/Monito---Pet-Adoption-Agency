@@ -20,6 +20,12 @@ import pet1 from "../images/PetKnowledge/pet1.png";
 import pet2 from "../images/PetKnowledge/pet2.png";
 import pet3 from "../images/PetKnowledge/pet3.png";
 
+import customer1 from "../images/Customers/customer1.png";
+import customer2 from "../images/Customers/customer2.png";
+import customer3 from "../images/Customers/customer3.png";
+import customer4 from "../images/Customers/customer4.png";
+import customer5 from "../images/Customers/customer5.png";
+
 export const navLinks = [
   {
     id: "sa9",
@@ -116,6 +122,166 @@ export const dogs = [
   },
   {
     id: "lsmxm3",
+    img: dog8,
+    name: "MO230",
+    breed: "poodle",
+    gender: "male",
+    birthdate: new Date("2023-10-24"),
+    size: "small",
+    colors: ["black", "white"],
+  },
+  {
+    id: "cdscsd2",
+    img: dog1,
+    name: "MO231",
+    breed: "pomeranian",
+    gender: "male",
+    birthdate: new Date("2023-10-30"),
+    size: "small",
+    colors: ["silver"],
+  },
+  {
+    id: "saaew",
+    img: dog2,
+    name: "MO502",
+    breed: "poodle",
+    gender: "female",
+    birthdate: new Date("2023-10-25"),
+    size: "small",
+    colors: ["tan"],
+  },
+  {
+    id: "klk,.xc",
+    img: dog3,
+    name: "MO102",
+    breed: "poodle",
+    gender: "male",
+    birthdate: new Date("2023-11-14"),
+    size: "small",
+    colors: ["apricot"],
+  },
+  {
+    id: "zssew3",
+    img: dog4,
+    name: "MO512",
+    breed: "alaskan malamute",
+    gender: "male",
+    birthdate: new Date("2023-09-19"),
+    size: "large",
+    colors: ["black", "silver", "white", "tricolor"],
+  },
+  {
+    id: ";lkjdx",
+    img: dog5,
+    name: "MO231",
+    breed: "pembroke corgi",
+    gender: "male",
+    birthdate: new Date("2023-10-15"),
+    size: "medium",
+    colors: ["brown", "white"],
+  },
+  {
+    id: "42355xs",
+    img: dog6,
+    name: "MO403",
+    breed: "pembroke corgi",
+    gender: "female",
+    birthdate: new Date("2023-09-29"),
+    size: "medium",
+    colors: ["tricolor", "white", "silver", "black"],
+  },
+  {
+    id: "09hfg",
+    img: dog7,
+    name: "MO403",
+    breed: "pomeranian",
+    gender: "female",
+    birthdate: new Date("2023-11-10"),
+    size: "small",
+    colors: ["tricolor", "white", "silver", "apricot"],
+  },
+  {
+    id: "ljhk-090",
+    img: dog8,
+    name: "MO230",
+    breed: "poodle",
+    gender: "male",
+    birthdate: new Date("2023-10-24"),
+    size: "small",
+    colors: ["black", "white"],
+  },
+  {
+    id: "sa22230",
+    img: dog1,
+    name: "MO231",
+    breed: "pomeranian",
+    gender: "male",
+    birthdate: new Date("2023-10-30"),
+    size: "small",
+    colors: ["silver"],
+  },
+  {
+    id: "4343434",
+    img: dog2,
+    name: "MO502",
+    breed: "poodle",
+    gender: "female",
+    birthdate: new Date("2023-10-25"),
+    size: "small",
+    colors: ["tan"],
+  },
+  {
+    id: "099-786",
+    img: dog3,
+    name: "MO102",
+    breed: "poodle",
+    gender: "male",
+    birthdate: new Date("2023-11-14"),
+    size: "small",
+    colors: ["apricot"],
+  },
+  {
+    id: "fsdfsdc09",
+    img: dog4,
+    name: "MO512",
+    breed: "alaskan malamute",
+    gender: "male",
+    birthdate: new Date("2023-09-19"),
+    size: "large",
+    colors: ["black", "silver", "white", "tricolor"],
+  },
+  {
+    id: "lkol978wqk00",
+    img: dog5,
+    name: "MO231",
+    breed: "pembroke corgi",
+    gender: "male",
+    birthdate: new Date("2023-10-15"),
+    size: "medium",
+    colors: ["brown", "white"],
+  },
+  {
+    id: ";klkcx",
+    img: dog6,
+    name: "MO403",
+    breed: "pembroke corgi",
+    gender: "female",
+    birthdate: new Date("2023-09-29"),
+    size: "medium",
+    colors: ["tricolor", "white", "silver", "black"],
+  },
+  {
+    id: "34dass5",
+    img: dog7,
+    name: "MO403",
+    breed: "pomeranian",
+    gender: "female",
+    birthdate: new Date("2023-11-10"),
+    size: "small",
+    colors: ["tricolor", "white", "silver", "apricot"],
+  },
+  {
+    id: "fsd76565",
     img: dog8,
     name: "MO230",
     breed: "poodle",
@@ -239,3 +405,46 @@ export const filterOptions = {
   },
   sizes: ["small", "medium", "large"],
 };
+
+export const customerCarouselImages = [
+  {
+    id: "43dfsd",
+    img: customer1,
+  },
+  {
+    id: "ds6565",
+    img: customer2,
+  },
+  {
+    id: "sxz6",
+    img: customer3,
+  },
+  {
+    id: "43sasdsdafsd",
+    img: customer4,
+  },
+  {
+    id: "gfcccrfr34",
+    img: customer5,
+  },
+  {
+    id: "y565ytr53",
+    img: customer1,
+  },
+  {
+    id: "232nbn",
+    img: customer2,
+  },
+  {
+    id: "sasdsf",
+    img: customer3,
+  },
+  {
+    id: "zxcxccxc",
+    img: customer4,
+  },
+  {
+    id: "o;lodf",
+    img: customer5,
+  },
+];

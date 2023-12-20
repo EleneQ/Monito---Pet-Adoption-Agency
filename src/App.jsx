@@ -1,10 +1,11 @@
-import { HomePage, FilterPage } from "./pages";
+import { HomePage, FilterPage, DogPage } from "./pages";
 
 const App = () => {
   return (
     <>
       {/* <HomePage /> */}
-      <FilterPage />
+      {/* <FilterPage /> */}
+      <DogPage />
     </>
   );
 };

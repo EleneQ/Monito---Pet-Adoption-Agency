@@ -9,6 +9,7 @@ const Carousel = () => {
 
   useEffect(() => {
     const carousel = carouselRef.current;
+    
     const arrowBtns = document.querySelectorAll(".arrow-btn");
     const firstCardWidth = carousel.querySelector(".card").offsetWidth;
 

@@ -26,7 +26,7 @@ const SizeOptions = ({ applyFilters }) => {
 
   return (
     <div>
-      <h3>Size</h3>
+      <h3 className="font-bold">Size</h3>
       <ul>
         {filterOptions.sizes.map((size) => (
           <li className="capitalize" key={size}>

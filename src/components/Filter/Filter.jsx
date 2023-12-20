@@ -3,7 +3,6 @@ import { DogDataContext } from "../../context/DogDataContext";
 import { dogs as allDogs } from "../../constants/data";
 import FilterOptions from "./FilterOptions/FilterOptions";
 import DogList from "./DogList";
-import "./Filter.css";
 
 const Filter = () => {
   const [dogList, setDogList] = useState(allDogs);

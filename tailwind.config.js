@@ -29,6 +29,7 @@ export default {
       },
       boxShadow: {
         "card-shadow": "0px 8px 24px rgba(149, 157, 165, 0.2)",
+        "orange-shadow": "0 7px 15px 0 rgba(255,83,48,.35)",
       },
       backgroundImage: {
         "primary-beige-gradient":
