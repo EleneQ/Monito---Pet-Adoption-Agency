@@ -5,16 +5,12 @@ import DogList from "./DogList";
 import "./Filter.css";
 
 const Filter = () => {
-  // const [fitlers, setFilters] = useState({
-  //   gender: null,
-  //   colors: [],
-  //   size: null,
-  // });
-  const [genderFilter, setGenderFilter] = useState(null);
-  const [colorFilters, setColorFilters] = useState([]);
-  const [sizeFilter, setSizeFilter] = useState(null);
-
   const [dogList, setDogList] = useState(allDogs);
+  const [filters, setFilters] = useState({
+    gender: null,
+    colors: [],
+    size: null,
+  });
 
   //for pagination
   const [currentPage, setCurrentPage] = useState(1);
@@ -28,9 +24,8 @@ const Filter = () => {
   return (
     <section className="filter-section | px-p-x-xs sm:px-p-x-md lg:px-p-x-lg max-w-max-width mx-auto mt-[2rem]">
       <FilterOptions
-        setGenderFilter={setGenderFilter}
-        setColorFilters={setColorFilters}
-        setSizeFilter={setSizeFilter}
+        setFilters={setFilters}
+        filters={filters}
         setDogList={setDogList}
         allDogs={allDogs}
         setCurrentPage={setCurrentPage}
@@ -42,6 +37,8 @@ const Filter = () => {
         setCurrentPage={setCurrentPage}
         setDogList={setDogList}
         allDogs={allDogs}
+        currentPage={currentPage}
+        filters={filters}
       />
     </section>
   );

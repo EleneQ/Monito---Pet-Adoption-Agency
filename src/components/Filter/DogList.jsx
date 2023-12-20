@@ -9,6 +9,8 @@ const DogList = ({
   dogList,
   setDogList,
   allDogs,
+  currentPage,
+  filters,
 }) => {
   const paginate = (pageNum) => setCurrentPage(pageNum);
 
@@ -18,7 +20,12 @@ const DogList = ({
         <h2 className="text-primary-blue-9 text-[1.2rem] sm:text-2xl font-bold">
           Small Dog
         </h2>
-        <SortDogs dogList={dogList} setDogList={setDogList} allDogs={allDogs} />
+        <SortDogs
+          dogList={dogList}
+          setDogList={setDogList}
+          allDogs={allDogs}
+          filters={filters}
+        />
       </div>
       <DogCardGrid dogs={currentPosts} className={"dog-list__card-grid"} />
       <Pagination
@@ -26,6 +33,7 @@ const DogList = ({
         totalPosts={dogList.length}
         dogList={dogList}
         paginate={paginate}
+        currentPage={currentPage}
       />
     </section>
   );

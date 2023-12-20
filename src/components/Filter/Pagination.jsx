@@ -1,6 +1,12 @@
 import { useState, useEffect } from "react";
 
-const Pagination = ({ postsPerPage, totalPosts, dogList, paginate }) => {
+const Pagination = ({
+  postsPerPage,
+  totalPosts,
+  dogList,
+  paginate,
+  currentPage,
+}) => {
   const [pageNumbers, setPageNumbers] = useState([]);
 
   //get page numbers
@@ -20,7 +26,11 @@ const Pagination = ({ postsPerPage, totalPosts, dogList, paginate }) => {
       <ul className="flex justify-center items-center gap-5">
         {pageNumbers.map((pageNum) => (
           <li
-            className="bg-primary-blue-9 text-white px-3 py-1 rounded-lg cursor-pointer"
+            className={`cursor-pointer ${
+              pageNum === currentPage
+                ? "bg-primary-blue-9 text-white px-3 py-1 rounded-lg"
+                : "text-primary-blue-9"
+            }`}
             key={pageNum}
             onClick={() => paginate(pageNum)}
           >

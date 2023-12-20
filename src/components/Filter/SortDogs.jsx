@@ -7,7 +7,7 @@ const options = [
   { label: "Youngest", value: "youngest" },
 ];
 
-function SortDogs({ dogList, setDogList, allDogs }) {
+function SortDogs({ dogList, setDogList, allDogs, filters }) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(false);
   const divEl = useRef();
@@ -37,7 +37,16 @@ function SortDogs({ dogList, setDogList, allDogs }) {
     setIsOpen(false);
     setSelectedOption(option);
 
+    sortDogs(option);
+  };
+
+  // useEffect(() => {
+  //   sortDogs(selectedOption);
+  // }, [filters]);
+
+  const sortDogs = (option) => {
     let sortedDogList = [...dogList];
+
     if (option.value === "all") {
       sortedDogList = [...allDogs];
     } else if (option.value === "oldest") {
