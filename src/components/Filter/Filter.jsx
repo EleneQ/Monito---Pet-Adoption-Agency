@@ -4,13 +4,8 @@ import FilterOptions from "./FilterOptions";
 import DogList from "./DogList";
 import "./Filter.css";
 
-const Filter = () => {
+const Filter = ({ filters, setFilters }) => {
   const [dogList, setDogList] = useState(allDogs);
-  const [filters, setFilters] = useState({
-    gender: null,
-    colors: [],
-    size: null,
-  });
 
   //for pagination
   const [currentPage, setCurrentPage] = useState(1);
@@ -25,7 +20,6 @@ const Filter = () => {
     <section className="filter-section | px-p-x-xs sm:px-p-x-md lg:px-p-x-lg max-w-max-width mx-auto mt-[2rem]">
       <FilterOptions
         setFilters={setFilters}
-        filters={filters}
         setDogList={setDogList}
         allDogs={allDogs}
         setCurrentPage={setCurrentPage}

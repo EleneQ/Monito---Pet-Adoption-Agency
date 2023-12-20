@@ -1,33 +1,20 @@
 import { useState, useEffect, useRef } from "react";
+import useOutsideClickHandler from "../../context/useOutsideClickHandler";
 import { IoIosArrowForward } from "react-icons/io";
 
 const options = [
-  { label: "All", value: "all" },
   { label: "Oldest", value: "oldest" },
   { label: "Youngest", value: "youngest" },
 ];
 
-function SortDogs({ dogList, setDogList, allDogs, filters }) {
+function SortDogs({ dogList, setDogList, filters }) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(false);
   const divEl = useRef();
 
-  useEffect(() => {
-    const handler = (event) => {
-      if (!divEl.current) {
-        return;
-      }
-
-      if (!divEl.current.contains(event.target)) {
-        setIsOpen(false);
-      }
-    };
-
-    document.addEventListener("click", handler, true);
-    return () => {
-      document.removeEventListener("click", handler);
-    };
-  }, []);
+  useOutsideClickHandler(divEl, () => {
+    setIsOpen(false);
+  });
 
   const handleClick = () => {
     setIsOpen((prevIsOpen) => !prevIsOpen);
@@ -40,16 +27,14 @@ function SortDogs({ dogList, setDogList, allDogs, filters }) {
     sortDogs(option);
   };
 
-  // useEffect(() => {
-  //   sortDogs(selectedOption);
-  // }, [filters]);
+  useEffect(() => {
+    sortDogs(selectedOption);
+  }, [filters]);
 
   const sortDogs = (option) => {
     let sortedDogList = [...dogList];
 
-    if (option.value === "all") {
-      sortedDogList = [...allDogs];
-    } else if (option.value === "oldest") {
+    if (option.value === "oldest") {
       sortedDogList.sort((a, b) => a.birthdate - b.birthdate);
     } else if (option.value === "youngest") {
       sortedDogList.sort((a, b) => b.birthdate - a.birthdate);

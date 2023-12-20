@@ -14,12 +14,11 @@ const Pagination = ({
     const totalPages = Math.ceil(totalPosts / postsPerPage);
     const numbers = Array.from({ length: totalPages }, (_, index) => index + 1);
     setPageNumbers(numbers);
-    console.log(totalPosts);
   }, [dogList.length]);
 
-  useEffect(() => {
-    window.scrollTo(0, 400);
-  }, [paginate]);
+  // useEffect(() => {
+  //   window.scrollTo(0, 400);
+  // }, [paginate]);
 
   return (
     <nav>
