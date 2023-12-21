@@ -395,8 +395,7 @@ input[type="radio"]:checked + label::after {
 .slider {
   position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
+
   overflow: hidden;
 }
 
@@ -423,7 +422,7 @@ input[type="radio"]:checked + label::after {
 }
 
 .right-arrow {
-  right: 20px;
+  right: 70px;
 }
 
 .left-arrow {

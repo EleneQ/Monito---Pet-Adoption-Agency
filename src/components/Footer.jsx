@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { navLinks } from "../constants/data";
-import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
-import { FaSquareXTwitter } from "react-icons/fa6";
+import SocialLinks from "./SocialLinks";
 import Logo from "../images/Logo.svg";
 
 const NavLink = ({ link, title }) => (
@@ -9,25 +8,6 @@ const NavLink = ({ link, title }) => (
     <a href={link}>{title}</a>
   </li>
 );
-
-const SocialLinks = () => {
-  return (
-    <ul className="flex gap-12">
-      <li className="cursor-pointer hover:text-primary-blue-9">
-        <FaFacebook size={23} />
-      </li>
-      <li className="cursor-pointer hover:text-primary-blue-9">
-        <FaSquareXTwitter size={23} />
-      </li>
-      <li className="cursor-pointer hover:text-primary-blue-9">
-        <FaInstagram size={23} />
-      </li>
-      <li className="cursor-pointer hover:text-primary-blue-9">
-        <FaYoutube size={23} />
-      </li>
-    </ul>
-  );
-};
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -63,7 +43,7 @@ const Footer = () => {
             ))}
           </ul>
         </nav>
-        <SocialLinks />
+        <SocialLinks className={"gap-12"} iconSize={25} />
       </div>
       <hr className="bg-[#d5dbde] my-[1.5rem] md:my-[2rem] h-[1px]" />
       <div className="text-[#667479] flex flex-col md:flex-row items-center justify-between">

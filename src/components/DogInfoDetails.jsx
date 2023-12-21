@@ -57,7 +57,7 @@ const DogInfoDetails = () => {
             <td>
               :{" "}
               <div className="inline-flex flex-col">
-                <span>Pure breed Shih Tzu.</span>
+                <span>Pure breed Shi Tzu.</span>
                 <span>Good body structure.</span>
                 <span>MKA cert and Microchip.</span>
                 <span>With Father from champion lineage.</span>
