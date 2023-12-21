@@ -391,3 +391,68 @@ input[type="radio"]:checked + label::after {
   justify-content: space-between;
   gap: 1.2rem;
 }
+
+.slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.slider-img {
+  width: 550px;
+  aspect-ratio: 1 / 0.9;
+  object-fit: cover;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  right: 100px;
+  color: white;
+  z-index: 30;
+  font-size: 2.5rem;
+  padding: 0.5rem;
+  user-select: none;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 38px,
+    rgba(0, 0, 0, 0.25) 0px 15px 12px;
+}
+
+.right-arrow {
+  right: 20px;
+}
+
+.left-arrow {
+  left: 20px;
+}
+
+.slide {
+  opacity: 0;
+  transition-duration: 500ms ease-in-out;
+  transform: scale(0.9);
+}
+
+.slide.active {
+  opacity: 1;
+  transition-duration: 500ms;
+  transform: scale(1);
+}
+
+.dog-info-details tr {
+  border-bottom: 1px solid #c0ccd0;
+}
+
+.dog-info-details th {
+  font-weight: normal;
+  padding-right: 3rem;
+}
+
+.dog-info-details th,
+.dog-info-details td {
+  padding-block: 0.5rem;
+  vertical-align: top;
+}

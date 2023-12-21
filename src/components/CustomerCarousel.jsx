@@ -34,11 +34,13 @@ const CustomerCarousel = () => {
   const goToSlide = (index) => {
     setCurrentSlide(index);
 
+    const containerWidth = carousel.current.offsetWidth;
     const slideWidth = carousel.current.children[index].offsetWidth;
-    const scrollLeft = index * slideWidth;
+    const scrollCenter =
+      index * slideWidth - (containerWidth - slideWidth) / 2 + 50;
 
     carousel.current.scrollTo({
-      left: scrollLeft,
+      left: scrollCenter,
       behavior: "smooth",
     });
   };

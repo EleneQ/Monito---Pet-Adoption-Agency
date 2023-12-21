@@ -1,4 +1,4 @@
-import { Navbar, Footer } from "../components";
+import { Navbar, Footer, DogProfile } from "../components";
 import CustomerCarousel from "../components/CustomerCarousel";
 
 const DogPage = () => {
@@ -6,7 +6,8 @@ const DogPage = () => {
     <>
       <Navbar />
       <main>
-        <CustomerCarousel />
+        <DogProfile />
+        {/* <CustomerCarousel /> */}
       </main>
       {/* <Footer /> */}
     </>

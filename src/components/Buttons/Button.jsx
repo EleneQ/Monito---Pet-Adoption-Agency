@@ -13,7 +13,7 @@ function Button({
     className,
     "rounded-[60px] px-5 py-2 font-medium text-primary-blue-9",
     {
-      "text-white bg-primary-blue-9 hover:bg-transparent hover:text-primary-blue-9 hover:border-[1.6px] hover:border-primary-blue-9 hover:border-solid":
+      "text-white bg-primary-blue-9 hover:bg-transparent hover:text-primary-blue-9 border-[1.5px] border-primary-blue-9 border-solid":
         primary,
       "bg-white text-primary-blue-9 hover:bg-primary-blue-9 hover:text-white":
         secondary,

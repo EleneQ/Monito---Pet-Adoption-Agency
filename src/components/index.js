@@ -11,3 +11,4 @@ export { default as PetKnowledgeCarousel } from "./PetKnowledgeCarousel/PetKnowl
 export { default as Footer } from "./Footer";
 export { default as CTADogs } from "./CTADogs";
 export { default as Filter } from "./Filter/Filter";
+export { default as DogProfile } from "./DogProfile";
