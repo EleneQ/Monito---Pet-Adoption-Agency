@@ -23,7 +23,7 @@ const DogPicturesCarousel = () => {
 
   return (
     <div>
-      <div className="slider | overflow-hidden mb-3">
+      <div className="slider max-w-[550px] mx-auto | overflow-hidden mb-3">
         <IoIosArrowBack
           className="arrow left-arrow"
           onClick={prevSlide}
@@ -38,13 +38,13 @@ const DogPicturesCarousel = () => {
         {dogPictureCarousel.map((slide, index) => (
           <div
             key={slide.id}
-            className={`slide rounded-xl ${
+            className={`slide | sm:rounded-xl ${
               index === currentSlide ? "active" : ""
             }`}
           >
             {index === currentSlide && (
               <img
-                className="slider-img"
+                className="slider-img | object-cover"
                 style={{ borderRadius: "inherit" }}
                 src={slide.img}
                 alt=""
@@ -55,10 +55,10 @@ const DogPicturesCarousel = () => {
         ))}
       </div>
 
-      <div className="flex gap-3 items-center overflow-hidden">
+      <div className="flex justify-center gap-3 items-center ml-3 sm:ml-0 overflow-hidden">
         {dogPictureCarousel.map((slide, index) => (
           <img
-            className={`w-[100px] h-[100px] object-cover rounded-lg cursor-pointer ${
+            className={`min-w-[60px] w-[100px] aspect-square object-cover rounded-lg cursor-pointer ${
               currentSlide === index ? "border-4 border-[#f5bc50]" : ""
             }`}
             key={slide.id}
@@ -69,8 +69,9 @@ const DogPicturesCarousel = () => {
           />
         ))}
       </div>
-      <div className="flex gap-5 justify-between items-center  text-primary-blue-9 py-2 px-4 bg-gradient-to-r from-[#FCEED5] via-[#FCEED5] to-[#FFE7BA] rounded-xl mt-5">
-        <p className="flex gap-2">
+
+      <div className="hidden md:flex gap-5 justify-between items-center text-[13.5px] font-bold text-primary-blue-9 py-2 px-4 bg-light-pink-gradient rounded-xl mt-4">
+        <p className="flex gap-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -112,7 +113,7 @@ const DogPicturesCarousel = () => {
           </svg>
           100% health guarantee for pets
         </p>
-        <p className="flex gap-2">
+        <p className="flex gap-1">
           <svg
             width="27"
             height="27"
@@ -309,7 +310,7 @@ const DogPicturesCarousel = () => {
         </p>
       </div>
 
-      <div className="flex mt-4">
+      <div className="hidden md:flex mt-4">
         <div className="flex items-center justify-center gap-2 mr-5 text-primary-blue-9 font-semibold">
           <RiShareLine className="text-lg" />
           <p>Share:</p>

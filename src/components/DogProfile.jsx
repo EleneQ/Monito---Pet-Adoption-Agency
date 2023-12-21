@@ -3,8 +3,8 @@ import DogInfoDetails from "./DogInfoDetails";
 
 const DogProfile = () => {
   return (
-    <section className="px-p-x-xs sm:px-p-x-md lg:px-p-x-lg max-w-max-width mx-auto mt-3">
-      <div className="flex gap-[2.5rem] p-4 rounded-2xl border-[1.6px] border-[#EBEEEF]">
+    <section className="md:px-p-x-md lg:px-p-x-lg max-w-max-width mx-auto md:mt-3">
+      <div className="flex flex-col md:flex-row gap-6 md:gap-[2.5rem] justify-center md:justify-normal md:p-4 md:rounded-2xl md:border-[1.6px] md:border-[#EBEEEF]">
         <DogPicturesCarousel />
         <DogInfoDetails />
       </div>

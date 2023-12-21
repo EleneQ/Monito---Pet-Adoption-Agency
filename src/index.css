@@ -351,32 +351,6 @@ body {
   border: 1px solid red;
 }
 
-/* input[type="radio"] {
-  display: none;
-}
-
-label {
-  position: relative;
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-color: #fff;
-  border: 2px solid #000;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-input[type="radio"]:checked + label::after {
-  content: "";
-  position: absolute;
-  top: 4px;
-  left: 4px;
-  width: 12px;
-  height: 12px;
-  background-color: #000;
-  border-radius: 2px;
-} */
-
 .filter-section {
   display: grid;
   grid-template-columns: minmax(15rem, 18.5rem) 1fr;
@@ -395,7 +369,7 @@ input[type="radio"]:checked + label::after {
 .slider {
   position: relative;
   display: flex;
-
+  justify-content: center;
   overflow: hidden;
 }
 
@@ -422,7 +396,7 @@ input[type="radio"]:checked + label::after {
 }
 
 .right-arrow {
-  right: 70px;
+  right: 20px;
 }
 
 .left-arrow {
@@ -432,7 +406,7 @@ input[type="radio"]:checked + label::after {
 .slide {
   opacity: 0;
   transition-duration: 500ms ease-in-out;
-  transform: scale(0.9);
+  transform: scale(0.8);
 }
 
 .slide.active {
@@ -447,7 +421,12 @@ input[type="radio"]:checked + label::after {
 
 .dog-info-details th {
   font-weight: normal;
-  padding-right: 3rem;
+}
+
+@media (min-width: 768px) {
+  .dog-info-details th {
+    padding-right: 3rem;
+  }
 }
 
 .dog-info-details th,
