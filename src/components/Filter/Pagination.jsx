@@ -12,9 +12,14 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
     setPageNumbers(numbers);
   }, [dogList.length]);
 
-  useEffect(() => {
-    window.scrollTo(0, 400);
-  }, [paginate]);
+  const pageChangeHandler = (pageNum) => {
+    paginate(pageNum);
+    
+    window.scrollTo({
+      top: 400,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <nav className="mt-[3rem] font-semibold">
@@ -27,7 +32,7 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
                 : "text-primary-blue-9 hover:bg-[#F7DCBF]"
             }`}
             key={pageNum}
-            onClick={() => paginate(pageNum)}
+            onClick={() => pageChangeHandler(pageNum)}
           >
             {pageNum}
           </li>

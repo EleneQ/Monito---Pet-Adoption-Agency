@@ -35,7 +35,7 @@ const CustomerCarousel = () => {
     setCurrentSlide(index);
 
     const containerWidth = carousel.current.offsetWidth;
-    const slideWidth = carousel.current.children[index].offsetWidth;
+    const slideWidth = carousel.current.children[0].offsetWidth;
     const scrollCenter =
       index * slideWidth - (containerWidth - slideWidth) / 2 + 50;
 
@@ -46,7 +46,10 @@ const CustomerCarousel = () => {
   };
 
   return (
-    <section className="px-p-x-xs sm:px-p-x-md lg:px-p-x-lg max-w-max-width mx-auto">
+    <section className="padding-x max-width-center mt-[3rem] ml-8">
+      <h2 className="text-xl font-bold text-[#00171F] mb-5">
+        Our lovely customers
+      </h2>
       <div
         ref={carousel}
         className={`flex gap-2 select-none overflow-x-hidden ${

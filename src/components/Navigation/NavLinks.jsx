@@ -2,11 +2,11 @@ import { useState } from "react";
 import { navLinks } from "../../constants/data";
 import { MdOutlineMenuOpen } from "react-icons/md";
 import { Button } from "../";
-// import JoinCommunityButton from "../Buttons/JoinCommunityButton";
+import { Link } from "react-router-dom";
 
 const NavLink = ({ link, title }) => (
   <li className="cursor-pointer hover:border-b-[3px] hover:border-primary-blue-9">
-    <a href={link}>{title}</a>
+    <Link to={link}>{title}</Link>
   </li>
 );
 

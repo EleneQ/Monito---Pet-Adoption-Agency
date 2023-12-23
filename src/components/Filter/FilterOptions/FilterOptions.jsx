@@ -1,3 +1,6 @@
+import { useContext, useEffect } from "react";
+import { FiltersContext } from "../../../context/FiltersContext";
+import { DogDataContext } from "../../../context/DogDataContext";
 import GenderOptions from "./GenderOptions";
 import ColorOptions from "./ColorOptions";
 import SizeOptions from "./SizeOptions";
@@ -30,10 +33,11 @@ const applyFilters = (filters, setDogList, allDogs) => {
 };
 
 const FilterOptions = () => {
-  // useEffect(() => {
-  //   applyFilters(filters, setDogList, allDogs);
-  //   setCurrentPage(1);
-  // }, [filters]);
+  const { filters } = useContext(FiltersContext);
+  const { allDogs, setDogList } = useContext(DogDataContext);
+
+  applyFiltersOnMount(filters, setDogList, allDogs);
+
   return (
     <section>
       <h2 className="text-2xl text-primary-blue-9 font-bold mb-3">Filters</h2>
@@ -46,5 +50,15 @@ const FilterOptions = () => {
     </section>
   );
 };
+
+function applyFiltersOnMount(filters, setDogList, allDogs) {
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      applyFilters(filters, setDogList, allDogs);
+    }, 10);
+
+    return () => clearTimeout(timeoutId);
+  }, []);
+}
 
 export default FilterOptions;

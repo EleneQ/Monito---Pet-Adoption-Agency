@@ -37,6 +37,9 @@ const DogList = () => {
         <SortDogs />
       </div>
       <DogCardGrid dogs={currentPosts} className={"dog-list__card-grid"} />
+      {dogList.length <= 0 && (
+        <p className="text-lg text-black">No results found</p>
+      )}
       <Pagination
         postsPerPage={postsPerPage}
         totalPosts={dogList.length}

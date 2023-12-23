@@ -4,23 +4,48 @@ import { DogDataContext } from "../../../context/DogDataContext";
 import { filterOptions } from "../../../constants/data";
 
 const SizeOptions = ({ applyFilters }) => {
-  const { setFilters } = useContext(FiltersContext);
+  const { filters, setSearchParams } = useContext(FiltersContext);
   const { allDogs, setDogList } = useContext(DogDataContext);
 
+  // const handleSizeFilter = (e) => {
+  //   const selectedSize = e.target.value;
+
+  //   setSearchParams((prevParams) => {
+  //     const newGender =
+  //       selectedGender === prevParams.get("gender") ? null : selectedGender;
+
+  //     if (newGender !== null) {
+  //       searchParams.set("gender", newGender);
+  //     } else {
+  //       searchParams.delete("gender");
+  //     }
+
+  //     filters.gender = newGender;
+  //     applyFilters(filters, setDogList, allDogs);
+
+  //     e.target.checked = selectedGender === newGender;
+  //     return searchParams;
+  //   });
+
   const handleSizeFilter = (e) => {
-    const selectedSize = e.target.value;
+    const selectedSize = e.target.value.toLowerCase();
 
-    setFilters((prevFilters) => {
-      const newFilters = {
-        ...prevFilters,
-        size: selectedSize === prevFilters.size ? null : selectedSize,
-      };
+    setSearchParams((prevParams) => {
+      const newSize =
+        selectedSize === prevParams.get("size") ? null : selectedSize;
 
-      e.target.checked =
-        e.target.value.toLowerCase() === newFilters.size?.toLowerCase();
+      const newParams = new URLSearchParams(prevParams);
+      if (newSize !== null) {
+        newParams.set("size", newSize);
+      } else {
+        newParams.delete("size");
+      }
 
-      applyFilters(newFilters, setDogList, allDogs);
-      return newFilters;
+      filters.size = newSize;
+      applyFilters(filters, setDogList, allDogs);
+
+      e.target.checked = selectedSize === newSize;
+      return newParams;
     });
   };
 
@@ -37,6 +62,9 @@ const SizeOptions = ({ applyFilters }) => {
                 name="size"
                 value={size}
                 onClick={handleSizeFilter}
+                defaultChecked={
+                  filters.size?.toLowerCase() === size?.toLowerCase()
+                }
               />
               {size}
             </label>

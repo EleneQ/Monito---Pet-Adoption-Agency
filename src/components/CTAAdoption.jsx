@@ -1,6 +1,7 @@
 import { Button } from "./";
 import { FaRegCirclePlay } from "react-icons/fa6";
 import ShakingHands from "../images/CTAAdoption/ShakingHands.png";
+import { Link } from "react-router-dom";
 
 const CTAAdoption = () => {
   return (
@@ -33,11 +34,15 @@ const CTAAdoption = () => {
             unconditionally.
           </p>
           <div className="mt-4 md:mt-6">
-            <Button className={"mr-2 sm:mr-5"} outline>
-              View Intro
-              <FaRegCirclePlay />
-            </Button>
-            <Button primary>Explore Now</Button>
+            <Link to={"filters"}>
+              <Button className={"mr-2 sm:mr-5"} outline>
+                View Intro
+                <FaRegCirclePlay />
+              </Button>
+            </Link>
+            <Link to={"filters"}>
+              <Button primary>Explore Now</Button>
+            </Link>
           </div>
         </div>
         <div className="relative h-full w-full">

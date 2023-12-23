@@ -1,13 +1,23 @@
+import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { dogPictureCarousel } from "../constants/data";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { RiShareLine } from "react-icons/ri";
 import SocialLinks from "./SocialLinks";
+import { dogs } from "../constants/data";
 
 const DogPicturesCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slidesLength = dogPictureCarousel.length;
 
+  let { dogId } = useParams();
+
+  let currentDog = dogs.find((dog) => dog.id === dogId);
+  if (!currentDog) {
+    return <p>Dog not found</p>;
+  }
+
+  //arrow buttons
   const nextSlide = () => {
     setCurrentSlide(currentSlide === slidesLength - 1 ? 0 : currentSlide + 1);
   };

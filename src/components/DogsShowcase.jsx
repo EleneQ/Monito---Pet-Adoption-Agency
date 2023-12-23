@@ -2,7 +2,22 @@ import { useMemo } from "react";
 import { dogs } from "../constants/data";
 import Card from "./Card";
 import { Button } from "./";
+import { Link } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
+import classnames from "classnames";
+
+const ViewMoreButton = ({ className }) => {
+  const classes = classnames(className);
+
+  return (
+    <Link to={"filters"}>
+      <Button className={classes} outline>
+        View More
+        <IoIosArrowForward />
+      </Button>
+    </Link>
+  );
+};
 
 const DogsShowcase = () => {
   //calculate age by birthdate
@@ -24,16 +39,13 @@ const DogsShowcase = () => {
   );
 
   return (
-    <section className="dogs-showcase | font-roboto capitalize px-p-x-xs sm:px-p-x-md lg:px-p-x-lg mt-12 md:mt-[4.5rem] max-w-max-width mx-auto flex flex-col md:block">
+    <section className="dogs-showcase | font-roboto capitalize padding-x max-width-center mt-12 md:mt-[4.5rem] flex flex-col md:block">
       <p className="normal-case">Who's new?</p>
       <div className="flex items-center justify-between mb-5 md:mb-8">
         <h2 className="text-primary-blue-10 text-[1.2rem] sm:text-2xl font-bold">
           Take a look at some of our pets
         </h2>
-        <Button className={"hidden sm:flex"} outline={true}>
-          View More
-          <IoIosArrowForward />
-        </Button>
+        <ViewMoreButton className={"hidden sm:flex"} />
       </div>
       <div className="card__grid | grid gap-y-4 md:grid-y-6">
         {dogs.slice(0, 8).map((dog) => (
@@ -54,10 +66,7 @@ const DogsShowcase = () => {
           </Card>
         ))}
       </div>
-      <Button className={"more-btn-stretch mt-5 flex-1 sm:hidden"} outline>
-        View More
-        <IoIosArrowForward />
-      </Button>
+      <ViewMoreButton className={"more-btn-stretch mt-5 flex-1 sm:hidden"} />
     </section>
   );
 };

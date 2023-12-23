@@ -1,16 +1,44 @@
+import { useParams } from "react-router-dom";
+import { useMemo } from "react";
 import { Button } from "./";
+import { dogs } from "../constants/data";
 import { RiMessage2Line } from "react-icons/ri";
+import { format } from "date-fns";
 
 const DogInfoDetails = () => {
+  let { dogId } = useParams();
+
+  let currentDog = dogs.find((dog) => dog.id === dogId);
+  if (!currentDog) {
+    return <p>Dog not found</p>;
+  }
+
+  const cachedAge = useMemo(
+    () => (birthdate) => {
+      const birthDate = new Date(birthdate);
+      const currentDate = new Date();
+
+      // Adjust age if the birthday hasn't occurred yet this year
+      if (currentDate.getMonth() > birthDate.getMonth()) {
+        const ageInMonths = currentDate.getMonth() - birthDate.getMonth();
+        return `${ageInMonths} month${ageInMonths > 1 ? "s" : ""}`;
+      }
+
+      const age = currentDate.getFullYear() - birthDate.getFullYear();
+      return `${age} years`;
+    },
+    []
+  );
+
   return (
     <div className="text-[#667479] px-4 md:px-0 rounded-ss-3xl rounded-se-3xl shadow-dark-shadow bg-white md:bg-transparent pt-3 md:pt-0 md:shadow-none md:rounded-none">
       <div className="md:hidden w-[2.5rem] h-[0.35rem] mb-4 mx-auto rounded-xl bg-[#CCD1D2]"></div>
-      <p className="text-[15px] mb-2 md:mb-0">
-        Home &gt; Dogs &gt; Large Dog &gt; Shibo Inu Sepia
+      <p className="text-[15px] mb-2 md:mb-0 capitalize">
+        {`Home & Dogs & ${currentDog.breed}`}
       </p>
-      <p className="hidden md:block text-sm mt-3 mb-1">SKU #1000078</p>
-      <h2 className="text-[#00171F] text-2xl font-bold mb-5">
-        Shibu Inu Sepia
+      <p className="hidden md:block text-sm mt-3 mb-1">SKU {currentDog.sku}</p>
+      <h2 className="text-[#00171F] text-2xl font-bold mb-5 capitalize">
+        {currentDog.breed}
       </h2>
       <div className="flex items-center">
         <Button primary>Contact us</Button>
@@ -23,23 +51,32 @@ const DogInfoDetails = () => {
         <tbody>
           <tr>
             <th>SKU</th>
-            <td>: #1000078</td>
+            <td>: {currentDog.sku}</td>
           </tr>
           <tr>
             <th>Gender</th>
-            <td>: Female</td>
+            <td>: {currentDog.gender}</td>
           </tr>
           <tr>
             <th>Age</th>
-            <td>: 2 Months</td>
+            <td>: {cachedAge(currentDog.birthdate)}</td>
           </tr>
           <tr>
             <th>Size</th>
-            <td>: Small</td>
+            <td>: {currentDog.size}</td>
           </tr>
           <tr>
             <th>Color</th>
-            <td>: Apricot &amp; Tan</td>
+            <td>
+              :{" "}
+              {currentDog.colors.map((color, index) => {
+                if (color === "tricolor") return null;
+
+                return index !== currentDog.colors.length - 1
+                  ? `${color} & `
+                  : color;
+              })}
+            </td>
           </tr>
           <tr>
             <th>Vaccinated</th>
@@ -47,11 +84,11 @@ const DogInfoDetails = () => {
           </tr>
           <tr>
             <th>Location</th>
-            <td>: Vietnam</td>
+            <td>: {currentDog.location}</td>
           </tr>
           <tr>
             <th>Published Date</th>
-            <td>: 12-Oct-2022</td>
+            <td>: {format(currentDog.birthdate, "dd/MM/yyyy")}</td>
           </tr>
           <tr>
             <th>Additional Information</th>
@@ -59,7 +96,7 @@ const DogInfoDetails = () => {
               :
               <div className="inline-flex flex-col">
                 <span>MKA cert.</span>
-                <span>Pure breed Shi Tzu.</span>
+                <span>{`Pure breed ${currentDog.breed}.`}</span>
                 <span>Good body structure.</span>
                 <span>With Father from champion lineage.</span>
               </div>

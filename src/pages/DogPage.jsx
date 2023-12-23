@@ -14,9 +14,9 @@ const DogPage = () => {
 
       <main>
         <DogProfile />
-        {/* <CustomerCarousel /> */}
+        <CustomerCarousel />
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

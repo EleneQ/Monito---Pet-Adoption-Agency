@@ -4,48 +4,72 @@ import { DogDataContext } from "../../../context/DogDataContext";
 import { filterOptions } from "../../../constants/data";
 
 const GenderOptions = ({ applyFilters }) => {
-  const { setFilters } = useContext(FiltersContext);
+  const { filters, setSearchParams } = useContext(FiltersContext);
   const { allDogs, setDogList } = useContext(DogDataContext);
 
+  // const handleGenderFilter = (e) => {
+  //   const selectedGender = e.target.value.toLowerCase();
+
+  //   setSearchParams((prevParams) => {
+  //     const newParams = {
+  //       ...prevParams,
+  //       gender:
+  //         selectedGender === prevParams.get("gender") ? null : selectedGender,
+  //     };
+
+  //     e.target.checked =
+  //       selectedGender.toLowerCase() === newParams.gender?.toLowerCase();
+
+  //     applyFilters(newParams, setDogList, allDogs);
+  //     return newParams;
+  //   });
+  // };
+
   const handleGenderFilter = (e) => {
-    const selectedGender = e.target.value;
+    const selectedGender = e.target.value.toLowerCase();
 
-    setFilters((prevFilters) => {
-      const newFilters = {
-        ...prevFilters,
-        gender: selectedGender === prevFilters.gender ? null : selectedGender,
-      };
+    setSearchParams((prevParams) => {
+      const newGender =
+        selectedGender === prevParams.get("gender") ? null : selectedGender;
 
-      e.target.checked =
-        e.target.value.toLowerCase() === newFilters.gender?.toLowerCase();
+      const newParams = new URLSearchParams(prevParams);
+      if (newGender !== null) {
+        newParams.set("gender", newGender);
+      } else {
+        newParams.delete("gender");
+      }
 
-      applyFilters(newFilters, setDogList, allDogs);
-      return newFilters;
+      filters.gender = newGender;
+      applyFilters(filters, setDogList, allDogs);
+
+      e.target.checked = selectedGender === newGender;
+      return newParams;
     });
-    // setFilters((prevFilters) => ({
-    //   ...prevFilters,
-    //   gender: selectedGender === prevFilters.gender ? null : selectedGender,
-    // }));
   };
 
   return (
     <div>
       <h3 className="font-bold">Gender</h3>
       <ul>
-        {filterOptions.genders.map((gender) => (
-          <li className="capitalize" key={gender}>
-            <label htmlFor={gender}>
-              <input
-                id={gender}
-                type="radio"
-                name="gender"
-                value={gender}
-                onClick={handleGenderFilter}
-              />
-              {gender}
-            </label>
-          </li>
-        ))}
+        {filterOptions.genders.map((gender) => {
+          return (
+            <li className="capitalize" key={gender}>
+              <label htmlFor={gender}>
+                <input
+                  id={gender}
+                  type="radio"
+                  name="gender"
+                  value={gender}
+                  onClick={handleGenderFilter}
+                  defaultChecked={
+                    filters.gender?.toLowerCase() === gender?.toLowerCase()
+                  }
+                />
+                {gender}
+              </label>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

@@ -36,12 +36,12 @@ export const navLinks = [
   {
     id: "sa9",
     title: "Home",
-    link: "#",
+    link: "/",
   },
   {
     id: "ma0",
-    title: "Category",
-    link: "#",
+    title: "Categories",
+    link: "/filters",
   },
   {
     id: "cmxcmx",
@@ -65,6 +65,8 @@ export const dogs = [
     birthdate: new Date("2023-10-30"),
     size: "small",
     colors: ["silver"],
+    sku: "#1000078",
+    location: "USA",
   },
   {
     id: "23sd12",
@@ -75,6 +77,8 @@ export const dogs = [
     birthdate: new Date("2023-10-25"),
     size: "small",
     colors: ["tan"],
+    sku: "#1000123",
+    location: "Canada",
   },
   {
     id: "12vdd12",
@@ -85,6 +89,8 @@ export const dogs = [
     birthdate: new Date("2023-11-14"),
     size: "small",
     colors: ["apricot"],
+    sku: "#1000345",
+    location: "UK",
   },
   {
     id: "90967",
@@ -94,7 +100,9 @@ export const dogs = [
     gender: "male",
     birthdate: new Date("2023-09-19"),
     size: "large",
-    colors: ["black", "silver", "white", "tricolor"],
+    colors: ["tricolor", "black", "silver", "white"],
+    sku: "#1000567",
+    location: "Germany",
   },
   {
     id: "lkolk00",
@@ -105,6 +113,8 @@ export const dogs = [
     birthdate: new Date("2023-10-15"),
     size: "medium",
     colors: ["brown", "white"],
+    sku: "#1000789",
+    location: "France",
   },
   {
     id: "lssdsd9",
@@ -115,6 +125,8 @@ export const dogs = [
     birthdate: new Date("2023-09-29"),
     size: "medium",
     colors: ["tricolor", "white", "silver", "black"],
+    sku: "#1000901",
+    location: "Japan",
   },
   {
     id: "knnmn6",
@@ -125,6 +137,8 @@ export const dogs = [
     birthdate: new Date("2023-11-10"),
     size: "small",
     colors: ["tricolor", "white", "silver", "apricot"],
+    sku: "#1001123",
+    location: "Brazil",
   },
   {
     id: "lsmxm3",
@@ -135,6 +149,8 @@ export const dogs = [
     birthdate: new Date("2023-10-24"),
     size: "small",
     colors: ["black", "white"],
+    sku: "#1001345",
+    location: "India",
   },
   {
     id: "cdscsd2",
@@ -145,6 +161,8 @@ export const dogs = [
     birthdate: new Date("2023-10-30"),
     size: "small",
     colors: ["silver"],
+    sku: "#1001567",
+    location: "Spain",
   },
   {
     id: "saaew",
@@ -155,6 +173,8 @@ export const dogs = [
     birthdate: new Date("2023-10-25"),
     size: "small",
     colors: ["tan"],
+    sku: "#1001789",
+    location: "Mexico",
   },
   {
     id: "klk,.xc",
@@ -165,6 +185,8 @@ export const dogs = [
     birthdate: new Date("2023-11-14"),
     size: "small",
     colors: ["apricot"],
+    sku: "#1001901",
+    location: "South Africa",
   },
   {
     id: "zssew3",
@@ -175,6 +197,8 @@ export const dogs = [
     birthdate: new Date("2023-09-19"),
     size: "large",
     colors: ["black", "silver", "white", "tricolor"],
+    sku: "#1002123",
+    location: "Russia",
   },
   {
     id: ";lkjdx",
@@ -185,6 +209,8 @@ export const dogs = [
     birthdate: new Date("2023-10-15"),
     size: "medium",
     colors: ["brown", "white"],
+    sku: "#1002345",
+    location: "China",
   },
   {
     id: "42355xs",
@@ -195,6 +221,8 @@ export const dogs = [
     birthdate: new Date("2023-09-29"),
     size: "medium",
     colors: ["tricolor", "white", "silver", "black"],
+    sku: "#1002567",
+    location: "Australia",
   },
   {
     id: "09hfg",
@@ -205,6 +233,8 @@ export const dogs = [
     birthdate: new Date("2023-11-10"),
     size: "small",
     colors: ["tricolor", "white", "silver", "apricot"],
+    sku: "#1002789",
+    location: "Argentina",
   },
   {
     id: "ljhk-090",
@@ -215,6 +245,8 @@ export const dogs = [
     birthdate: new Date("2023-10-24"),
     size: "small",
     colors: ["black", "white"],
+    sku: "#1002901",
+    location: "Italy",
   },
   {
     id: "sa22230",
@@ -225,6 +257,8 @@ export const dogs = [
     birthdate: new Date("2023-10-30"),
     size: "small",
     colors: ["silver"],
+    sku: "#1003123",
+    location: "Nigeria",
   },
   {
     id: "4343434",
@@ -235,6 +269,8 @@ export const dogs = [
     birthdate: new Date("2023-10-25"),
     size: "small",
     colors: ["tan"],
+    sku: "#1003345",
+    location: "Saudi Arabia",
   },
   {
     id: "099-786",
@@ -245,6 +281,8 @@ export const dogs = [
     birthdate: new Date("2023-11-14"),
     size: "small",
     colors: ["apricot"],
+    sku: "#1003567",
+    location: "France",
   },
   {
     id: "fsdfsdc09",
@@ -255,6 +293,8 @@ export const dogs = [
     birthdate: new Date("2023-09-19"),
     size: "large",
     colors: ["black", "silver", "white", "tricolor"],
+    sku: "#1003789",
+    location: "Brazil",
   },
   {
     id: "lkol978wqk00",
@@ -265,6 +305,8 @@ export const dogs = [
     birthdate: new Date("2023-10-15"),
     size: "medium",
     colors: ["brown", "white"],
+    sku: "#1003901",
+    location: "India",
   },
   {
     id: ";klkcx",
@@ -275,6 +317,8 @@ export const dogs = [
     birthdate: new Date("2023-09-29"),
     size: "medium",
     colors: ["tricolor", "white", "silver", "black"],
+    sku: "#1004123",
+    location: "USA",
   },
   {
     id: "34dass5",
@@ -285,6 +329,8 @@ export const dogs = [
     birthdate: new Date("2023-11-10"),
     size: "small",
     colors: ["tricolor", "white", "silver", "apricot"],
+    sku: "#1004345",
+    location: "Canada",
   },
   {
     id: "fsd76565",
@@ -295,6 +341,8 @@ export const dogs = [
     birthdate: new Date("2023-10-24"),
     size: "small",
     colors: ["black", "white"],
+    sku: "#1004567",
+    location: "UK",
   },
 ];
 

@@ -8,24 +8,52 @@ const CheckboxCircle = ({ style }) => (
 );
 
 const ColorOptions = ({ applyFilters }) => {
-  const { setFilters } = useContext(FiltersContext);
+  // const handleColorFilter = (e) => {
+  //   const selectedColor = e.target.value;
+
+  //   setFilters((prevFilters) => {
+  //     const updatedColors = prevFilters.colors.includes(selectedColor)
+  //       ? prevFilters.colors.filter((color) => color !== selectedColor)
+  //       : [...prevFilters.colors, selectedColor];
+
+  //     const newFilters = {
+  //       ...prevFilters,
+  //       colors: updatedColors,
+  //     };
+
+  //     applyFilters(newFilters, setDogList, allDogs);
+  //     return newFilters;
+  //   });
+  // };
+
+  const { filters, setSearchParams } = useContext(FiltersContext);
   const { allDogs, setDogList } = useContext(DogDataContext);
 
   const handleColorFilter = (e) => {
-    const selectedColor = e.target.value;
+    const selectedColor = e.target.value.toLowerCase();
 
-    setFilters((prevFilters) => {
-      const updatedColors = prevFilters.colors.includes(selectedColor)
-        ? prevFilters.colors.filter((color) => color !== selectedColor)
-        : [...prevFilters.colors, selectedColor];
+    setSearchParams((prevParams) => {
+      const newColors = prevParams.getAll("colors");
 
-      const newFilters = {
-        ...prevFilters,
-        colors: updatedColors,
-      };
+      if (newColors.includes(selectedColor)) {
+        const updatedColors = newColors.filter(
+          (color) => color !== selectedColor
+        );
+        filters.colors = updatedColors;
+      } else {
+        const updatedColors = [...newColors, selectedColor];
+        filters.colors = updatedColors;
+      }
 
-      applyFilters(newFilters, setDogList, allDogs);
-      return newFilters;
+      const newParams = new URLSearchParams(prevParams);
+
+      // Remove existing "colors" parameter
+      newParams.delete("colors");
+      // Append updated "colors" parameter
+      filters.colors.forEach((color) => newParams.append("colors", color));
+
+      applyFilters(filters, setDogList, allDogs);
+      return newParams;
     });
   };
 
@@ -42,6 +70,7 @@ const ColorOptions = ({ applyFilters }) => {
                 name={color}
                 value={color}
                 onClick={handleColorFilter}
+                defaultChecked={filters.colors?.includes(color)}
               />
               <CheckboxCircle
                 style={{ background: filterOptions.colors[color] }}

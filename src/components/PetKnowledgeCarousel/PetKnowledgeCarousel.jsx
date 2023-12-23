@@ -1,6 +1,21 @@
 import { Button } from "../";
 import { IoIosArrowForward } from "react-icons/io";
 import Carousel from "./Carousel";
+import { Link } from "react-router-dom";
+import classnames from "classnames";
+
+const ViewMoreButton = ({ className }) => {
+  const classes = classnames(className);
+
+  return (
+    <Link to={"filters"}>
+      <Button className={classes} outline>
+        View More
+        <IoIosArrowForward />
+      </Button>
+    </Link>
+  );
+};
 
 const PetKnowledgeCarousel = () => {
   return (
@@ -10,16 +25,10 @@ const PetKnowledgeCarousel = () => {
         <h2 className="text-primary-blue-10 text-[1.2rem] sm:text-2xl font-bold">
           Useful pet knowledge
         </h2>
-        <Button className={"hidden sm:flex"} outline={true}>
-          View More
-          <IoIosArrowForward />
-        </Button>
+        <ViewMoreButton className={"hidden sm:flex"} />
       </div>
       <Carousel />
-      <Button className={"more-btn-stretch mt-5 flex-1 sm:hidden"} outline>
-        View More
-        <IoIosArrowForward />
-      </Button>
+      <ViewMoreButton className={"more-btn-stretch mt-5 flex-1 sm:hidden"} />
     </section>
   );
 };

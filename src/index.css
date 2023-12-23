@@ -9,11 +9,15 @@
     #ffe7ba 104.24%;
 }
 
-/* @layer components {
-  .primary-nav {
-    @apply "";
+@layer components {
+  .padding-x {
+    @apply px-[1.3rem] sm:px-[calc(5%+1rem)] lg:px-[8.5rem];
   }
-} */
+
+  .max-width-center {
+    @apply max-w-[100rem] mx-auto;
+  }
+}
 
 /*TODO: make more concise styles for common things like the max width */
 
@@ -144,15 +148,6 @@ body {
       top 19% right 25%, top 17% right 25%, top 10% right 23%;
   }
 }
-
-/* @media (min-width: 700px) {
-  .hero-section__container::after {
-    right: 0;
-    background-size: 50%, 50%, 15px, 20px, auto;
-    background-position: bottom -15px right 10%, bottom -25px right 10%,
-      top 19% right 25%, top 17% right 25%, top 10% right 23%;
-  }
-} */
 
 @media (min-width: 1300px) {
   .hero-section__container::after {
@@ -433,4 +428,25 @@ body {
 .dog-info-details td {
   padding-block: 0.5rem;
   vertical-align: top;
+}
+
+.subscription-msg {
+  transform: translateX(-80rem);
+  opacity: 0;
+  transition: transform 400ms ease-in, opacity 400ms ease-in;
+}
+
+.subscription-msg.active {
+  transform: translateX(0);
+  animation: fade-out 3s ease-in-out;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
