@@ -11,7 +11,7 @@ const NavLinkElement = ({ link, title }) => (
 );
 
 const NavLinks = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [mobileNavIsOpen, setMobileNavIsOpen] = useState(false);
 
   return (
     <>
@@ -29,12 +29,12 @@ const NavLinks = () => {
       <div className="md:hidden flex flex-1 justify-end items-center">
         <MdOutlineMenuOpen
           className="w-[2rem] h-[2rem] cursor-pointer"
-          onClick={() => setIsOpen((prev) => !prev)}
+          onClick={() => setMobileNavIsOpen((prev) => !prev)}
         />
         <ul
           id="primary-navigation"
           className={`bg-white flex gap-4 flex-col items-center absolute top-[8rem] left-1/2 -translate-x-[50%] px-[3.5rem] pt-[3rem] pb-[2.5rem] min-w-[300px] rounded-xl shadow-2xl  ${
-            isOpen ? "flex" : "hidden"
+            mobileNavIsOpen ? "flex" : "hidden"
           }`}
         >
           {navLinks.map((nav, index) => (

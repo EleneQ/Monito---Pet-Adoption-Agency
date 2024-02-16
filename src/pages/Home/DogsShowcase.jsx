@@ -4,6 +4,7 @@ import { dogs } from "../../constants/data/dogInfo";
 import Card from "../../components/Card";
 import Button from "../../components/Button";
 import { IoIosArrowForward } from "react-icons/io";
+import { calcAge } from "../../utils/calcAge";
 
 const ViewMoreButton = ({ className }) => {
   return (
@@ -17,23 +18,7 @@ const ViewMoreButton = ({ className }) => {
 };
 
 const DogsShowcase = () => {
-  //calculate age by birthdate
-  const cachedAge = useMemo(
-    () => (birthdate) => {
-      const birthDate = new Date(birthdate);
-      const currentDate = new Date();
-
-      // Adjust age if the birthday hasn't occurred yet this year
-      if (currentDate.getMonth() > birthDate.getMonth()) {
-        const ageInMonths = currentDate.getMonth() - birthDate.getMonth();
-        return `${ageInMonths} month${ageInMonths > 1 ? "s" : ""}`;
-      }
-
-      const age = currentDate.getFullYear() - birthDate.getFullYear();
-      return `${age} years`;
-    },
-    []
-  );
+  const cachedAge = useMemo(() => calcAge, []);
 
   return (
     <section className="dogs-showcase | font-roboto capitalize padding-x max-width-center mt-12 md:mt-[4.5rem] flex flex-col md:block">
@@ -42,27 +27,31 @@ const DogsShowcase = () => {
         <h2 className="text-primary-blue-10 text-[1.2rem] sm:text-2xl font-bold">
           Take a look at some of our pets
         </h2>
+
         <ViewMoreButton className={"hidden sm:flex"} />
       </div>
       <div className="card__grid | grid gap-y-4 md:grid-y-6">
         {dogs.slice(0, 8).map((dog) => (
-          <Card key={dog.id}>
-            <div className="mb-4">
-              <img
-                className="max-w-full rounded-lg"
-                src={dog.img}
-                alt=""
-                loading="lazy"
-              />
-            </div>
-            <h3 className="font-bold mb-2 text-sm md:text-[17px]">{`${dog.name} - ${dog.breed}`}</h3>
-            <p className="text-slate-500 text-[13px] md:text-base flex flex-col sm:block">
-              {`Gender: ${dog.gender} \u00B7 `}
-              <span>{`Age: ${cachedAge(dog.birthdate)}`}</span>
-            </p>
-          </Card>
+          <Link key={dog.id} to={`/dogs/${dog.id}`}>
+            <Card>
+              <div className="mb-4">
+                <img
+                  className="max-w-full rounded-lg"
+                  src={dog.img}
+                  alt=""
+                  loading="lazy"
+                />
+              </div>
+              <h3 className="font-bold mb-2 text-sm md:text-[17px]">{`${dog.name} - ${dog.breed}`}</h3>
+              <p className="text-slate-500 text-[13px] md:text-base flex flex-col sm:block">
+                {`Gender: ${dog.gender} \u00B7 `}
+                <span>{`Age: ${cachedAge(dog.birthdate)}`}</span>
+              </p>
+            </Card>
+          </Link>
         ))}
       </div>
+
       <ViewMoreButton className={"more-btn-stretch mt-5 flex-1 sm:hidden"} />
     </section>
   );

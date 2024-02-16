@@ -11,7 +11,7 @@ function Button({
 }) {
   const classes = classNames(
     className,
-    "rounded-[60px] px-5 py-2 font-medium text-primary-blue-9",
+    "rounded-[60px] px-5 py-2 font-medium text-primary-blue-9 transition-all duration-200 ease-in-out",
     {
       "text-white bg-primary-blue-9 hover:bg-transparent hover:text-primary-blue-9 border-[1.5px] border-primary-blue-9 border-solid":
         primary,
