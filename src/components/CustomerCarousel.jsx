@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { customerCarouselImages } from "../constants/data";
+import { customerCarouselImages } from "../constants/data/customerCarousel";
 
 const CustomerCarousel = () => {
   const carousel = useRef();

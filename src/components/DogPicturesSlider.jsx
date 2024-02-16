@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-import { dogPictureCarousel } from "../constants/data";
+import { dogPictureCarousel } from "../constants/data/dogCarousel";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { RiShareLine } from "react-icons/ri";
 import SocialLinks from "./SocialLinks";
-import { dogs } from "../constants/data";
+import { dogs } from "../constants/data/dogInfo";
 
 const DogPicturesCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);

@@ -1,4 +1,4 @@
-import { products } from "../../constants/data";
+import { products } from "../../constants/data/productInfo";
 import Card from "../../components/Card";
 import  Button from "../../components/Button";
 import { IoIosArrowForward } from "react-icons/io";

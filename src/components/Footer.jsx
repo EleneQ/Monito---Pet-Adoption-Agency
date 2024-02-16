@@ -1,8 +1,8 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
-import { navLinks } from "../constants/data";
+import { navLinks } from "../constants/navLinks";
 import SocialLinks from "./SocialLinks";
 import Logo from "../images/Logo.svg";
-import { Link } from "react-router-dom";
 
 const NavLink = ({ link, title }) => (
   <li className="cursor-pointer hover:border-b-[3px] hover:border-primary-blue-9">

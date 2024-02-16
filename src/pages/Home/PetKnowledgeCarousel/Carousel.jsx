@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import Card from "../../../components/Card";
 import { IoIosArrowRoundForward, IoIosArrowRoundBack } from "react-icons/io";
-import { petKnowledge } from "../../../constants/data";
+import { petKnowledge } from "../../../constants/data/petKnowledge";
 import "./carousel.css";
 
 const Carousel = () => {

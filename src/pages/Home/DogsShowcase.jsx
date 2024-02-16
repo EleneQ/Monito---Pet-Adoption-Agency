@@ -1,8 +1,8 @@
-import { useMemo } from "react";
-import { dogs } from "../../constants/data";
-import Card from "../../components/Card";
-import { Button } from "../../components";
 import { Link } from "react-router-dom";
+import { useMemo } from "react";
+import { dogs } from "../../constants/data/dogInfo";
+import Card from "../../components/Card";
+import Button from "../../components/Button";
 import { IoIosArrowForward } from "react-icons/io";
 
 const ViewMoreButton = ({ className }) => {
@@ -37,7 +37,7 @@ const DogsShowcase = () => {
 
   return (
     <section className="dogs-showcase | font-roboto capitalize padding-x max-width-center mt-12 md:mt-[4.5rem] flex flex-col md:block">
-      <p className="normal-case">Who's new?</p>
+      <p className="normal-case">Who&apos;s new?</p>
       <div className="flex items-center justify-between mb-5 md:mb-8">
         <h2 className="text-primary-blue-10 text-[1.2rem] sm:text-2xl font-bold">
           Take a look at some of our pets

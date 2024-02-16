@@ -1,24 +1,19 @@
 import { useParams } from "react-router-dom";
 import { useMemo } from "react";
 import Button from "./Button";
-import { dogs } from "../constants/data";
-import { RiMessage2Line } from "react-icons/ri";
+import { dogs } from "../constants/data/dogInfo";
 import { format } from "date-fns";
+import { RiMessage2Line } from "react-icons/ri";
 
 const DogInfoDetails = () => {
   let { dogId } = useParams();
-
-  let currentDog = dogs.find((dog) => dog.id === dogId);
-  if (!currentDog) {
-    return <p>Dog not found</p>;
-  }
 
   const cachedAge = useMemo(
     () => (birthdate) => {
       const birthDate = new Date(birthdate);
       const currentDate = new Date();
 
-      // Adjust age if the birthday hasn't occurred yet this year
+      //adjust age if the birthday hasn't occurred yet this year
       if (currentDate.getMonth() > birthDate.getMonth()) {
         const ageInMonths = currentDate.getMonth() - birthDate.getMonth();
         return `${ageInMonths} month${ageInMonths > 1 ? "s" : ""}`;
@@ -29,6 +24,11 @@ const DogInfoDetails = () => {
     },
     []
   );
+
+  let currentDog = dogs.find((dog) => dog.id === dogId);
+  if (!currentDog) {
+    return <p>Dog not found</p>;
+  }
 
   return (
     <div className="text-[#667479] px-4 md:px-0 rounded-ss-3xl rounded-se-3xl shadow-dark-shadow bg-white md:bg-transparent pt-3 md:pt-0 md:shadow-none md:rounded-none">

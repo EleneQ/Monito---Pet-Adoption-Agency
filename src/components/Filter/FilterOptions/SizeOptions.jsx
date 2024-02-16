@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { FiltersContext } from "../../../context/FiltersContext";
 import { DogDataContext } from "../../../context/DogDataContext";
-import { filterOptions } from "../../../constants/data";
+import { filterOptions } from "../../../constants/data/filterOptions";
 
 const SizeOptions = ({ applyFilters }) => {
   const { filters, setSearchParams } = useContext(FiltersContext);

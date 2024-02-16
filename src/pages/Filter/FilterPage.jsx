@@ -1,9 +1,9 @@
-import { FiltersContext } from "../../context/FiltersContext";
-import Filter from "../../components/Filter/Filter";
 import { useSearchParams } from "react-router-dom";
+import Filter from "../../components/Filter/Filter";
 import Navbar from "../../components/Nav/Navbar";
 import Footer from "../../components/Footer";
 import CTADogs from "./CTADogs";
+import { FiltersContext } from "../../context/FiltersContext";
 
 const FilterPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();

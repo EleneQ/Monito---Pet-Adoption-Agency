@@ -1,6 +1,6 @@
+import { Link } from "react-router-dom";
 import { useMemo } from "react";
 import Card from "./Card";
-import { Link } from "react-router-dom";
 
 const CardGrid = ({ dogs, className }) => {
   const cachedAge = useMemo(
