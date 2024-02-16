@@ -1,6 +1,9 @@
-import { FiltersContext } from "../context/FiltersContext";
-import { Navbar, CTADogs, Filter, Footer } from "../components";
+import { FiltersContext } from "../../context/FiltersContext";
+import Filter from "../../components/Filter/Filter";
 import { useSearchParams } from "react-router-dom";
+import Navbar from "../../components/Nav/Navbar";
+import Footer from "../../components/Footer";
+import CTADogs from "./CTADogs";
 
 const FilterPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -15,12 +18,6 @@ const FilterPage = () => {
         ? null
         : searchParams.get("size") || null,
   };
-
-  // const [filters, setFilters] = useState({
-  //   gender: null,
-  //   colors: [],
-  //   size: null,
-  // });
 
   const filterValues = Object.values(filters).filter(
     (value) => value !== null && value.length !== 0

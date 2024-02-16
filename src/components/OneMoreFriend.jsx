@@ -1,13 +1,10 @@
-import classNames from "classnames";
-import { Button } from "./";
+import Button from "./Button";
 import { Link } from "react-router-dom";
 import { FaRegCirclePlay } from "react-icons/fa6";
 
 const OneMoreFriend = ({ className }) => {
-  const classes = classNames(className, "max-w-[27rem] mx-auto");
-
   return (
-    <div className={classes}>
+    <div className={`${className} max-w-[27rem] mx-auto`}>
       <h1 className="font-extrabold flex flex-col text capitalize">
         One more friend
         <span className="text-sms font-bold">Thousands more fun!</span>

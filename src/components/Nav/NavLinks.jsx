@@ -1,8 +1,8 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import { navLinks } from "../../constants/data";
 import { MdOutlineMenuOpen } from "react-icons/md";
-import { Button } from "../";
-import { Link } from "react-router-dom";
+import Button from "../Button";
 
 const NavLink = ({ link, title }) => (
   <li className="cursor-pointer hover:border-b-[3px] hover:border-primary-blue-9">

@@ -7,26 +7,6 @@ const SizeOptions = ({ applyFilters }) => {
   const { filters, setSearchParams } = useContext(FiltersContext);
   const { allDogs, setDogList } = useContext(DogDataContext);
 
-  // const handleSizeFilter = (e) => {
-  //   const selectedSize = e.target.value;
-
-  //   setSearchParams((prevParams) => {
-  //     const newGender =
-  //       selectedGender === prevParams.get("gender") ? null : selectedGender;
-
-  //     if (newGender !== null) {
-  //       searchParams.set("gender", newGender);
-  //     } else {
-  //       searchParams.delete("gender");
-  //     }
-
-  //     filters.gender = newGender;
-  //     applyFilters(filters, setDogList, allDogs);
-
-  //     e.target.checked = selectedGender === newGender;
-  //     return searchParams;
-  //   });
-
   const handleSizeFilter = (e) => {
     const selectedSize = e.target.value.toLowerCase();
 

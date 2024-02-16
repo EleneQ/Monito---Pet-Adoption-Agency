@@ -1,7 +1,7 @@
-import { Button } from "./";
-import { FaRegCirclePlay } from "react-icons/fa6";
-import ShakingHands from "../images/CTAAdoption/ShakingHands.png";
 import { Link } from "react-router-dom";
+import { FaRegCirclePlay } from "react-icons/fa6";
+import Button from "../../components/Button";
+import ShakingHands from "../../images/CTAAdoption/ShakingHands.png";
 
 const CTAAdoption = () => {
   return (

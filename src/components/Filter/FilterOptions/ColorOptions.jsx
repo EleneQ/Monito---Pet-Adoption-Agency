@@ -8,24 +8,6 @@ const CheckboxCircle = ({ style }) => (
 );
 
 const ColorOptions = ({ applyFilters }) => {
-  // const handleColorFilter = (e) => {
-  //   const selectedColor = e.target.value;
-
-  //   setFilters((prevFilters) => {
-  //     const updatedColors = prevFilters.colors.includes(selectedColor)
-  //       ? prevFilters.colors.filter((color) => color !== selectedColor)
-  //       : [...prevFilters.colors, selectedColor];
-
-  //     const newFilters = {
-  //       ...prevFilters,
-  //       colors: updatedColors,
-  //     };
-
-  //     applyFilters(newFilters, setDogList, allDogs);
-  //     return newFilters;
-  //   });
-  // };
-
   const { filters, setSearchParams } = useContext(FiltersContext);
   const { allDogs, setDogList } = useContext(DogDataContext);
 

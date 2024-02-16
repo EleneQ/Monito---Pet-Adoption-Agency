@@ -1,10 +1,9 @@
-import { OneMoreFriend } from "./";
-import HeroImg from "../images/Hero/Hero.png";
+import OneMoreFriend from "../../components/OneMoreFriend";
+import HeroImg from "../../images/Hero/Hero.png";
 
 const Hero = () => {
   return (
     <section className="bg-primary-beige-gradient pt-[6rem] h-[650px] overflow-hidden rounded-ee-[40px] rounded-es-[40px]">
-      {/** the max-width is so that the content doesn't go too far apart on bigger screens */}
       <div className="hero-section__container | h-full padding-x max-width-center">
         <OneMoreFriend
           className={

@@ -7,24 +7,6 @@ const GenderOptions = ({ applyFilters }) => {
   const { filters, setSearchParams } = useContext(FiltersContext);
   const { allDogs, setDogList } = useContext(DogDataContext);
 
-  // const handleGenderFilter = (e) => {
-  //   const selectedGender = e.target.value.toLowerCase();
-
-  //   setSearchParams((prevParams) => {
-  //     const newParams = {
-  //       ...prevParams,
-  //       gender:
-  //         selectedGender === prevParams.get("gender") ? null : selectedGender,
-  //     };
-
-  //     e.target.checked =
-  //       selectedGender.toLowerCase() === newParams.gender?.toLowerCase();
-
-  //     applyFilters(newParams, setDogList, allDogs);
-  //     return newParams;
-  //   });
-  // };
-
   const handleGenderFilter = (e) => {
     const selectedGender = e.target.value.toLowerCase();
 

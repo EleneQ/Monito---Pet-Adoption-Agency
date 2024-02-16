@@ -1,5 +1,7 @@
-import { Navbar, Footer, DogProfile } from "../components";
-import CustomerCarousel from "../components/CustomerCarousel";
+import CustomerCarousel from "../../components/CustomerCarousel";
+import DogProfile from "./DogProfile";
+import Navbar from "../../components/Nav/Navbar";
+import Footer from "../../components/Footer";
 import { IoIosArrowBack } from "react-icons/io";
 
 const DogPage = () => {

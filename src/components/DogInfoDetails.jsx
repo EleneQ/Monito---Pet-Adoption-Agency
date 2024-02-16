@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useMemo } from "react";
-import { Button } from "./";
+import Button from "./Button";
 import { dogs } from "../constants/data";
 import { RiMessage2Line } from "react-icons/ri";
 import { format } from "date-fns";

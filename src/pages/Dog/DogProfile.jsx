@@ -1,5 +1,5 @@
-import DogPicturesCarousel from "./DogPicturesCarousel";
-import DogInfoDetails from "./DogInfoDetails";
+import DogPicturesCarousel from "../../components/DogPicturesSlider";
+import DogInfoDetails from "../../components/DogInfoDetails";
 
 const DogProfile = () => {
   return (

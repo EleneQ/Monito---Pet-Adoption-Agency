@@ -43,16 +43,6 @@ export const navLinks = [
     title: "Categories",
     link: "/filters",
   },
-  {
-    id: "cmxcmx",
-    title: "About",
-    link: "#",
-  },
-  {
-    id: "5242",
-    title: "Contact",
-    link: "#",
-  },
 ];
 
 export const dogs = [

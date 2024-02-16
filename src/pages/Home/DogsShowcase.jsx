@@ -1,17 +1,14 @@
 import { useMemo } from "react";
-import { dogs } from "../constants/data";
-import Card from "./Card";
-import { Button } from "./";
+import { dogs } from "../../constants/data";
+import Card from "../../components/Card";
+import { Button } from "../../components";
 import { Link } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
-import classnames from "classnames";
 
 const ViewMoreButton = ({ className }) => {
-  const classes = classnames(className);
-
   return (
     <Link to={"filters"}>
-      <Button className={classes} outline>
+      <Button className={className} outline>
         View More
         <IoIosArrowForward />
       </Button>

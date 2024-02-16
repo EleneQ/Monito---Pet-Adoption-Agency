@@ -1,5 +1,5 @@
-import { OneMoreFriend } from "./";
-import GirlHoldingDog from "../images/CTABanner/GirlHoldingDog.png";
+import OneMoreFriend from "../../components/OneMoreFriend";
+import GirlHoldingDog from "../../images/CTABanner/GirlHoldingDog.png";
 
 const CTABanner = () => {
   return (

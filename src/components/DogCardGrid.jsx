@@ -1,5 +1,4 @@
 import { useMemo } from "react";
-import classnames from "classnames";
 import Card from "./Card";
 import { Link } from "react-router-dom";
 
@@ -21,10 +20,8 @@ const CardGrid = ({ dogs, className }) => {
     []
   );
 
-  const classes = classnames(className, "grid gap-y-4 md:grid-y-6");
-
   return (
-    <div className={classes}>
+    <div className={`${className} grid gap-y-4 md:grid-y-6`}>
       {dogs.map((dog) => (
         <Link key={dog.id} to={`/dogs/${dog.id}`}>
           <Card

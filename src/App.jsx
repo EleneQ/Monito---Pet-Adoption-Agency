@@ -1,5 +1,7 @@
-import { HomePage, FilterPage, DogPage } from "./pages";
 import { Routes, Route } from "react-router-dom";
+import HomePage from "./pages/Home/HomePage";
+import FilterPage from "./pages/Filter/FilterPage";
+import DogPage from "./pages/Dog/DogPage";
 
 const App = () => {
   return (

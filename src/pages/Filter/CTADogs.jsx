@@ -1,5 +1,5 @@
-import OneMoreFriend from "./OneMoreFriend";
-import PuppyGroup from "../images/CTADogs/PuppyGroup.png";
+import OneMoreFriend from "../../components/OneMoreFriend";
+import PuppyGroup from "../../images/CTADogs/PuppyGroup.png";
 
 const CTADogs = () => {
   return (

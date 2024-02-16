@@ -1,15 +1,12 @@
-import { Button } from "../";
+import { Link } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
 import Carousel from "./Carousel";
-import { Link } from "react-router-dom";
-import classnames from "classnames";
+import Button from "../../../components/Button";
 
 const ViewMoreButton = ({ className }) => {
-  const classes = classnames(className);
-
   return (
     <Link to={"filters"}>
-      <Button className={classes} outline>
+      <Button className={className} outline>
         View More
         <IoIosArrowForward />
       </Button>
