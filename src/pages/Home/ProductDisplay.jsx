@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { productsInfo } from "../../constants/data/products";
 import Card from "../../components/Card";
-import  Button from "../../components/Button";
+import Button from "../../components/Button";
 import { IoIosArrowForward } from "react-icons/io";
-import GiftBox from "../../images/Products/GiftBox.svg";
+import { GiftBox } from "../../images";
 
 const ProductDisplay = () => {
   return (

@@ -1,17 +1,17 @@
-import dog1 from "../../images/Animals/dog1.png";
-import dog2 from "../../images/Animals/dog2.png";
-import dog3 from "../../images/Animals/dog3.png";
-import dog4 from "../../images/Animals/dog4.png";
-import dog5 from "../../images/Animals/dog5.png";
-import dog6 from "../../images/Animals/dog6.png";
-import dog7 from "../../images/Animals/dog7.png";
-import dog8 from "../../images/Animals/dog8.png";
+import { dog1 } from "../../images";
+import { dog2 } from "../../images";
+import { dog3 } from "../../images";
+import { dog4 } from "../../images";
+import { dog5 } from "../../images";
+import { dog6 } from "../../images";
+import { dog7 } from "../../images";
+import { dog8 } from "../../images";
 
-import BigDogCarousel1 from "../../images/DogCarousel/BigDogCarousel1.png";
-import BigDogCarousel2 from "../../images/DogCarousel/BigDogCarousel2.png";
-import BigDogCarousel3 from "../../images/DogCarousel/BigDogCarousel3.png";
-import BigDogCarousel4 from "../../images/DogCarousel/BigDogCarousel4.png";
-import BigDogCarousel5 from "../../images/DogCarousel/BigDogCarousel5.png";
+import { BigDogCarousel1 } from "../../images";
+import { BigDogCarousel2 } from "../../images";
+import { BigDogCarousel3 } from "../../images";
+import { BigDogCarousel4 } from "../../images";
+import { BigDogCarousel5 } from "../../images";
 
 export const dogsInfo = [
   {

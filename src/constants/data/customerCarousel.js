@@ -1,8 +1,8 @@
-import customer1 from "../../images/Customers/customer1.png";
-import customer2 from "../../images/Customers/customer2.png";
-import customer3 from "../../images/Customers/customer3.png";
-import customer4 from "../../images/Customers/customer4.png";
-import customer5 from "../../images/Customers/customer5.png";
+import { customer1 } from "../../images";
+import { customer2 } from "../../images";
+import { customer3 } from "../../images";
+import { customer4 } from "../../images";
+import { customer5 } from "../../images";
 
 export const customerCarouselImages = [
   {
@@ -42,4 +42,3 @@ export const customerCarouselImages = [
     img: customer4,
   },
 ];
-

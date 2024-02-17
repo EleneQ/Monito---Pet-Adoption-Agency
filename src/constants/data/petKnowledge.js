@@ -1,6 +1,6 @@
-import pet1 from "../../images/PetKnowledge/pet1.png";
-import pet2 from "../../images/PetKnowledge/pet2.png";
-import pet3 from "../../images/PetKnowledge/pet3.png";
+import { pet1 } from "../../images";
+import { pet2 } from "../../images";
+import { pet3 } from "../../images";
 
 export const petKnowledge = [
   {

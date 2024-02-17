@@ -3,8 +3,7 @@ import { RiShareLine } from "react-icons/ri";
 import { dogsInfo, dogPictures } from "../../constants/data/dogs";
 import ItemPictures from "../../components/ItemPictures";
 import SocialLinks from "../../components/SocialLinks";
-import DogImg from "../../images/DogCarousel/dog.svg";
-import heartImg from "../../images/DogCarousel/heart.svg";
+import { DogImg, HeartImg } from "../../images";
 
 const DogPictures = () => {
   const { dogId } = useParams();
@@ -24,7 +23,7 @@ const DogPictures = () => {
           100% health guarantee for pets
         </p>
         <p className="flex gap-1">
-          <img src={heartImg} alt="dog" />
+          <img src={HeartImg} alt="dog" />
           100% guarantee of pet identification
         </p>
       </div>

@@ -1,17 +1,17 @@
-import product1 from "../../images/Products/product1.png";
-import product2 from "../../images/Products/product2.png";
-import product3 from "../../images/Products/product3.png";
-import product4 from "../../images/Products/product4.png";
-import product5 from "../../images/Products/product5.png";
-import product6 from "../../images/Products/product6.png";
-import product7 from "../../images/Products/product7.png";
-import product8 from "../../images/Products/product8.png";
+import { product1 } from "../../images";
+import { product2 } from "../../images";
+import { product3 } from "../../images";
+import { product4 } from "../../images";
+import { product5 } from "../../images";
+import { product6 } from "../../images";
+import { product7 } from "../../images";
+import { product8 } from "../../images";
 
-import BigDogCarousel1 from "../../images/DogCarousel/BigDogCarousel1.png";
-import BigDogCarousel2 from "../../images/DogCarousel/BigDogCarousel2.png";
-import BigDogCarousel3 from "../../images/DogCarousel/BigDogCarousel3.png";
-import BigDogCarousel4 from "../../images/DogCarousel/BigDogCarousel4.png";
-import BigDogCarousel5 from "../../images/DogCarousel/BigDogCarousel5.png";
+import { BigDogCarousel1 } from "../../images";
+import { BigDogCarousel2 } from "../../images";
+import { BigDogCarousel3 } from "../../images";
+import { BigDogCarousel4 } from "../../images";
+import { BigDogCarousel5 } from "../../images";
 
 export const productsInfo = [
   {

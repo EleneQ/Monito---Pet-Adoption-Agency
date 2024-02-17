@@ -3,7 +3,7 @@ import { useState } from "react";
 import { navLinks } from "../constants/navLinks";
 import SocialLinks from "./SocialLinks";
 import { motion } from "framer-motion";
-import Logo from "../images/Logo.svg";
+import { Logo } from "../images";
 
 const NavLinkElement = ({ link, title }) => (
   <li className="cursor-pointer border-b-[3px] border-transparent hover:border-primary-blue-9">

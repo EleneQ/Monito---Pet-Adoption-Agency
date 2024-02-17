@@ -1,5 +1,5 @@
 import OneMoreFriend from "../../components/OneMoreFriend";
-import HeroImg from "../../images/Hero/Hero.png";
+import { HeroImg } from "../../images";
 
 const Hero = () => {
   return (
