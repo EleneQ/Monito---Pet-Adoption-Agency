@@ -6,13 +6,13 @@ import { motion } from "framer-motion";
 import useCalcDraggableWidth from "../../../hooks/useCalcDraggableWidth";
 import "./carousel.css";
 
-const Carousel = () => {
+const PetCarousel = () => {
   const carouselRef = useRef();
   const width = useCalcDraggableWidth(carouselRef);
   const [scrollDistance, setScrollDistance] = useState(0);
   const [cardWidth, setCardWidth] = useState(0);
 
-  //get carousel 1st card width on window resize
+  //get 1st card width on window resize
   useEffect(() => {
     const handleResize = () => {
       if (carouselRef.current) {
@@ -30,7 +30,7 @@ const Carousel = () => {
   }, []);
 
   const scrollLeft = () => {
-    const newScrollDistance = Math.max(scrollDistance - (cardWidth + 25), 0);
+    const newScrollDistance = Math.max(scrollDistance - (cardWidth + 30), 0);
     setScrollDistance(newScrollDistance);
   };
 
@@ -40,7 +40,7 @@ const Carousel = () => {
     const maxScrollDistance = scrollWidth - containerWidth;
 
     const newScrollDistance = Math.min(
-      scrollDistance + (cardWidth + 25),
+      scrollDistance + (cardWidth + 30),
       maxScrollDistance
     );
     setScrollDistance(newScrollDistance);
@@ -95,4 +95,4 @@ const Carousel = () => {
   );
 };
 
-export default Carousel;
+export default PetCarousel;

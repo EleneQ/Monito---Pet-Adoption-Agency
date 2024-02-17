@@ -1,17 +1,17 @@
 import { useParams } from "react-router-dom";
 import { useMemo } from "react";
 import Button from "../../components/Button";
-import { dogs } from "../../constants/data/dogInfo";
+import { dogsInfo } from "../../constants/data/dogs";
 import { format } from "date-fns";
 import { RiMessage2Line } from "react-icons/ri";
 import { calcAge } from "../../utils/calcAge";
 
-const DogInfoDetails = () => {
-  let { dogId } = useParams();
+const DogInfo = () => {
+  const { dogId } = useParams();
 
   const cachedAge = useMemo(() => calcAge, []);
 
-  let currentDog = dogs.find((dog) => dog.id === dogId);
+  let currentDog = dogsInfo.find((dog) => dog.id === dogId);
   if (!currentDog) {
     return <p>Dog not found</p>;
   }
@@ -94,4 +94,4 @@ const DogInfoDetails = () => {
   );
 };
 
-export default DogInfoDetails;
+export default DogInfo;

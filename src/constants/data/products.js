@@ -7,7 +7,13 @@ import product6 from "../../images/Products/product6.png";
 import product7 from "../../images/Products/product7.png";
 import product8 from "../../images/Products/product8.png";
 
-export const products = [
+import BigDogCarousel1 from "../../images/DogCarousel/BigDogCarousel1.png";
+import BigDogCarousel2 from "../../images/DogCarousel/BigDogCarousel2.png";
+import BigDogCarousel3 from "../../images/DogCarousel/BigDogCarousel3.png";
+import BigDogCarousel4 from "../../images/DogCarousel/BigDogCarousel4.png";
+import BigDogCarousel5 from "../../images/DogCarousel/BigDogCarousel5.png";
+
+export const productsInfo = [
   {
     id: "dsad",
     img: product1,
@@ -66,5 +72,28 @@ export const products = [
     name: "Cute Plush Pet Toy For Sensitive Skin",
     type: "toy",
     cost: 15,
+  },
+];
+
+export const productPictures = [
+  {
+    id: "dss232-",
+    img: BigDogCarousel1,
+  },
+  {
+    id: "zxzxcx-",
+    img: BigDogCarousel2,
+  },
+  {
+    id: "swew-",
+    img: BigDogCarousel3,
+  },
+  {
+    id: "2342thgf-",
+    img: BigDogCarousel4,
+  },
+  {
+    id: "gi76jgh;-",
+    img: BigDogCarousel5,
   },
 ];

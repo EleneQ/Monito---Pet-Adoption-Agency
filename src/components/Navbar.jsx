@@ -1,6 +1,6 @@
 import Button from "./Button";
 import { Link, NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { navLinks } from "../constants/navLinks";
 import { MdOutlineMenuOpen } from "react-icons/md";
 import { Logo } from "../images";
@@ -21,6 +21,20 @@ const NavbarLink = ({ link, title }) => (
 
 const Navbar = ({ className }) => {
   const [mobileNavIsOpen, setMobileNavIsOpen] = useState(false);
+
+  //remove mobile navbar effects above tw md screen
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        document.body.style.overflowY = "auto";
+        setMobileNavIsOpen(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);  
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const toggleMobileNavbar = () => {
     if (mobileNavIsOpen) {

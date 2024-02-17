@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useMemo } from "react";
-import { dogs } from "../../constants/data/dogInfo";
+import { dogsInfo } from "../../constants/data/dogs";
 import Card from "../../components/Card";
 import Button from "../../components/Button";
 import { IoIosArrowForward } from "react-icons/io";
@@ -31,7 +31,7 @@ const DogsShowcase = () => {
         <ViewMoreButton className={"hidden sm:flex"} />
       </div>
       <div className="card__grid | grid gap-y-4 md:grid-y-6">
-        {dogs.slice(0, 8).map((dog) => (
+        {dogsInfo.slice(0, 8).map((dog) => (
           <Link key={dog.id} to={`/dogs/${dog.id}`}>
             <Card>
               <div className="mb-4">

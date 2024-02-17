@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
-import Carousel from "./Carousel";
+import PetCarousel from "./PetCarousel";
 import Button from "../../../components/Button";
 
 const ViewMoreButton = ({ className }) => {
@@ -24,7 +24,7 @@ const PetKnowledgeCarousel = () => {
         </h2>
         <ViewMoreButton className={"hidden sm:flex"} />
       </div>
-      <Carousel />
+      <PetCarousel />
       <ViewMoreButton className={"more-btn-stretch mt-5 flex-1 sm:hidden"} />
     </section>
   );

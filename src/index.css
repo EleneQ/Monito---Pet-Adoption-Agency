@@ -439,24 +439,3 @@ body {
   padding-block: 0.5rem;
   vertical-align: top;
 }
-
-.subscription-msg {
-  transform: translateX(-80rem);
-  opacity: 0;
-  transition: transform 400ms ease-in, opacity 400ms ease-in;
-}
-
-.subscription-msg.active {
-  transform: translateX(0);
-  animation: fade-out 3s ease-in-out;
-}
-
-@keyframes fade-out {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
