@@ -1,7 +1,3 @@
-.carousel-container {
-  position: relative;
-}
-
 .arrow-btn {
   position: absolute;
   top: 50%;
@@ -27,71 +23,6 @@
   right: -40px;
 }
 
-.carousel {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: calc((100% / 3) - 32px);
-  gap: 3rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  scrollbar-width: 0;
-  padding-top: 1.5rem;
-  padding-bottom: 1rem;
-}
-
-/* making the scrollbar dissapear on chromium based browsers */
-.carousel::-webkit-scrollbar {
-  display: none;
-}
-
-/* 
-  removing the smooth scroll behaviour when scrolling.
-*/
-.carousel.dragging {
-  scroll-snap-type: none;
-  scroll-behavior: auto;
-}
-
-.carousel.dragging .card {
-  cursor: grab;
-  user-select: none;
-}
-
-.carousel .card {
-  min-height: 20rem;
-  max-height: 30rem;
-  overflow-y: hidden;
-  cursor: pointer;
-  transition: transform 200ms ease-in-out;
-}
-
-.carousel .card:hover {
-  transform: translateY(-10px);
-}
-
-.carousel.dragging .card {
-  transform: translateY(0);
-}
-
-@media screen and (max-width: 60em) {
-  .carousel {
-    gap: 1rem;
-    grid-auto-columns: calc((100% / 2) - 9px);
-  }
-}
-
-@media screen and (max-width: 30em) {
-  .carousel {
-    grid-auto-columns: 100%;
-  }
-
-  .carousel .card {
-    /* this makes the cards move by their entire width */
-    scroll-snap-align: start;
-  }
-}
-
 .cutoff-text {
   --max-lines: 4;
   --line-height: 1.4;
@@ -112,5 +43,5 @@
   bottom: 0;
   left: 0;
   pointer-events: none;
-  background: linear-gradient(to bottom, transparent, white);
+  background: linear-gradient(to bottom, transparent, rgb(255, 255, 255));
 }

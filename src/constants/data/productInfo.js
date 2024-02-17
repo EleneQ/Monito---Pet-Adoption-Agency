@@ -63,7 +63,7 @@ export const products = [
   {
     id: "sds54565",
     img: product8,
-    name: "Plush Pet Toy",
+    name: "Cute Plush Pet Toy For Sensitive Skin",
     type: "toy",
     cost: 15,
   },

@@ -1,22 +1,18 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { customerCarouselImages } from "../constants/data/customerCarousel";
+import useCalcDraggableWidth from "../hooks/useCalcDraggableWidth";
 import { motion } from "framer-motion";
 
 const CustomerCarousel = () => {
-  const carousel = useRef();
-  const [width, setWidth] = useState(0);
+  const slider = useRef();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [scrollDistance, setScrollDistance] = useState(0);
 
-  useEffect(() => {
-    if (carousel.current) {
-      setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
-    }
-  }, [carousel]);
+  const width = useCalcDraggableWidth(slider);
 
   const handleDotClick = (index) => {
     const newScrollDistance =
-      index * (carousel.current.offsetWidth / customerCarouselImages.length);
+      index * (slider.current.offsetWidth / customerCarouselImages.length);
 
     setCurrentSlide(index);
     setScrollDistance(-newScrollDistance);
@@ -27,11 +23,8 @@ const CustomerCarousel = () => {
       <h2 className="text-xl font-bold text-[#00171F] mb-5">
         Our lovely customers
       </h2>
-      <div
-        ref={carousel}
-        className="cursor-pointer overflow-hidden"
-        style={{ overflowX: "hidden" }}
-      >
+      
+      <div ref={slider} className="cursor-pointer overflow-hidden">
         <motion.ul
           className="inline-flex gap-5 md:gap-8 rounded-2xl"
           drag="x"

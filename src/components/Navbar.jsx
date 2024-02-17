@@ -7,7 +7,7 @@ import { Logo } from "../images";
 import { motion } from "framer-motion";
 
 const NavbarLink = ({ link, title }) => (
-  <li className="cursor-pointer hover:border-b-[3px] hover:border-primary-blue-9">
+  <li className="cursor-pointer hover:border-b-[2.5px] hover:border-primary-blue-9">
     <NavLink
       to={link}
       className={({ isActive }) =>

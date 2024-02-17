@@ -1,97 +1,96 @@
-import { useRef, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import Card from "../../../components/Card";
 import { IoIosArrowRoundForward, IoIosArrowRoundBack } from "react-icons/io";
 import { petKnowledge } from "../../../constants/data/petKnowledge";
+import { motion } from "framer-motion";
+import useCalcDraggableWidth from "../../../hooks/useCalcDraggableWidth";
 import "./carousel.css";
 
 const Carousel = () => {
   const carouselRef = useRef();
+  const width = useCalcDraggableWidth(carouselRef);
+  const [scrollDistance, setScrollDistance] = useState(0);
+  const [cardWidth, setCardWidth] = useState(0);
 
+  //get card width on window resize
   useEffect(() => {
-    const carousel = carouselRef.current;
-    
-    const arrowBtns = document.querySelectorAll(".arrow-btn");
-    const firstCardWidth = carousel.querySelector(".card").offsetWidth;
-
-    const computedStyles = window.getComputedStyle(carousel);
-    const gap = parseInt(computedStyles.gap);
-
-    let isDragging = false,
-      startX,
-      startScrollLeft;
-
-    // arrow buttons
-    arrowBtns.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const scrollAmount =
-          btn.id === "left" ? -firstCardWidth - gap : firstCardWidth + gap;
-
-        carousel.scrollTo({
-          left: carousel.scrollLeft + scrollAmount,
-          behavior: "smooth",
-        });
-      });
-    });
-
-    // scrolling behaviour
-    const dragStart = (e) => {
-      isDragging = true;
-      carousel.classList.add("dragging");
-
-      startX = e.pageX;
-      startScrollLeft = carousel.scrollLeft;
+    const handleResize = () => {
+      if (carouselRef.current) {
+        const card = carouselRef.current.querySelector(".card");
+        if (card) {
+          const cardWidth = card.clientWidth;
+          setCardWidth(cardWidth);
+        }
+      }
     };
+    window.addEventListener("resize", handleResize);
+    handleResize();
 
-    const dragging = (e) => {
-      if (!isDragging) return;
-      carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
-    };
-
-    const dragStop = () => {
-      isDragging = false;
-      carousel.classList.remove("dragging");
-    };
-
-    carousel.addEventListener("mousedown", dragStart);
-    carousel.addEventListener("mousemove", dragging);
-    document.addEventListener("mouseup", dragStop);
-
-    return () => {
-      arrowBtns.forEach((btn) => {
-        btn.removeEventListener("click", () => {});
-      });
-
-      carousel.removeEventListener("mousedown", dragStart);
-      carousel.removeEventListener("mousemove", dragging);
-      document.removeEventListener("mouseup", dragStop);
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const scrollLeft = () => {
+    const newScrollDistance = Math.max(scrollDistance - (cardWidth + 25), 0);
+    setScrollDistance(newScrollDistance);
+  };
+
+  const scrollRight = () => {
+    const containerWidth = carouselRef.current.clientWidth;
+    const scrollWidth = carouselRef.current.scrollWidth;
+    const maxScrollDistance = scrollWidth - containerWidth;
+
+    const newScrollDistance = Math.min(
+      scrollDistance + (cardWidth + 25),
+      maxScrollDistance
+    );
+    setScrollDistance(newScrollDistance);
+  };
+
   return (
-    <div className="carousel-container">
-      <IoIosArrowRoundBack id="left" className="arrow-btn" size={20} />
-      <ul ref={carouselRef} className="carousel rounded-3xl">
-        {petKnowledge.map((knowledge) => (
-          <Card className={"card h-full"} key={knowledge.id}>
-            <li>
-              <img
-                className="w-full rounded-lg"
-                src={knowledge.img}
-                alt=""
-                loading="lazy"
-              />
-              <div>
-                <p className="text-[13px] bg-[#00A7E7] px-4 py-[0.2rem] max-w-fit rounded-[30px] mt-4 mb-2 text-white">
-                  Pet knowledge
-                </p>
-                <h3 className="font-bold text-lg mb-1">{knowledge.title}</h3>
-                <p className="cutoff-text">{knowledge.content}</p>
-              </div>
-            </li>
-          </Card>
-        ))}
-      </ul>
-      <IoIosArrowRoundForward id="right" className="arrow-btn" />
+    <div className="relative">
+      <IoIosArrowRoundBack
+        id="left"
+        className="arrow-btn"
+        size={20}
+        onClick={scrollLeft}
+      />
+      <div ref={carouselRef} className="cursor-pointer overflow-hidden">
+        <motion.ul
+          className="inline-flex gap-5 md:gap-8 rounded-2xl"
+          style={{ x: -scrollDistance }}
+          drag="x"
+          dragConstraints={{ right: 0, left: -width }}
+          transition={{ damping: 5, stiffness: 100 }}
+        >
+          {petKnowledge.map((info) => (
+            <Card
+              className="card | w-[330px] md:w-[300px] rounded-xl"
+              key={info.id}
+            >
+              <motion.li style={{ borderRadius: "inherit" }}>
+                <img
+                  className="w-full rounded-lg object-cover pointer-events-none select-none"
+                  src={info.img}
+                  alt=""
+                  loading="lazy"
+                />
+                <div>
+                  <p className="text-[13px] bg-[#00A7E7] px-4 py-[0.2rem] max-w-fit rounded-[30px] mt-4 mb-2 text-white">
+                    Pet knowledge
+                  </p>
+                  <h3 className="font-bold text-lg mb-1">{info.title}</h3>
+                  <p className="cutoff-text">{info.content}</p>
+                </div>
+              </motion.li>
+            </Card>
+          ))}
+        </motion.ul>
+      </div>
+      <IoIosArrowRoundForward
+        id="right"
+        className="arrow-btn"
+        onClick={scrollRight}
+      />
     </div>
   );
 };

@@ -13,15 +13,14 @@ export const petKnowledge = [
   {
     id: "9dzj9",
     img: pet2,
-    title: "Dog Diet You Need To Know",
+    title: "Dog Diets You Need To Know. Explore Dog Diet Trends",
     content:
       "Dividing a dog's diet may seem simple at first, but there are some rules you should know so that your dog can easily absorb the nutrients in the diet. For those who are just starting to raise dogs, especially newborn puppies with relatively weak resistance.",
   },
   {
     id: "cxczhf",
     img: pet3,
-    title:
-      "Why Dogs Bite and Destroy Furniture and How to Prevent It Effectively",
+    title: "Why Dogs Bite and Destroy Furniture and How to Prevent It",
     content:
       "Dog bites are common during development. However, no one wants to see their furniture or important items being bitten by a dog...",
   },
@@ -35,7 +34,7 @@ export const petKnowledge = [
   {
     id: "jxkasl01",
     img: pet2,
-    title: "Dog Diet You Need To Know",
+    title: "Dog Diets You Need To Know. Explore Dog Diet Trends",
     content:
       "Dividing a dog's diet may seem simple at first, but there are some rules you should know so that your dog can easily absorb the nutrients in the diet. For those who are just starting to raise dogs, especially newborn puppies with relatively weak resistance.",
   },
