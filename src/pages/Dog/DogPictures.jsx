@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-import { dogPictureCarousel } from "../constants/data/dogCarousel";
+import { dogPictureCarousel } from "../../constants/data/dogCarousel";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { RiShareLine } from "react-icons/ri";
-import SocialLinks from "./SocialLinks";
-import { dogs } from "../constants/data/dogInfo";
+import SocialLinks from "../../components/SocialLinks";
+import { dogs } from "../../constants/data/dogInfo";
 
 const DogPicturesCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -69,7 +69,7 @@ const DogPicturesCarousel = () => {
         {dogPictureCarousel.map((slide, index) => (
           <img
             className={`min-w-[60px] w-[100px] aspect-square object-cover rounded-lg cursor-pointer ${
-              currentSlide === index ? "border-4 border-[#f5bc50]" : ""
+              currentSlide === index ? "border-4 border-gold-3-accent" : ""
             }`}
             key={slide.id}
             src={slide.img}

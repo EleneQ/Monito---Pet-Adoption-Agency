@@ -1,24 +1,10 @@
 import { Link } from "react-router-dom";
 import { useMemo } from "react";
-import Card from "./Card";
+import Card from "../../components/Card";
+import { calcAge } from "../../utils/calcAge";
 
 const CardGrid = ({ dogs, className }) => {
-  const cachedAge = useMemo(
-    () => (birthdate) => {
-      const birthDate = new Date(birthdate);
-      const currentDate = new Date();
-
-      // Adjust age if the birthday hasn't occurred yet this year
-      if (currentDate.getMonth() > birthDate.getMonth()) {
-        const ageInMonths = currentDate.getMonth() - birthDate.getMonth();
-        return `${ageInMonths} month${ageInMonths > 1 ? "s" : ""}`;
-      }
-
-      const age = currentDate.getFullYear() - birthDate.getFullYear();
-      return `${age} years`;
-    },
-    []
-  );
+  const cachedAge = useMemo(() => calcAge, []);
 
   return (
     <div className={`${className} grid gap-y-4 md:grid-y-6`}>

@@ -3,7 +3,7 @@ import { DogDataContext } from "../../context/DogDataContext";
 import { FiltersContext } from "../../context/FiltersContext";
 import SortDogs from "./SortDogs";
 import Pagination from "./Pagination";
-import DogCardGrid from "../DogCardGrid";
+import DogCardGrid from "../../pages/Filter/DogCardGrid";
 
 const DogList = () => {
   const { dogList } = useContext(DogDataContext);

@@ -17,6 +17,10 @@
   .max-width-center {
     @apply max-w-[100rem] mx-auto;
   }
+
+  .social-link {
+    @apply cursor-pointer hover:text-primary-blue-9;
+  }
 }
 
 /*TODO: make more concise styles for common things like the max width */
@@ -57,6 +61,12 @@ body {
     background-repeat: no-repeat;
     background-position: top left, bottom 65px right 45%;
   }
+}
+
+.mobile-nav {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 15px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 /** Hero background images */

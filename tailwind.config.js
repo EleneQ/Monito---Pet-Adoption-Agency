@@ -26,6 +26,8 @@ export default {
         "primary-blue-9": "#003459",
         "primary-blue-10": "#002A48",
         "pink-3": "#FCEED5",
+        "pink-5-accent": "#EC4899",
+        "gold-3-accent": "#f5bc50",
       },
       boxShadow: {
         "card-shadow": "0px 8px 24px rgba(149, 157, 165, 0.2)",
