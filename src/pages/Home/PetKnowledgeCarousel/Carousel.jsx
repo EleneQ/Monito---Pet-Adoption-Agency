@@ -57,9 +57,9 @@ const Carousel = () => {
       <div ref={carouselRef} className="cursor-pointer overflow-hidden">
         <motion.ul
           className="inline-flex gap-5 md:gap-8 rounded-2xl"
-          style={{ x: -scrollDistance }}
           drag="x"
           dragConstraints={{ right: 0, left: -width }}
+          animate={{ x: -scrollDistance }}
           transition={{ damping: 5, stiffness: 100 }}
         >
           {petKnowledge.map((info) => (
