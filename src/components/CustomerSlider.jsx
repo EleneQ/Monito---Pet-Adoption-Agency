@@ -15,7 +15,7 @@ const CustomerCarousel = () => {
       index * (slider.current.offsetWidth / customerCarouselImages.length);
 
     setCurrentSlide(index);
-    setScrollDistance(-newScrollDistance);
+    setScrollDistance(-Math.min(newScrollDistance, width));
   };
 
   return (
@@ -23,7 +23,7 @@ const CustomerCarousel = () => {
       <h2 className="text-xl font-bold text-[#00171F] mb-5">
         Our lovely customers
       </h2>
-      
+
       <div ref={slider} className="cursor-pointer overflow-hidden">
         <motion.ul
           className="inline-flex gap-5 md:gap-8 rounded-2xl"

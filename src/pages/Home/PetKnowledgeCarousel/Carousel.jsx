@@ -12,13 +12,13 @@ const Carousel = () => {
   const [scrollDistance, setScrollDistance] = useState(0);
   const [cardWidth, setCardWidth] = useState(0);
 
-  //get card width on window resize
+  //get carousel 1st card width on window resize
   useEffect(() => {
     const handleResize = () => {
       if (carouselRef.current) {
-        const card = carouselRef.current.querySelector(".card");
-        if (card) {
-          const cardWidth = card.clientWidth;
+        const firstCard = carouselRef.current.querySelector(".card");
+        if (firstCard) {
+          const cardWidth = firstCard.clientWidth;
           setCardWidth(cardWidth);
         }
       }
