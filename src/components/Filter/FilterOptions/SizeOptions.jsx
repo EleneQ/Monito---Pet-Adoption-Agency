@@ -1,32 +1,21 @@
-import { useContext } from "react";
-import { FiltersContext } from "../../../context/FiltersContext";
-import { DogDataContext } from "../../../context/DogDataContext";
+import { useDogData } from "../../../context/DogDataContext";
 import { filterOptions } from "../../../constants/data/filterOptions";
+import { useFilters } from "../../../context/FiltersContext";
 
-const SizeOptions = ({ applyFilters }) => {
-  const { filters, setSearchParams } = useContext(FiltersContext);
-  const { allDogs, setDogList } = useContext(DogDataContext);
+const SizeOptions = () => {
+  const { filters, setFilterParams } = useFilters();
+  const { filterDogs } = useDogData();
 
   const handleSizeFilter = (e) => {
     const selectedSize = e.target.value.toLowerCase();
 
-    setSearchParams((prevParams) => {
-      const newSize =
-        selectedSize === prevParams.get("size") ? null : selectedSize;
-
-      const newParams = new URLSearchParams(prevParams);
-      if (newSize !== null) {
-        newParams.set("size", newSize);
-      } else {
-        newParams.delete("size");
-      }
-
-      filters.size = newSize;
-      applyFilters(filters, setDogList, allDogs);
-
-      e.target.checked = selectedSize === newSize;
-      return newParams;
+    setFilterParams((prev) => {
+      prev.set("size", selectedSize);
+      return prev;
     });
+
+    filters.size = selectedSize;
+    filterDogs(filters);
   };
 
   return (
@@ -42,7 +31,7 @@ const SizeOptions = ({ applyFilters }) => {
                 name="size"
                 value={size}
                 onClick={handleSizeFilter}
-                defaultChecked={
+                checked={
                   filters.size?.toLowerCase() === size?.toLowerCase()
                 }
               />

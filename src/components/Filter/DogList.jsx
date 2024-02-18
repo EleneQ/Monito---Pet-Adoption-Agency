@@ -1,13 +1,13 @@
-import { useState, useEffect, useContext } from "react";
-import { DogDataContext } from "../../context/DogDataContext";
-import { FiltersContext } from "../../context/FiltersContext";
+import { useState, useEffect } from "react";
+import { useFilters } from "../../context/FiltersContext";
 import SortDogs from "./SortDogs";
-import Pagination from "./Pagination";
+import Pagination from "../Pagination";
 import DogCardGrid from "../../pages/Filter/DogCardGrid";
+import { useDogData } from "../../context/DogDataContext";
 
 const DogList = () => {
-  const { dogList } = useContext(DogDataContext);
-  const { filters } = useContext(FiltersContext);
+  const { dogList } = useDogData();
+  const { filters } = useFilters();
 
   //pagination
   const [currentPage, setCurrentPage] = useState(1);
@@ -34,15 +34,18 @@ const DogList = () => {
             dogList.length === 1 ? "puppy" : "puppies"
           }`}</p>
         </div>
+        
         <SortDogs />
       </div>
+
       <DogCardGrid dogs={currentPosts} />
+
       {dogList.length <= 0 && (
         <p className="text-lg text-black">No results found</p>
       )}
       <Pagination
-        postsPerPage={postsPerPage}
-        totalPosts={dogList.length}
+        itemsAmount={dogList.length}
+        itemsPerPage={postsPerPage}
         paginate={paginate}
         currentPage={currentPage}
       />

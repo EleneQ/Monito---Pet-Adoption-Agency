@@ -1,20 +1,14 @@
-import { useState, useEffect, useContext } from "react";
-import { DogDataContext } from "../../context/DogDataContext";
-
-const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
-  const [pageNumbers, setPageNumbers] = useState([]);
-  const { dogList } = useContext(DogDataContext);
+const Pagination = ({ itemsAmount, itemsPerPage, paginate, currentPage }) => {
+  const pageNumbers = [];
 
   //get page numbers
-  useEffect(() => {
-    const totalPages = Math.ceil(totalPosts / postsPerPage);
-    const numbers = Array.from({ length: totalPages }, (_, index) => index + 1);
-    setPageNumbers(numbers);
-  }, [dogList.length]);
+  for (let i = 1; i <= Math.ceil(itemsAmount / itemsPerPage); i++) {
+    pageNumbers.push(i);
+  }
 
   const pageChangeHandler = (pageNum) => {
     paginate(pageNum);
-    
+
     window.scrollTo({
       top: 400,
       behavior: "smooth",

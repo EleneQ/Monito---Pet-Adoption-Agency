@@ -1,32 +1,21 @@
-import { useContext } from "react";
-import { FiltersContext } from "../../../context/FiltersContext";
-import { DogDataContext } from "../../../context/DogDataContext";
+import { useFilters } from "../../../context/FiltersContext";
 import { filterOptions } from "../../../constants/data/filterOptions";
+import { useDogData } from "../../../context/DogDataContext";
 
-const GenderOptions = ({ applyFilters }) => {
-  const { filters, setSearchParams } = useContext(FiltersContext);
-  const { allDogs, setDogList } = useContext(DogDataContext);
+const GenderOptions = () => {
+  const { filters, setFilterParams } = useFilters();
+  const { filterDogs } = useDogData();
 
   const handleGenderFilter = (e) => {
     const selectedGender = e.target.value.toLowerCase();
 
-    setSearchParams((prevParams) => {
-      const newGender =
-        selectedGender === prevParams.get("gender") ? null : selectedGender;
-
-      const newParams = new URLSearchParams(prevParams);
-      if (newGender !== null) {
-        newParams.set("gender", newGender);
-      } else {
-        newParams.delete("gender");
-      }
-
-      filters.gender = newGender;
-      applyFilters(filters, setDogList, allDogs);
-
-      e.target.checked = selectedGender === newGender;
-      return newParams;
+    setFilterParams((prev) => {
+      prev.set("gender", selectedGender);
+      return prev;
     });
+
+    filters.gender = selectedGender;
+    filterDogs(filters);
   };
 
   return (
@@ -43,7 +32,7 @@ const GenderOptions = ({ applyFilters }) => {
                   name="gender"
                   value={gender}
                   onClick={handleGenderFilter}
-                  defaultChecked={
+                  checked={
                     filters.gender?.toLowerCase() === gender?.toLowerCase()
                   }
                 />

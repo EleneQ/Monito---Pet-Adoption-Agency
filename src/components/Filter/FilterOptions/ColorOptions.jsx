@@ -1,42 +1,35 @@
-import { useContext } from "react";
-import { FiltersContext } from "../../../context/FiltersContext";
-import { DogDataContext } from "../../../context/DogDataContext";
+import { useFilters } from "../../../context/FiltersContext";
 import { filterOptions } from "../../../constants/data/filterOptions";
+import { useDogData } from "../../../context/DogDataContext";
 
 const CheckboxCircle = ({ style }) => (
-  <span className="checkbox-circle" style={style}></span>
+  <span className="checkbox-circle" style={style} />
 );
 
-const ColorOptions = ({ applyFilters }) => {
-  const { filters, setSearchParams } = useContext(FiltersContext);
-  const { allDogs, setDogList } = useContext(DogDataContext);
+const ColorOptions = () => {
+  const { filters, setFilterParams } = useFilters();
+  const { filterDogs } = useDogData();
 
   const handleColorFilter = (e) => {
     const selectedColor = e.target.value.toLowerCase();
 
-    setSearchParams((prevParams) => {
+    setFilterParams((prevParams) => {
       const newColors = prevParams.getAll("colors");
 
       if (newColors.includes(selectedColor)) {
-        const updatedColors = newColors.filter(
-          (color) => color !== selectedColor
-        );
-        filters.colors = updatedColors;
+        filters.colors = newColors.filter((color) => color !== selectedColor);
       } else {
-        const updatedColors = [...newColors, selectedColor];
-        filters.colors = updatedColors;
+        filters.colors = [...newColors, selectedColor];
       }
 
       const newParams = new URLSearchParams(prevParams);
 
-      // Remove existing "colors" parameter
       newParams.delete("colors");
-      // Append updated "colors" parameter
       filters.colors.forEach((color) => newParams.append("colors", color));
-
-      applyFilters(filters, setDogList, allDogs);
       return newParams;
     });
+
+    filterDogs(filters);
   };
 
   return (
@@ -52,7 +45,7 @@ const ColorOptions = ({ applyFilters }) => {
                 name={color}
                 value={color}
                 onClick={handleColorFilter}
-                defaultChecked={filters.colors?.includes(color)}
+                checked={filters.colors?.includes(color)}
               />
               <CheckboxCircle
                 style={{ background: filterOptions.colors[color] }}
