@@ -27,8 +27,8 @@ const DogInfo = () => {
         {currentDog.breed}
       </h2>
       <div className="flex items-center">
-        <Button primary>Contact us</Button>
-        <Button className={"flex gap-1 md:gap-3 ml-2 md:ml-5"} outline>
+        <Button variant="primary">Contact us</Button>
+        <Button className={"ml-2 md:ml-5"} variant="outline">
           <RiMessage2Line />
           Chat with Monito
         </Button>

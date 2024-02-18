@@ -9,6 +9,8 @@ const Hero = () => {
           className={
             "hero-section_content | text-primary-blue-10 md:min-w-[25rem] mt-3 sm:mt-[2rem] md:mt-[4rem]"
           }
+          introBtnVariant="outline"
+          exploreBtnVariant="primary"
         />
         <div className="hero-img__container | relative">
           <img

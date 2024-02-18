@@ -15,7 +15,7 @@ const ProductDisplay = () => {
         <h2 className="text-primary-blue-10 text-[1.2rem] sm:text-2xl font-bold">
           Our Products
         </h2>
-        <Button className={"hidden sm:flex"} outline={true}>
+        <Button className={"hidden sm:flex"} variant="outline">
           View More
           <IoIosArrowForward />
         </Button>

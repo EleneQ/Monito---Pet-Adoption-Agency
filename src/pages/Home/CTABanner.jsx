@@ -9,6 +9,8 @@ const CTABanner = () => {
           className={
             "one-more-friend | relative text-primary-blue-9 sm:max-w-[27rem] text-center lg:text-right md:pb-[3rem] z-10 mx-0"
           }
+          introBtnVariant="outline"
+          exploreBtnVariant="primary"
         />
         <div className="relative">
           <img

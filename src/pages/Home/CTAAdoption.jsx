@@ -35,13 +35,13 @@ const CTAAdoption = () => {
           </p>
           <div className="mt-4 md:mt-6">
             <Link to={"filters"}>
-              <Button className={"mr-2 sm:mr-5"} outline>
+              <Button className={"mr-2 sm:mr-5"} variant="primary">
                 View Intro
                 <FaRegCirclePlay />
               </Button>
             </Link>
             <Link to={"filters"}>
-              <Button primary>Explore Now</Button>
+              <Button variant="outline">Explore Now</Button>
             </Link>
           </div>
         </div>

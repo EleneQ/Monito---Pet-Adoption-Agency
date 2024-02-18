@@ -2,7 +2,7 @@ import Button from "./Button";
 import { Link } from "react-router-dom";
 import { FaRegCirclePlay } from "react-icons/fa6";
 
-const OneMoreFriend = ({ className }) => {
+const OneMoreFriend = ({ className, exploreBtnVariant, introBtnVariant }) => {
   return (
     <div className={`${className} max-w-[27rem] mx-auto`}>
       <h1 className="title-big | font-extrabold flex flex-col capitalize">
@@ -16,14 +16,14 @@ const OneMoreFriend = ({ className }) => {
       </p>
       <div className="mt-5 md:mt-7">
         <Link to={"/filters"}>
-          <Button className={"mr-2 md:mr-6"} outline primary>
+          <Button className={"mr-2 md:mr-6"} variant={`${introBtnVariant}`}>
             View Intro
             <FaRegCirclePlay />
           </Button>
         </Link>
 
         <Link to="/filters">
-          <Button tertiary>Explore Now</Button>
+          <Button variant={`${exploreBtnVariant}`}>Explore Now</Button>
         </Link>
       </div>
     </div>

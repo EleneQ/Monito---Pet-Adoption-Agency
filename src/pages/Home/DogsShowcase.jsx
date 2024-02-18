@@ -9,7 +9,7 @@ import { calcAge } from "../../utils/calcAge";
 const ViewMoreButton = ({ className }) => {
   return (
     <Link to={"filters"}>
-      <Button className={className} outline>
+      <Button className={className} variant="outline">
         View More
         <IoIosArrowForward />
       </Button>

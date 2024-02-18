@@ -91,13 +91,13 @@ const Navbar = ({ className }) => {
             ))}
 
             <div className="mt-3">
-              <Button outline>Join the community</Button>
+              <Button variant="outline">Join the community</Button>
             </div>
           </motion.ul>
         </div>
       </nav>
 
-      <Button className={"hidden md:block"} primary>
+      <Button className={"hidden md:block"} variant="primary">
         Join the community
       </Button>
     </header>
