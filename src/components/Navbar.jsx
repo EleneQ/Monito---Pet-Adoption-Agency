@@ -7,7 +7,11 @@ import { Logo } from "../images";
 import { motion } from "framer-motion";
 
 const NavbarLink = ({ link, title }) => (
-  <li className="cursor-pointer hover:border-b-[2.5px] hover:border-primary-blue-9">
+  <motion.li
+    className="cursor-pointer border-b-[2.5px] border-transparent hover:border-primary-blue-9"
+    whileHover={{ scale: 1.1 }}
+    whileTap={{ scale: 0.9 }}
+  >
     <NavLink
       to={link}
       className={({ isActive }) =>
@@ -16,7 +20,7 @@ const NavbarLink = ({ link, title }) => (
     >
       {title}
     </NavLink>
-  </li>
+  </motion.li>
 );
 
 const Navbar = ({ className }) => {
@@ -30,7 +34,7 @@ const Navbar = ({ className }) => {
         setMobileNavIsOpen(false);
       }
     };
-    window.addEventListener("resize", handleResize);  
+    window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
