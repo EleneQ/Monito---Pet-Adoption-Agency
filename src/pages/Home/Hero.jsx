@@ -10,9 +10,8 @@ const Hero = () => {
             "hero-section_content | text-primary-blue-10 md:min-w-[25rem] mt-3 sm:mt-[2rem] md:mt-[4rem]"
           }
         />
-        <div className="hero-img">
+        <div className="hero-img__container | relative">
           <img
-            className=""
             src={HeroImg}
             alt="a woman holding a cute dog and smiling"
             loading="lazy"

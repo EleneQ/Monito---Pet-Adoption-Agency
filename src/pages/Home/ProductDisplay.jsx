@@ -20,7 +20,7 @@ const ProductDisplay = () => {
           <IoIosArrowForward />
         </Button>
       </div>
-      <div className="card__grid | grid gap-y-4 md:grid-y-6">
+      <div className="item-card-grid | grid gap-y-4 md:grid-y-6">
         {productsInfo.map((product) => (
           <Link key={product.id} to={`/products/${product.id}`}>
             <Card>

@@ -30,7 +30,7 @@ const DogsShowcase = () => {
 
         <ViewMoreButton className={"hidden sm:flex"} />
       </div>
-      <div className="card__grid | grid gap-y-4 md:grid-y-6">
+      <div className="item-card-grid | grid gap-y-4 md:grid-y-6">
         {dogsInfo.slice(0, 8).map((dog) => (
           <Link key={dog.id} to={`/dogs/${dog.id}`}>
             <Card>

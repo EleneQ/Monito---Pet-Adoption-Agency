@@ -1,0 +1,36 @@
+.slider {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+
+  img {
+    width: 550px;
+    aspect-ratio: 1 / 0.9;
+    object-fit: cover;
+  }
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  right: 100px;
+  color: white;
+  z-index: 30;
+  font-size: 2.5rem;
+  padding: 0.5rem;
+  user-select: none;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 38px,
+    rgba(0, 0, 0, 0.25) 0px 15px 12px;
+
+  &.left {
+    left: 20px;
+  }
+
+  &.right {
+    right: 20px;
+  }
+}

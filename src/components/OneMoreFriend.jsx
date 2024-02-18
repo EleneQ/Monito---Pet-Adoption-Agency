@@ -5,9 +5,9 @@ import { FaRegCirclePlay } from "react-icons/fa6";
 const OneMoreFriend = ({ className }) => {
   return (
     <div className={`${className} max-w-[27rem] mx-auto`}>
-      <h1 className="font-extrabold flex flex-col text capitalize">
+      <h1 className="title-big | font-extrabold flex flex-col capitalize">
         One more friend
-        <span className="text-sms font-bold">Thousands more fun!</span>
+        <span className="font-bold">Thousands more fun!</span>
       </h1>
       <p className="text-sm md:text-sm mt-2 md:mt-3 md:max-w-[25rem]">
         Having a pet means you have more joy, a new friend, a happy person who
@@ -22,7 +22,7 @@ const OneMoreFriend = ({ className }) => {
           </Button>
         </Link>
 
-        <Link to={"/filters"}>
+        <Link to="/filters">
           <Button tertiary>Explore Now</Button>
         </Link>
       </div>

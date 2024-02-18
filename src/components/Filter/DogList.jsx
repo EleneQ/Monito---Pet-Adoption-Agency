@@ -36,7 +36,7 @@ const DogList = () => {
         </div>
         <SortDogs />
       </div>
-      <DogCardGrid dogs={currentPosts} className={"dog-list__card-grid"} />
+      <DogCardGrid dogs={currentPosts} />
       {dogList.length <= 0 && (
         <p className="text-lg text-black">No results found</p>
       )}

@@ -3,11 +3,11 @@ import { useMemo } from "react";
 import Card from "../../components/Card";
 import { calcAge } from "../../utils/calcAge";
 
-const CardGrid = ({ dogs, className }) => {
+const CardGrid = ({ dogs }) => {
   const cachedAge = useMemo(() => calcAge, []);
 
   return (
-    <div className={`${className} grid gap-y-4 md:grid-y-6`}>
+    <div className="dog-list__card-grid | grid gap-y-4 md:grid-y-6">
       {dogs.map((dog) => (
         <Link key={dog.id} to={`/dogs/${dog.id}`}>
           <Card

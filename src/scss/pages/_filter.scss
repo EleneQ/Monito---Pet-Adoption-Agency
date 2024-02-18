@@ -1,0 +1,65 @@
+/** CTA Dogs bg */
+.cta-dogs__container {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  background-image: url("../images/pages/Filter/CTADogs/MobileBlueBottom.svg"),
+    linear-gradient(103deg, #fceed5 6.43%, #fceed5 78.33%, #ffe7ba 104.24%);
+  background-repeat: no-repeat;
+  background-size: 100%, auto;
+  background-position: bottom right, 0% 0%;
+  align-items: end;
+}
+
+@media (min-width: 768px) {
+  .cta-dogs__container {
+    grid-template-rows: none;
+    grid-template-columns: repeat(2, 1fr);
+    background-image: url("../images/pages/Filter/CTADogs/BlueRectangle.svg"),
+      linear-gradient(103deg, #fceed5 6.43%, #fceed5 78.33%, #ffe7ba 104.24%);
+    background-size: auto, auto;
+    background-position: top right, 0% 0%;
+  }
+}
+
+.checkbox-circle {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin-inline: 5px;
+  vertical-align: middle;
+}
+
+.color-options {
+  label {
+    cursor: pointer;
+  }
+
+  input[type="checkbox"] {
+    cursor: pointer;
+    opacity: 0.5;
+    height: 18px;
+    width: 18px;
+    vertical-align: middle;
+
+    &:checked {
+      background-color: black;
+      border: 1px solid red;
+    }
+  }
+}
+
+.filter-section {
+  display: grid;
+  grid-template-columns: minmax(15rem, 18.5rem) 1fr;
+  justify-content: space-between;
+  gap: 4rem;
+  overflow: hidden;
+}
+
+.dog-list__card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(14rem, 17rem));
+  justify-content: space-between;
+  gap: 1.2rem;
+}

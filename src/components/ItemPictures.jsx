@@ -25,14 +25,14 @@ const ItemPictures = ({ itemsInfo, itemId, itemName, itemPictures }) => {
 
   return (
     <div>
-      <div className="slider max-w-[550px] mx-auto | overflow-hidden mb-3">
+      <div className="slider mx-auto | mb-3 relative flex justify-center overflow-hidden">
         <IoIosArrowBack
-          className="arrow left-arrow"
+          className="arrow left"
           onClick={showPrev}
           alt="Previous Slide"
         />
         <IoIosArrowForward
-          className="arrow right-arrow"
+          className="arrow right"
           onClick={showNext}
           alt="Next Slide"
         />
@@ -45,7 +45,6 @@ const ItemPictures = ({ itemsInfo, itemId, itemName, itemPictures }) => {
             transition={{ duration: 0.5 }}
           >
             <img
-              className="slider-img | object-cover"
               style={{ borderRadius: "inherit" }}
               src={itemPictures[currentImgIndex].img}
               alt=""
