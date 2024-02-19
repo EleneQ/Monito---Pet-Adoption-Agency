@@ -2,7 +2,7 @@ import { filterOptions } from "../../../constants/data/filterOptions";
 import { useFilters } from "../../../context/FiltersContext";
 
 const SizeOptions = () => {
-  const { filters, setFilterParams } = useFilters();
+  const { filterParams, setFilterParams } = useFilters();
 
   return (
     <div>
@@ -17,7 +17,9 @@ const SizeOptions = () => {
                 id={size}
                 name="size"
                 value={size}
-                checked={filters.size.toLowerCase() === size?.toLowerCase()}
+                checked={
+                  filterParams.get("size")?.toLowerCase() === size.toLowerCase()
+                }
                 onChange={(e) =>
                   setFilterParams((prev) => {
                     prev.set("size", e.target.value.toLowerCase());

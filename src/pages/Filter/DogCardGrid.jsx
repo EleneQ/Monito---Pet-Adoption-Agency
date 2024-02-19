@@ -11,7 +11,7 @@ const CardGrid = ({ dogs }) => {
       {dogs.map((dog) => (
         <Link key={dog.id} to={`/dogs/${dog.id}`}>
           <Card
-            className={"cursor-pointer"}
+            className={"cursor-pointer h-full"}
             onClick={() => {
               window.scrollTo(0, 0);
             }}

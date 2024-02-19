@@ -23,7 +23,7 @@ const CTADogs = () => {
           {/* small screen */}
           <OneMoreFriend
             className={
-              "md:hidden text-center md:text-right my-3 sm:mb-[2rem] md:mb-[4rem] text-primary-blue-9"
+              "md:hidden text-center md:text-right my-3 sm:mb-[2rem] md:mb-[4rem] text-primary-blue-9 mx-auto md:mx-0"
             }
             introBtnVariant={"outline"}
             exploreBtnVariant={"primary"}

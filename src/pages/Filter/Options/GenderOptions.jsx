@@ -2,7 +2,7 @@ import { useFilters } from "../../../context/FiltersContext";
 import { filterOptions } from "../../../constants/data/filterOptions";
 
 const GenderOptions = () => {
-  const { filters, setFilterParams } = useFilters();
+  const { filterParams, setFilterParams } = useFilters();
 
   return (
     <div>
@@ -19,7 +19,8 @@ const GenderOptions = () => {
                   name="gender"
                   value={gender}
                   checked={
-                    filters.gender?.toLowerCase() === gender.toLowerCase()
+                    filterParams.get("gender")?.toLowerCase() ===
+                    gender.toLowerCase()
                   }
                   onChange={(e) =>
                     setFilterParams((prev) => {

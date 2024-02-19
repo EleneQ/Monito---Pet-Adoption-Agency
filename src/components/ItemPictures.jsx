@@ -39,9 +39,9 @@ const ItemPictures = ({ itemsInfo, itemId, itemName, itemPictures }) => {
 
         <AnimatePresence key={currentImgIndex}>
           <motion.div
-            initial={{ scale: 0.5 }}
-            animate={{ scale: 1 }}
-            exit={{ scale: 0.5 }}
+            initial={{ opacity: 0.3 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0.3 }}
             transition={{ duration: 0.5 }}
           >
             <img
