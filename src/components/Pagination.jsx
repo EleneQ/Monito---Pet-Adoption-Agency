@@ -1,4 +1,10 @@
-const Pagination = ({ itemsAmount, itemsPerPage, paginate, currentPage }) => {
+const Pagination = ({
+  className,
+  itemsAmount,
+  itemsPerPage,
+  paginate,
+  currentPage,
+}) => {
   const pageNumbers = [];
 
   //get page numbers
@@ -16,7 +22,7 @@ const Pagination = ({ itemsAmount, itemsPerPage, paginate, currentPage }) => {
   };
 
   return (
-    <nav className="mt-[3rem] font-semibold">
+    <nav className={`mt-[3rem] font-semibold ${className}`}>
       <ul className="flex justify-center items-center gap-2">
         {pageNumbers.map((pageNum) => (
           <li

@@ -7,11 +7,7 @@ import { Logo } from "../images";
 import { motion } from "framer-motion";
 
 const NavbarLink = ({ link, title }) => (
-  <motion.li
-    className="cursor-pointer border-b-[2.5px] border-transparent hover:border-primary-blue-9"
-    whileHover={{ scale: 1.1 }}
-    whileTap={{ scale: 0.9 }}
-  >
+  <li className="cursor-pointer border-b-[2.5px] border-transparent hover:border-primary-blue-9">
     <NavLink
       to={link}
       className={({ isActive }) =>
@@ -20,7 +16,7 @@ const NavbarLink = ({ link, title }) => (
     >
       {title}
     </NavLink>
-  </motion.li>
+  </li>
 );
 
 const Navbar = ({ className }) => {

@@ -1,22 +1,8 @@
-import { useDogData } from "../../../context/DogDataContext";
 import { filterOptions } from "../../../constants/data/filterOptions";
 import { useFilters } from "../../../context/FiltersContext";
 
 const SizeOptions = () => {
   const { filters, setFilterParams } = useFilters();
-  const { filterDogs } = useDogData();
-
-  const handleSizeFilter = (e) => {
-    const selectedSize = e.target.value.toLowerCase();
-
-    setFilterParams((prev) => {
-      prev.set("size", selectedSize);
-      return prev;
-    });
-
-    filters.size = selectedSize;
-    filterDogs(filters);
-  };
 
   return (
     <div>
@@ -24,18 +10,23 @@ const SizeOptions = () => {
       <ul>
         {filterOptions.sizes.map((size) => (
           <li className="capitalize" key={size}>
-            <label htmlFor={size}>
+            <label className="radio-label" htmlFor={size}>
               <input
-                id={size}
                 type="radio"
+                className="radio-input"
+                id={size}
                 name="size"
                 value={size}
-                onClick={handleSizeFilter}
-                checked={
-                  filters.size?.toLowerCase() === size?.toLowerCase()
+                checked={filters.size.toLowerCase() === size?.toLowerCase()}
+                onChange={(e) =>
+                  setFilterParams((prev) => {
+                    prev.set("size", e.target.value.toLowerCase());
+                    return prev;
+                  })
                 }
               />
-              {size}
+              <div className="radio-design" />
+              <div className="capitalize">{size}</div>
             </label>
           </li>
         ))}

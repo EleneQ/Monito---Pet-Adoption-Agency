@@ -1,19 +1,19 @@
 import { useState, useEffect } from "react";
 import { useFilters } from "../../context/FiltersContext";
-import SortDogs from "./SortDogs";
-import Pagination from "../Pagination";
-import DogCardGrid from "../../pages/Filter/DogCardGrid";
+import SortDropdown from "./SortDropdown";
+import Pagination from "../../components/Pagination";
+import DogCardGrid from "./DogCardGrid";
 import { useDogData } from "../../context/DogDataContext";
 
 const DogList = () => {
   const { dogList } = useDogData();
   const { filters } = useFilters();
 
-  //pagination
+  // Pagination
   const [currentPage, setCurrentPage] = useState(1);
-  let postsPerPage = 15;
+  const postsPerPage = 15;
 
-  //get current posts
+  // Get current posts
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = dogList.slice(indexOfFirstPost, indexOfLastPost);
@@ -24,7 +24,7 @@ const DogList = () => {
   }, [filters]);
 
   return (
-    <section className="dog-list | font-roboto capitalize flex flex-col md:block pb-5">
+    <section className="dog-list | font-roboto capitalize flex flex-col md:block pb-5 relative">
       <div className="flex items-center justify-between mb-3 md:mb-6">
         <div className="flex items-center gap-3">
           <h2 className="text-primary-blue-9 text-[1.2rem] sm:text-2xl font-bold">
@@ -34,8 +34,8 @@ const DogList = () => {
             dogList.length === 1 ? "puppy" : "puppies"
           }`}</p>
         </div>
-        
-        <SortDogs />
+
+        <SortDropdown />
       </div>
 
       <DogCardGrid dogs={currentPosts} />
@@ -43,7 +43,9 @@ const DogList = () => {
       {dogList.length <= 0 && (
         <p className="text-lg text-black">No results found</p>
       )}
+
       <Pagination
+        className="absolute bottom-0 left-[50%] -translate-x-[50%]"
         itemsAmount={dogList.length}
         itemsPerPage={postsPerPage}
         paginate={paginate}

@@ -7,7 +7,7 @@ const CardGrid = ({ dogs }) => {
   const cachedAge = useMemo(() => calcAge, []);
 
   return (
-    <div className="dog-list__card-grid | grid gap-y-4 md:grid-y-6">
+    <div className="dog-list__card-grid | grid gap-y-4 md:grid-y-6 mb-[3rem]">
       {dogs.map((dog) => (
         <Link key={dog.id} to={`/dogs/${dog.id}`}>
           <Card

@@ -21,34 +21,6 @@
   }
 }
 
-.checkbox-circle {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  margin-inline: 5px;
-  vertical-align: middle;
-}
-
-.color-options {
-  label {
-    cursor: pointer;
-  }
-
-  input[type="checkbox"] {
-    cursor: pointer;
-    opacity: 0.5;
-    height: 18px;
-    width: 18px;
-    vertical-align: middle;
-
-    &:checked {
-      background-color: black;
-      border: 1px solid red;
-    }
-  }
-}
-
 .filter-section {
   display: grid;
   grid-template-columns: minmax(15rem, 18.5rem) 1fr;
@@ -62,4 +34,14 @@
   grid-template-columns: repeat(3, minmax(14rem, 17rem));
   justify-content: space-between;
   gap: 1.2rem;
+}
+
+//Color circle
+.color-circle {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin-inline: 5px;
+  vertical-align: middle;
 }

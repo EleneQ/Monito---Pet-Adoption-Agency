@@ -10,23 +10,6 @@ export const useDogData = () => {
 export const DogDataProvider = ({ children }) => {
   const [dogList, setDogList] = useState(allDogs);
 
-  const sortDogs = (optionValue) => {
-    let sortedDogs = [...dogList];
-
-    switch (optionValue) {
-      case "oldest":
-        sortedDogs.sort((a, b) => a.birthdate - b.birthdate);
-        break;
-      case "youngest":
-        sortedDogs.sort((a, b) => b.birthdate - a.birthdate);
-        break;
-      default:
-        console.error("Invalid dog sorting value!");
-    }
-
-    setDogList(sortedDogs);
-  };
-
   const filterDogs = (filters) => {
     let filteredDogs = [...allDogs];
 
@@ -53,11 +36,30 @@ export const DogDataProvider = ({ children }) => {
       );
     }
 
-    setDogList(filteredDogs);
+    return filteredDogs;
+  };
+
+  const sortDogs = (optionValue, dogsToSort) => {
+    let sortedDogs = [...dogsToSort];
+
+    switch (optionValue) {
+      case "oldest":
+        sortedDogs.sort((a, b) => a.birthdate - b.birthdate);
+        break;
+      case "youngest":
+        sortedDogs.sort((a, b) => b.birthdate - a.birthdate);
+        break;
+      default:
+        console.error("Invalid dog sorting value!");
+    }
+
+    return sortedDogs;
   };
 
   return (
-    <DogDataContext.Provider value={{ dogList, sortDogs, filterDogs }}>
+    <DogDataContext.Provider
+      value={{ dogList, setDogList, sortDogs, filterDogs }}
+    >
       {children}
     </DogDataContext.Provider>
   );

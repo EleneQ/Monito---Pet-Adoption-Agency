@@ -11,7 +11,9 @@ export const FiltersProvider = ({ children }) => {
   const [filterParams, setFilterParams] = useSearchParams();
   const filters = {
     gender: filterParams.get("gender") || "",
-    colors: filterParams.getAll("colors") || [],
+    colors: filterParams.get("colors")
+      ? filterParams.get("colors").split(",")
+      : [],
     size: filterParams.get("size") || "",
     sort: filterParams.get("sort") || "",
   };
