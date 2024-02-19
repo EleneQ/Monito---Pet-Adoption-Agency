@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import useOutsideClickHandler from "../../hooks/useOutsideClickHandler";
 import { IoIosArrowForward } from "react-icons/io";
 import { useFilters } from "../../context/FiltersContext";
+import { motion } from "framer-motion";
 
 const options = [
   { label: "Oldest", value: "oldest" },
@@ -30,7 +31,7 @@ const SortDropdown = () => {
   return (
     <div ref={divEl} className="relative cursor-pointer">
       <div
-        className="flex justify-between items-center gap-[0.8rem] text-primary-blue-9 border-[1.5px] border-primary-blue-9 rounded-3xl px-4 py-1 shadow-xl"
+        className="flex justify-between items-center gap-[0.8rem] text-primary-blue-9 border-[1.5px] border-primary-blue-9 rounded-3xl px-4 py-2 shadow-xl hover:text-white hover:bg-primary-blue-9 transition-all duration-100 ease-in-out"
         onClick={() => setIsOpen((prev) => !prev)}
       >
         <p className="capitalize">
@@ -39,17 +40,22 @@ const SortDropdown = () => {
         <IoIosArrowForward />
       </div>
       {isOpen && (
-        <ul className="absolute w-full text-white rounded-3xl px-4 py-1 mt-3 bg-primary-blue-9 border-white border-[2px]">
+        <motion.ul
+          initial={{ opacity: 0, y: -25 }}
+          animate={{ opacity: isOpen && 1, y: isOpen && 0 }}
+          className="absolute w-full text-white rounded-3xl px-4 py-2 mt-2 bg-primary-blue-9 border-white border-[2px]"
+        >
           {options.map((option) => (
-            <div
+            <motion.div
               key={option.label}
-              className="hover:bg-white hover:text-primary-blue-9 rounded cursor-pointer px-3 py-1"
+              whileHover={{ scale: 1.05 }}
+              className="hover:bg-white hover:text-primary-blue-9 rounded cursor-pointer px-2 py-1"
               onClick={() => handleOptionClick(option)}
             >
               {option.label}
-            </div>
+            </motion.div>
           ))}
-        </ul>
+        </motion.ul>
       )}
     </div>
   );
