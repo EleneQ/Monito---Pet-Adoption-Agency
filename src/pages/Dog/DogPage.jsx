@@ -3,17 +3,11 @@ import DogPictures from "./DogPictures";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import DogInfo from "./DogInfo";
-import { IoIosArrowBack } from "react-icons/io";
 
 const DogPage = () => {
   return (
     <>
-      <div>
-        <div className="relative">
-          <IoIosArrowBack className="absolute md:hidden top-[2rem] left-[1.3rem] text-[1.6rem] p-1 bg-white sm:bg-black sm:opacity-20 sm:text-white bg-opacity-40 rounded-full z-50" />
-        </div>
-        <Navbar className={"hidden md:flex"} />
-      </div>
+      <Navbar />
 
       <main>
         <section className="md:px-p-x-md lg:px-p-x-lg max-w-max-width mx-auto md:mt-3">
@@ -25,6 +19,7 @@ const DogPage = () => {
 
         <CustomerSlider />
       </main>
+      
       <Footer />
     </>
   );

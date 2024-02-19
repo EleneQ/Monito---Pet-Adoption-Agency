@@ -12,24 +12,27 @@ const CustomerCarousel = () => {
 
   const handleDotClick = (index) => {
     const newScrollDistance =
-      index * (slider.current.offsetWidth / customerCarouselImages.length);
+      index * (slider.current.scrollWidth / customerCarouselImages.length);
+
+    const carouselCenter = width / 2 - slider.current.scrollWidth / 2;
+    const scrollPosition = newScrollDistance + carouselCenter + 120;
+
+    const finalScrollDistance = Math.max(0, Math.min(scrollPosition, width));
 
     setCurrentSlide(index);
-    setScrollDistance(-Math.min(newScrollDistance, width));
+    setScrollDistance(finalScrollDistance);
   };
 
   return (
     <section className="padding-x max-width-center mt-[3rem] ml-8">
-      <h2 className="text-xl font-bold text-[#00171F] mb-5">
-        Our lovely customers
-      </h2>
+      <h2 className="text-xl font-bold mb-5">Our lovely customers</h2>
 
       <div ref={slider} className="cursor-pointer overflow-hidden">
         <motion.ul
           className="inline-flex gap-5 md:gap-8 rounded-2xl"
           drag="x"
           dragConstraints={{ right: 0, left: -width }}
-          animate={{ x: scrollDistance }}
+          animate={{ x: -scrollDistance }}
           transition={{ damping: 5, stiffness: 100 }}
         >
           {customerCarouselImages.map((slide, index) => (

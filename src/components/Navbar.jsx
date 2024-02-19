@@ -12,7 +12,10 @@ const Navbar = ({ className }) => {
   //remove mobile navbar effects above tw md screen
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768) {
+      if (
+        window.innerWidth >= 768 &&
+        document.body.style.overflowY === "hidden"
+      ) {
         document.body.style.overflowY = "auto";
         setMobileNavIsOpen(false);
       }
@@ -35,7 +38,7 @@ const Navbar = ({ className }) => {
 
   return (
     <header
-      className={`${className} flex items-center justify-between py-7 px-p-x-xs sm:px-p-x-md lg:px-p-x-lg font-roboto text-primary-blue-9 font-semibold w-full  z-30`}
+      className={`flex items-center justify-between py-7 px-p-x-xs sm:px-p-x-md lg:px-p-x-lg font-roboto text-primary-blue-9 font-semibold w-full ${className}`}
     >
       <Link to="/">
         <img src={Logo} alt="monito logo" />
@@ -50,7 +53,7 @@ const Navbar = ({ className }) => {
           {navLinks.map((nav) => (
             <li
               key={nav.title}
-              className="cursor-pointer border-b-[2.5px] border-transparent hover:border-primary-blue-9"
+              className="border-b-[2.5px] border-transparent hover:border-primary-blue-9"
             >
               <NavLink
                 to={nav.link}
@@ -72,7 +75,7 @@ const Navbar = ({ className }) => {
           />
           <motion.ul
             id="primary-navigation"
-            className={`mobile-nav | bg-white flex gap-4 flex-col items-center fixed top-[8rem] px-[3.5rem] pt-[3rem] pb-[2.5rem] min-w-[300px] rounded-xl left-1/2 ${
+            className={`mobile-nav | z-[99999] bg-white flex gap-4 flex-col items-center fixed top-[8rem] px-[3.5rem] pt-[3rem] pb-[2.5rem] min-w-[300px] rounded-xl left-1/2 ${
               mobileNavIsOpen ? "flex" : "hidden"
             }`}
             animate={{
@@ -84,14 +87,14 @@ const Navbar = ({ className }) => {
             {navLinks.map((nav) => (
               <li
                 key={nav.title}
-                className="cursor-pointer border-b-[2.5px] border-transparent hover:border-primary-blue-9"
-                onClick={() => (document.body.style.overflowY = "auto")}
+                className="border-b-[2.5px] border-transparent hover:border-primary-blue-9"
               >
                 <NavLink
                   to={nav.link}
                   className={({ isActive }) =>
                     isActive ? "text-pink-5-accent" : "text-primary-blue-9"
                   }
+                  onClick={() => (document.body.style.overflowY = "auto")}
                 >
                   {nav.title}
                 </NavLink>

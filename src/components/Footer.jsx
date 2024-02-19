@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { navLinks } from "../constants/navLinks";
 import SocialLinks from "./SocialLinks";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Logo } from "../images";
 
 const NavLinkElement = ({ link, title }) => (
@@ -34,26 +34,26 @@ const Footer = () => {
 
     setTimeout(() => {
       setAnimateSubscribed(false);
-    }, 4000); //4 seconds
+    }, 2000); //2 seconds
   };
 
   return (
-    <footer className="pt-11 md:pt-[5rem] pb-11 px-p-x-xs sm:px-p-x-md lg:px-p-x-lg bg-primary-beige-gradient rounded-se-[40px] rounded-ss-[40px] mt-[3rem] relative">
-      <motion.p
-        className={"absolute top-7 text-red-600 text-lg font-semibold"}
-        initial={{ translateX: -80, opacity: 0 }}
-        animate={{
-          translateX: animateSubscribed ? 0 : -80,
-          opacity: animateSubscribed && [1, 0],
-        }}
-        transition={{
-          translateX: { duration: 0.5 },
-          opacity: { duration: 3.8 },
-          ease: "easeInOut",
-        }}
-      >
-        Your Subscription Was Successful
-      </motion.p>
+    <footer className="pt-[3.5rem] md:pt-[5rem] pb-11 px-p-x-xs sm:px-p-x-md lg:px-p-x-lg bg-primary-beige-gradient rounded-se-[40px] rounded-ss-[40px] mt-[3rem] relative">
+      <AnimatePresence>
+        {animateSubscribed && (
+          <motion.p
+            className={
+              "absolute top-4 md:top-7 text-red-600 text-lg font-semibold"
+            }
+            initial={{ opacity: 0, translateX: -80 }}
+            animate={{ opacity: 1, translateX: 0 }}
+            exit={{ opacity: 0, translateX: -80 }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+          >
+            Your Subscription Was Successful
+          </motion.p>
+        )}
+      </AnimatePresence>
       <div className="bg-primary-blue-9 text-white py-8 px-8 rounded-2xl capitalize flex flex-col lg:flex-row gap-7 md:gap-10 mb-10">
         <h2 className="text-[1.33rem] md:text-2xl max-w-[24rem] font-semibold">
           Register now so you don&apos;t miss our programs

@@ -27,7 +27,7 @@ const ProductInfo = () => {
           Chat with Monito
         </Button>
       </div>
-      <table className="dog-info-details | w-full capitalize mt-7 text-left text-sm md:text-base">
+      <table className="item-info-table | w-full capitalize mt-7 text-left text-sm md:text-base">
         <tbody>
           <tr>
             <th>Type</th>

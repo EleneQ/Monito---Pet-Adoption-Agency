@@ -48,7 +48,6 @@ const ItemPictures = ({ itemsInfo, itemId, itemName, itemPictures }) => {
               style={{ borderRadius: "inherit" }}
               src={itemPictures[currentImgIndex].img}
               alt=""
-              loading="lazy"
             />
           </motion.div>
         </AnimatePresence>
@@ -63,7 +62,6 @@ const ItemPictures = ({ itemsInfo, itemId, itemName, itemPictures }) => {
             key={slide.id}
             src={slide.img}
             alt=""
-            loading="lazy"
             onClick={() => setCurrentImgIndex(index)}
           />
         ))}
