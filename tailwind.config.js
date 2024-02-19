@@ -11,11 +11,6 @@ export default {
         desktop: "1280px",
         // => @media (min-width: 1280px) { ... }
       },
-      spacing: {
-        "p-x-xs": "1.3rem",
-        "p-x-md": "calc(5% + 1rem)",
-        "p-x-lg": "8.5rem",
-      },
       maxWidth: {
         "max-width": "100rem",
       },

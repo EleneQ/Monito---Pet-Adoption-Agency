@@ -9,7 +9,7 @@ const options = [
   { label: "Youngest", value: "youngest" },
 ];
 
-const SortDropdown = () => {
+const SortDropdown = ({ className }) => {
   const divEl = useRef();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -29,7 +29,7 @@ const SortDropdown = () => {
   };
 
   return (
-    <div ref={divEl} className="relative cursor-pointer">
+    <div ref={divEl} className={`relative cursor-pointer z-30 ${className}`}>
       <div
         className="flex justify-between items-center gap-[0.8rem] text-primary-blue-9 border-[1.5px] border-primary-blue-9 rounded-3xl px-4 py-2 shadow-xl hover:text-white hover:bg-primary-blue-9 transition-all duration-100 ease-in-out"
         onClick={() => setIsOpen((prev) => !prev)}
@@ -42,7 +42,10 @@ const SortDropdown = () => {
       {isOpen && (
         <motion.ul
           initial={{ opacity: 0, y: -25 }}
-          animate={{ opacity: isOpen && 1, y: isOpen && 0 }}
+          animate={{
+            opacity: isOpen ? 1 : 0,
+            y: isOpen ? 0 : -25,
+          }}
           className="absolute w-full text-white rounded-3xl px-4 py-2 mt-2 bg-primary-blue-9 border-white border-[2px]"
         >
           {options.map((option) => (

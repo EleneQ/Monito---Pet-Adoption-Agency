@@ -5,7 +5,7 @@ import { ShakingHands } from "../../images";
 
 const CTAAdoption = () => {
   return (
-    <section className="hidden md:block px-p-x-xs sm:px-p-x-md lg:px-p-x-lg max-w-max-width mx-auto my-12">
+    <section className="hidden md:block max-width-center padding-x my-12">
       <div
         className="cta-adoption__container | grid grid-cols-2 
       md:gap-3 bg-[#FFB775] px-[1rem] md:px-[1.5rem] lg:px-[5rem] rounded-tl-[70px] rounded-br-[70px]"

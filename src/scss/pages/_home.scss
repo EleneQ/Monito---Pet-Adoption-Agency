@@ -119,7 +119,7 @@ $cta-adoption-bottom-rect: "../images/Pages/Home/CTAAdoption/BottomRectangle.svg
   }
 }
 
-/** CTA Banner */
+/* CTA Banner */
 .cta-banner__container {
   overflow: hidden;
   background-image: url($cta-banner-rect-blue);
@@ -204,9 +204,75 @@ $cta-adoption-bottom-rect: "../images/Pages/Home/CTAAdoption/BottomRectangle.svg
   }
 }
 
-/** CTA Adoption bg */
+/* CTA Adoption bg */
 .cta-adoption__container {
   background-image: url($cta-adoption-top-rect), url($cta-adoption-bottom-rect);
   background-repeat: no-repeat;
   background-position: center left, bottom right;
+}
+
+/* Pet Knowledge */
+.arrow-btn {
+  position: absolute;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  padding: 0.2rem;
+  cursor: pointer;
+  font-size: 1.25rem;
+  text-align: center;
+  line-height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: rgba(100, 100, 111, 0.7) 0px 2px 15px 0px;
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+  z-index: 10;
+
+  &#left {
+    left: -10px;
+  }
+
+  &#right {
+    right: -10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .arrow-btn {
+    height: 40px;
+    width: 40px;
+    padding: 0.3rem;
+
+    &#left {
+      left: -40px;
+    }
+
+    &#right {
+      right: -40px;
+    }
+  }
+}
+
+.cutoff-text {
+  --max-lines: 4;
+  --line-height: 1.4;
+
+  max-height: calc(var(--max-lines) * 1em * var(--line-height));
+  line-height: var(--line-height);
+
+  overflow: hidden;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    //so that the effect is only 1 line tall
+    height: calc(1em * var(--line-height));
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    background: linear-gradient(to bottom, transparent, rgb(255, 255, 255));
+  }
 }

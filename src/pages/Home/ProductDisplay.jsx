@@ -7,7 +7,7 @@ import { GiftBox } from "../../images";
 
 const ProductDisplay = () => {
   return (
-    <section className="dogs-showcase | font-roboto capitalize px-p-x-xs sm:px-p-x-md lg:px-p-x-lg mt-12 md:mt-[4.5rem] max-w-max-width mx-auto flex flex-col md:block">
+    <section className="dogs-showcase | max-width-center padding-x font-roboto capitalize mt-12 md:mt-[4.5rem] flex flex-col md:block">
       <p className="normal-case">
         Hard to choose right products for your pets?
       </p>

@@ -17,7 +17,11 @@ const CardGrid = ({ dogs }) => {
             }}
           >
             <div className="mb-4">
-              <img className="max-w-full" src={dog.img} alt="" loading="lazy" />
+              <img
+                className="object-cover w-full h-[250px] md:h-[200px] lg:h-[260px]"
+                src={dog.img}
+                alt=""
+              />
             </div>
             <h3 className="font-bold mb-2 text-sm md:text-[17px]">{`${dog.name} - ${dog.breed}`}</h3>
             <p className="text-slate-500 text-[13px] md:text-base flex flex-col sm:block">

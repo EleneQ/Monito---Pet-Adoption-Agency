@@ -35,7 +35,7 @@ const DogList = () => {
           }`}</p>
         </div>
 
-        <SortDropdown />
+        <SortDropdown className="hidden md:block" />
       </div>
 
       <DogCardGrid dogs={currentPosts} />

@@ -4,9 +4,8 @@ import { IoIosArrowRoundForward, IoIosArrowRoundBack } from "react-icons/io";
 import { petKnowledge } from "../../../constants/data/petKnowledge";
 import { motion } from "framer-motion";
 import useCalcDraggableWidth from "../../../hooks/useCalcDraggableWidth";
-import "./carousel.css";
 
-const PetCarousel = () => {
+const Carousel = () => {
   const carouselRef = useRef();
   const width = useCalcDraggableWidth(carouselRef);
   const [scrollDistance, setScrollDistance] = useState(0);
@@ -95,4 +94,4 @@ const PetCarousel = () => {
   );
 };
 
-export default PetCarousel;
+export default Carousel;

@@ -21,19 +21,50 @@
   }
 }
 
-.filter-section {
-  display: grid;
-  grid-template-columns: minmax(15rem, 18.5rem) 1fr;
-  justify-content: space-between;
-  gap: 4rem;
-  overflow: hidden;
-}
-
+/* Filter Section */
 .dog-list__card-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(14rem, 17rem));
+  grid-template-columns: 1fr;
   justify-content: space-between;
-  gap: 1.2rem;
+}
+
+@media (min-width: 400px) {
+  .dog-list__card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(1rem, 5vw, 2rem);
+  }
+}
+
+@media (min-width: 768px) {
+  .filter-section {
+    display: grid;
+    grid-template-columns: minmax(5rem, 7rem) 1fr;
+    justify-content: space-between;
+    gap: 2.5rem;
+    overflow: hidden;
+  }
+}
+
+@media (min-width: 900px) {
+  .filter-section {
+    grid-template-columns: minmax(7rem, 10rem) 1fr;
+  }
+
+  .dog-list__card-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1300px) {
+  .filter-section {
+    grid-template-columns: minmax(14rem, 18.5rem) 1fr;
+    gap: 4rem;
+  }
+
+  .dog-list__card-grid {
+    gap: 2rem;
+  }
 }
 
 //Color circle

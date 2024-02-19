@@ -38,7 +38,7 @@ const Navbar = ({ className }) => {
 
   return (
     <header
-      className={`flex items-center justify-between py-7 px-p-x-xs sm:px-p-x-md lg:px-p-x-lg font-roboto text-primary-blue-9 font-semibold w-full ${className}`}
+      className={`padding-x flex items-center justify-between py-7 font-roboto text-primary-blue-9 font-semibold w-full ${className}`}
     >
       <Link to="/">
         <img src={Logo} alt="monito logo" />

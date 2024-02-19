@@ -3,7 +3,7 @@ import { GirlHoldingDog } from "../../images";
 
 const CTABanner = () => {
   return (
-    <section className="px-p-x-xs sm:px-p-x-md lg:px-p-x-lg max-w-max-width mx-auto my-12">
+    <section className="max-width-center padding-x my-12">
       <div className="cta-banner__container | bg-primary-blue-9 pt-10 sm:pt-[4rem] px-[1rem] md:px-[1.5rem] lg:pl-2 lg:pr-[6rem] rounded-2xl">
         <OneMoreFriend
           className={

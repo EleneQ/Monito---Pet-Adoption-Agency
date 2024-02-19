@@ -38,7 +38,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="pt-[3.5rem] md:pt-[5rem] pb-11 px-p-x-xs sm:px-p-x-md lg:px-p-x-lg bg-primary-beige-gradient rounded-se-[40px] rounded-ss-[40px] mt-[3rem] relative">
+    <footer className="max-width-center padding-x pt-[3.5rem] md:pt-[5rem] pb-11 bg-primary-beige-gradient rounded-se-[40px] rounded-ss-[40px] mt-[3rem] relative">
       <AnimatePresence>
         {animateSubscribed && (
           <motion.p

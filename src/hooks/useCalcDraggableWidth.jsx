@@ -17,7 +17,6 @@ const useCalcDraggableWidth = (draggableObj, moreDeps = []) => {
     return () => {
       window.removeEventListener("resize", updateWidth);
     };
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [draggableObj, ...moreDeps]);
 

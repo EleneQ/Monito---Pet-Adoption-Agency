@@ -21,24 +21,28 @@ const Pagination = ({
     });
   };
 
+  if (pageNumbers.length <= 1) {
+    return null;
+  }
+
   return (
-    <nav className={`mt-[3rem] font-semibold ${className}`}>
-      <ul className="flex justify-center items-center gap-2">
-        {pageNumbers.map((pageNum) => (
-          <li
-            className={`cursor-pointer px-3 py-1 rounded-lg ${
-              pageNum === currentPage
-                ? "bg-primary-blue-9 text-white"
-                : "text-primary-blue-9 hover:bg-[#F7DCBF]"
-            }`}
-            key={pageNum}
-            onClick={() => pageChangeHandler(pageNum)}
-          >
-            {pageNum}
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <ul
+      className={`mt-[3rem] font-semibold flex justify-center items-center gap-2 ${className}`}
+    >
+      {pageNumbers.map((pageNum) => (
+        <li
+          className={`cursor-pointer px-3 py-1 rounded-lg ${
+            pageNum === currentPage
+              ? "bg-primary-blue-9 text-white"
+              : "text-primary-blue-9 hover:bg-[#F7DCBF]"
+          }`}
+          key={pageNum}
+          onClick={() => pageChangeHandler(pageNum)}
+        >
+          {pageNum}
+        </li>
+      ))}
+    </ul>
   );
 };
 

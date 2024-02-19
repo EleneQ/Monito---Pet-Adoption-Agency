@@ -6,12 +6,12 @@ const CTADogs = () => {
   const { filterValues } = useFilters();
 
   return (
-    <section>
-      <p className="capitalize px-p-x-xs sm:px-p-x-md lg:px-p-x-lg max-w-max-width mx-auto text-gray-500 mb-3">{`Home > ${filterValues.join(
+    <section className="max-width-center padding-x">
+      <p className="capitalize text-gray-500 mb-3">{`Home > ${filterValues.join(
         " > "
       )}`}</p>
 
-      <div className="px-p-x-xs sm:px-p-x-md lg:px-p-x-lg max-w-max-width mx-auto">
+      <div>
         <div className="cta-dogs__container | pt-10 sm:pt-[2rem] px-[1rem] md:px-[1.5rem] lg:px-[2rem] rounded-2xl">
           <div className="order-last md:order-none">
             <img
