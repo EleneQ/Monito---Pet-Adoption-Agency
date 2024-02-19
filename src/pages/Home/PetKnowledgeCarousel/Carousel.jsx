@@ -29,7 +29,7 @@ const Carousel = () => {
   }, []);
 
   const scrollLeft = () => {
-    const newScrollDistance = Math.max(scrollDistance - (cardWidth + 30), 0);
+    const newScrollDistance = Math.max(scrollDistance - (cardWidth + 20), 0);
     setScrollDistance(newScrollDistance);
   };
 
@@ -39,7 +39,7 @@ const Carousel = () => {
     const maxScrollDistance = scrollWidth - containerWidth;
 
     const newScrollDistance = Math.min(
-      scrollDistance + (cardWidth + 30),
+      scrollDistance + (cardWidth + 20),
       maxScrollDistance
     );
     setScrollDistance(newScrollDistance);

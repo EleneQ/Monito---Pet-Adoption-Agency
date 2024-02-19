@@ -6,7 +6,7 @@
     linear-gradient(103deg, #fceed5 6.43%, #fceed5 78.33%, #ffe7ba 104.24%);
   background-repeat: no-repeat;
   background-size: 100%, auto;
-  background-position: bottom right, 0% 0%;
+  background-position: bottom right, 0%;
   align-items: end;
 }
 
@@ -16,8 +16,14 @@
     grid-template-columns: repeat(2, 1fr);
     background-image: url("../images/pages/Filter/CTADogs/BlueRectangle.svg"),
       linear-gradient(103deg, #fceed5 6.43%, #fceed5 78.33%, #ffe7ba 104.24%);
+    background-size: cover, auto;
+    background-position: top right, 0%;
+  }
+}
+
+@media (min-width: 860px) {
+  .cta-dogs__container {
     background-size: auto, auto;
-    background-position: top right, 0% 0%;
   }
 }
 

@@ -16,7 +16,7 @@ const ViewMoreButton = ({ className }) => {
 
 const PetKnowledgeCarousel = () => {
   return (
-    <section className="max-width-center padding-x">
+    <section className="max-width-center padding-x mt-10">
       <p>You already Know?</p>
       <div className="capitalize flex items-center justify-between">
         <h2 className="text-primary-blue-10 text-[1.2rem] sm:text-2xl font-bold">

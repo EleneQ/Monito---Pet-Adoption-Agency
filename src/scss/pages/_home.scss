@@ -121,45 +121,13 @@ $cta-adoption-bottom-rect: "../images/Pages/Home/CTAAdoption/BottomRectangle.svg
 
 /* CTA Banner */
 .cta-banner__container {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  justify-content: center;
   overflow: hidden;
   background-image: url($cta-banner-rect-blue);
   background-repeat: no-repeat;
   background-position: bottom -130px left;
-}
-
-.one-more-friend::before {
-  content: "";
-  position: absolute;
-  width: 150%;
-  height: 230%;
-  bottom: -10%;
-  right: -15%;
-  z-index: -1;
-  border-radius: 75px;
-  background-image: url($cta-banner-rect-beige);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top right;
-  transform: rotate(25deg);
-}
-
-@media (min-width: 830px) {
-  .cta-banner__container {
-    background-position: bottom left;
-  }
-
-  .one-more-friend::before {
-    width: 125%;
-    transform: rotate(112deg);
-    left: 0;
-    top: -280px;
-  }
-}
-
-.cta-banner__container {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  justify-content: center;
 }
 
 .cta-banner__img {
@@ -173,28 +141,51 @@ $cta-adoption-bottom-rect: "../images/Pages/Home/CTAAdoption/BottomRectangle.svg
   aspect-ratio: 1 / 0.8;
 }
 
-@media (min-width: 800px) {
-  .cta-banner__container {
-    display: flex;
-    flex-direction: column;
-  }
+.one-more-friend::before {
+  content: "";
+  position: absolute;
+  width: 160%;
+  height: 200%;
+  bottom: -20%;
+  right: -25%;
+  z-index: -1;
+  border-radius: 75px;
+  background-image: url($cta-banner-rect-beige);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top right;
+  transform: rotate(25deg);
+}
 
-  .one-more-friend {
-    margin-inline: 0;
-    margin-left: auto;
-  }
-
-  .cta-banner__img {
-    left: -18%;
-    max-width: unset;
-    max-height: unset;
-    height: unset;
+@media (min-width: 500px) {
+  .one-more-friend::before {
+    width: 160%;
+    height: 200%;
+    bottom: -20%;
+    right: -35%;
+    transform: rotate(170deg);
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 880px) {
+  .cta-banner__container {
+    display: flex;
+    flex-direction: column;
+    background-position: bottom left;
+
+    .one-more-friend::before {
+      width: 125%;
+      transform: rotate(112deg);
+      left: -50px;
+      bottom: -60px;
+    }
+  }
+
   .cta-banner__img {
     left: -10%;
+    max-width: unset;
+    max-height: unset;
+    height: unset;
   }
 }
 

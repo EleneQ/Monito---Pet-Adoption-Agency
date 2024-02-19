@@ -23,7 +23,7 @@ const ProductDisplay = () => {
       <div className="item-card-grid | grid gap-y-4 md:grid-y-6">
         {productsInfo.map((product) => (
           <Link key={product.id} to={`/products/${product.id}`}>
-            <Card>
+            <Card className="h-full">
               <div className="mb-2">
                 <img
                   className="max-w-full rounded-lg"

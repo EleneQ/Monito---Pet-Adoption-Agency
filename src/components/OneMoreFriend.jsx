@@ -4,7 +4,7 @@ import { FaRegCirclePlay } from "react-icons/fa6";
 
 const OneMoreFriend = ({ className, exploreBtnVariant, introBtnVariant }) => {
   return (
-    <div className={`${className} max-w-[27rem] mx-auto`}>
+    <div className={`max-w-[27rem] ${className}`}>
       <h1 className="title-big | font-extrabold flex flex-col capitalize">
         One more friend
         <span className="font-bold">Thousands more fun!</span>
@@ -16,7 +16,7 @@ const OneMoreFriend = ({ className, exploreBtnVariant, introBtnVariant }) => {
       </p>
       <div className="mt-5 md:mt-7">
         <Link to={"/filters"}>
-          <Button className={"mr-2 md:mr-6"} variant={`${introBtnVariant}`}>
+          <Button className={"mr-1 md:mr-6"} variant={`${introBtnVariant}`}>
             View Intro
             <FaRegCirclePlay />
           </Button>
