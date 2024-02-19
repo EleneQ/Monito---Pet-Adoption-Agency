@@ -11,6 +11,8 @@ import { TbFilter } from "react-icons/tb";
 import useOutsideClickHandler from "../../hooks/useOutsideClickHandler";
 import { motion } from "framer-motion";
 import useWindowWidth from "../../hooks/useWindowWidth";
+import resolveConfig from "tailwindcss/resolveConfig";
+import tailwindConfig from "../../../tailwind.config.js";
 
 const FilterSortDogs = () => {
   const filtersRef = useRef();
@@ -20,6 +22,9 @@ const FilterSortDogs = () => {
   const { filters } = useFilters();
 
   const windowWidth = useWindowWidth();
+  const { theme: twTheme } = resolveConfig(tailwindConfig);
+
+  const isSmallScreen = windowWidth < parseInt(twTheme.screens.md);
 
   useOutsideClickHandler(filtersRef, () => {
     setFiltersOpen(false);
@@ -39,7 +44,7 @@ const FilterSortDogs = () => {
 
       <section className="filter-section max-width-center padding-x | md:min-h-[600px] mt-[2rem]">
         {/* Small Screen Filters */}
-        {windowWidth < 768 && (
+        {isSmallScreen && (
           <div className="flex justify-between items-center mb-[3rem]">
             <SortDropdown />
 
@@ -72,7 +77,7 @@ const FilterSortDogs = () => {
         )}
 
         {/* Big Screen Filters */}
-        {windowWidth >= 768 && (
+        {!isSmallScreen && (
           <div>
             <h2 className="text-2xl text-primary-blue-9 font-bold mb-3">
               Filters
