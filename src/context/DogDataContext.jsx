@@ -42,15 +42,17 @@ export const DogDataProvider = ({ children }) => {
   const sortDogs = (optionValue, dogsToSort) => {
     let sortedDogs = [...dogsToSort];
 
-    switch (optionValue) {
-      case "oldest":
-        sortedDogs.sort((a, b) => a.birthdate - b.birthdate);
-        break;
-      case "youngest":
-        sortedDogs.sort((a, b) => b.birthdate - a.birthdate);
-        break;
-      default:
-        console.error("Invalid dog sorting value!");
+    if (optionValue) {
+      switch (optionValue) {
+        case "oldest":
+          sortedDogs.sort((a, b) => a.birthdate - b.birthdate);
+          break;
+        case "youngest":
+          sortedDogs.sort((a, b) => b.birthdate - a.birthdate);
+          break;
+        default:
+          console.error("Invalid dog sorting value!");
+      }
     }
 
     return sortedDogs;

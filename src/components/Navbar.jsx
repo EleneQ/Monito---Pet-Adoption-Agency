@@ -6,19 +6,6 @@ import { MdOutlineMenuOpen } from "react-icons/md";
 import { Logo } from "../images";
 import { motion } from "framer-motion";
 
-const NavbarLink = ({ link, title }) => (
-  <li className="cursor-pointer border-b-[2.5px] border-transparent hover:border-primary-blue-9">
-    <NavLink
-      to={link}
-      className={({ isActive }) =>
-        isActive ? "text-pink-5-accent" : "text-primary-blue-9"
-      }
-    >
-      {title}
-    </NavLink>
-  </li>
-);
-
 const Navbar = ({ className }) => {
   const [mobileNavIsOpen, setMobileNavIsOpen] = useState(false);
 
@@ -60,8 +47,20 @@ const Navbar = ({ className }) => {
           className="hidden md:flex gap-[1.5rem] lg:gap-[3rem] justify-end items-center"
           id="primary-navigation"
         >
-          {navLinks.map((nav, index) => (
-            <NavbarLink key={index} {...nav} />
+          {navLinks.map((nav) => (
+            <li
+              key={nav.title}
+              className="cursor-pointer border-b-[2.5px] border-transparent hover:border-primary-blue-9"
+            >
+              <NavLink
+                to={nav.link}
+                className={({ isActive }) =>
+                  isActive ? "text-pink-5-accent" : "text-primary-blue-9"
+                }
+              >
+                {nav.title}
+              </NavLink>
+            </li>
           ))}
         </ul>
 
@@ -82,8 +81,21 @@ const Navbar = ({ className }) => {
             }}
             transition={{ type: "spring", stiffness: 360, damping: 20 }}
           >
-            {navLinks.map((nav, index) => (
-              <NavbarLink key={index} {...nav} />
+            {navLinks.map((nav) => (
+              <li
+                key={nav.title}
+                className="cursor-pointer border-b-[2.5px] border-transparent hover:border-primary-blue-9"
+                onClick={() => (document.body.style.overflowY = "auto")}
+              >
+                <NavLink
+                  to={nav.link}
+                  className={({ isActive }) =>
+                    isActive ? "text-pink-5-accent" : "text-primary-blue-9"
+                  }
+                >
+                  {nav.title}
+                </NavLink>
+              </li>
             ))}
 
             <div className="mt-3">
