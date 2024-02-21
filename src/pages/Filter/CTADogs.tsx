@@ -1,17 +1,15 @@
 import resolveConfig from "tailwindcss/resolveConfig";
 import OneMoreFriend from "../../components/OneMoreFriend";
 import { useFilters } from "../../hooks/useFilters";
-import useWindowWidth from "../../hooks/useWindowWidth";
 import { PuppyGroup } from "../../images";
 import tailwindConfig from "../../../tailwind.config";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 const CTADogs = () => {
   const { filters } = useFilters();
 
-  const windowWidth = useWindowWidth();
   const { theme: twTheme } = resolveConfig(tailwindConfig);
-
-  const isSmallScreen = windowWidth < parseInt(twTheme.screens.md);
+  const isBigScreen = useMediaQuery(`(min-width: ${twTheme.screens.md})`);
 
   const formatColors = (colors: string[]): string => {
     if (colors.length >= 3) {
@@ -43,10 +41,8 @@ const CTADogs = () => {
             className={
               "text-center md:text-right my-3 sm:mb-[2rem] md:mb-[4rem] text-primary-blue-9 md:text-white mx-auto"
             }
-            introBtnVariant={`${
-              isSmallScreen ? "outline" : "outline-secondary"
-            }`}
-            exploreBtnVariant={`${isSmallScreen ? "primary" : "secondary"}`}
+            introBtnVariant={`${isBigScreen ? "outline-secondary" : "outline"}`}
+            exploreBtnVariant={`${isBigScreen ? "secondary" : "primary"}`}
           />
         </div>
       </div>

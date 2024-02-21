@@ -10,9 +10,9 @@ import SortDropdown from "./SortDropdown.tsx";
 import { TbFilter } from "react-icons/tb";
 import useOutsideClickHandler from "../../hooks/useOutsideClickHandler";
 import { motion } from "framer-motion";
-import useWindowWidth from "../../hooks/useWindowWidth";
 import resolveConfig from "tailwindcss/resolveConfig";
 import tailwindConfig from "../../../tailwind.config";
+import useMediaQuery from "../../hooks/useMediaQuery.ts";
 
 const FilterSortDogs = () => {
   const filtersRef = useRef<HTMLDivElement>(null);
@@ -21,10 +21,8 @@ const FilterSortDogs = () => {
   const { filterDogs, sortDogs, setDogList } = useDogData();
   const { filters } = useFilters();
 
-  const windowWidth = useWindowWidth();
   const { theme: twTheme } = resolveConfig(tailwindConfig);
-
-  const isSmallScreen = windowWidth < parseInt(twTheme.screens.md);
+  const isBigScreen = useMediaQuery(`(min-width: ${twTheme.screens.md})`);
 
   useOutsideClickHandler(filtersRef, () => {
     setFiltersOpen(false);
@@ -44,7 +42,7 @@ const FilterSortDogs = () => {
 
       <section className="filter-section max-width-center padding-x | md:min-h-[600px] mt-[2rem]">
         {/* Small Screen Filters */}
-        {isSmallScreen && (
+        {!isBigScreen && (
           <div className="flex justify-between items-end mb-[3rem]">
             <SortDropdown />
 
@@ -77,7 +75,7 @@ const FilterSortDogs = () => {
         )}
 
         {/* Big Screen Filters */}
-        {!isSmallScreen && (
+        {isBigScreen && (
           <div>
             <h2 className="text-2xl text-primary-blue-9 font-bold mb-3">
               Filters
