@@ -1,6 +1,6 @@
 import { createContext, ReactNode } from "react";
 import { useSearchParams } from "react-router-dom";
-import { Filters } from "../types/entities/Filters";
+import { Filters } from "../types/types";
 
 interface FiltersContextType {
   filters: Filters;

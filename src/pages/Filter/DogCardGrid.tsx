@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useMemo } from "react";
 import Card from "../../components/Card";
 import { calcAge } from "../../utils/calcAge";
-import { DogInfo } from "../../types/types";
+import { DogInfo } from "../../types/entities/Dogs";
 
 interface CardGridProps {
   dogs: DogInfo[];

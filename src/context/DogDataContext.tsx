@@ -1,7 +1,7 @@
 import React, { createContext, useState, ReactNode } from "react";
 import { dogsInfo as allDogs } from "../constants/data/dogs";
 import { DogInfo } from "../types/entities/Dogs";
-import { Filters } from "../types/entities/Filters";
+import { Filters } from "../types/types";
 
 interface DogDataContextType {
   dogList: DogInfo[];

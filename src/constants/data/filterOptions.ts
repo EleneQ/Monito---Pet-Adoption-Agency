@@ -1,4 +1,4 @@
-import { FilterOptions } from "../../types/entities/Filters";
+import { FilterOptions } from "../../types/types";
 
 export const filterOptions: FilterOptions = {
   genders: ["male", "female"],

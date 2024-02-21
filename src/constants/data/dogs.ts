@@ -14,7 +14,7 @@ import { BigDogCarousel4 } from "../../images";
 import { BigDogCarousel5 } from "../../images";
 
 import { DogInfo } from "../../types/entities/Dogs";
-import { ItemPicture } from "../../types/entities/Items";
+import { ItemPicture } from "../../types/types";
 
 export const dogsInfo: DogInfo[] = [
   {

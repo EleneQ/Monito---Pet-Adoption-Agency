@@ -1,7 +1,7 @@
 import Button from "./Button";
 import { Link } from "react-router-dom";
 import { FaRegCirclePlay } from "react-icons/fa6";
-import { ButtonVariant } from "../types/types";
+import { ButtonVariant } from "../types/components/ButtonTypes";
 
 interface OneMoreFriendProps {
   className: string;

@@ -4,7 +4,7 @@ import { customer3 } from "../../images";
 import { customer4 } from "../../images";
 import { customer5 } from "../../images";
 
-import { ItemPicture } from "../../types/entities/Items";
+import { ItemPicture } from "../../types/types";
 
 export const customerCarouselImages: ItemPicture[] = [
   {

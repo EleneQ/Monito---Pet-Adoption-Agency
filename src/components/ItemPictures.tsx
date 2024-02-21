@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { AnimatePresence, motion } from "framer-motion";
-import { DogInfo, ItemPicture, ProductInfo } from "../types/types";
+import { DogInfo } from "../types/entities/Dogs";
+import { ProductInfo } from "../types/entities/Products";
+import { ItemPicture } from "../types/types";
 
 interface ItemPicturesProps {
   itemsInfo: DogInfo[] | ProductInfo[];

@@ -14,7 +14,7 @@ import { BigDogCarousel4 } from "../../images";
 import { BigDogCarousel5 } from "../../images";
 
 import { ProductInfo } from "../../types/entities/Products";
-import { ItemPicture } from "../../types/entities/Items";
+import { ItemPicture } from "../../types/types";
 
 export const productsInfo: ProductInfo[] = [
   {
