@@ -26,7 +26,7 @@ const CustomerCarousel = () => {
   };
 
   return (
-    <section className="padding-x max-width-center mt-[3rem] ml-8">
+    <section className="padding-x max-width-center mt-[3rem]">
       <h2 className="text-xl font-bold mb-5">Our lovely customers</h2>
 
       <div ref={slider} className="cursor-pointer overflow-hidden">
