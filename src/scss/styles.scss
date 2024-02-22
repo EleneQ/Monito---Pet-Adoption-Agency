@@ -6,16 +6,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .padding-x {
-    @apply px-[1.3rem] sm:px-[calc(5%+1rem)] lg:px-[5rem] xl:px-[8.5rem];
-  }
+.padding-x {
+  @apply px-[1.3rem] sm:px-[calc(5%+1rem)] lg:px-[5rem] xl:px-[8.5rem];
+}
 
-  .max-width-center {
-    @apply max-w-[100rem] mx-auto;
-  }
-
-  .social-link {
-    @apply cursor-pointer hover:text-primary-blue-9;
-  }
+.max-width-center {
+  @apply max-w-[100rem] mx-auto;
 }

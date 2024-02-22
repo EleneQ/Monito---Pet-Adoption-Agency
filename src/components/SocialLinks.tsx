@@ -7,18 +7,21 @@ interface SocialLinksProps {
 }
 
 const SocialLinks = ({ className, iconSize }: SocialLinksProps) => {
+  const socialLinks =
+    "cursor-pointer hover:text-primary-blue-9 transition-all duration-200";
+
   return (
-    <ul className={`${className} flex`}>
-      <li className="social-link">
+    <ul className={`flex ${className}`}>
+      <li className={`${socialLinks}`}>
         <FaFacebook size={iconSize} />
       </li>
-      <li className="social-link">
+      <li className={`${socialLinks}`}>
         <FaSquareXTwitter size={iconSize} />
       </li>
-      <li className="social-link">
+      <li className={`${socialLinks}`}>
         <FaInstagram size={iconSize} />
       </li>
-      <li className="social-link">
+      <li className={`${socialLinks}`}>
         <FaYoutube size={iconSize} />
       </li>
     </ul>
