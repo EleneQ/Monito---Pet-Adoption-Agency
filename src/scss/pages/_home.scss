@@ -1,86 +1,14 @@
-/** BG IMAGE URLS */
-//Hero
-$hero-img-medium-rect-beige: "../images/pages/Home/Hero/MediumRectangleBeige.png";
-$hero-img-bottom-rect-beige: "../images/pages/Home/Hero/BottomBeigeRectangle.png";
-$hero-img-big-rect-beige: "../images/pages/Home/Hero/BigRectangleBeige.png";
-$hero-img-big-rect-blue: "../images/pages/Home/Hero/BigRectangleBlue.png";
-$hero-img-small-rect-blue: "../images/pages/Home/Hero/SmallRectangleBlue.png";
-$hero-img-smaller-rect-beige: "../images/pages/Home/Hero/SmallerRectangleBeige.png";
-$hero-img-small-rect-beige: "../images/pages/Home/Hero/SmallRectangleBeige.png";
+@use "../vars" as vars;
 
-//Cta Banner
-$cta-banner-rect-blue: "../images/pages/Home/CTABanner/RectangleBlue.svg";
-$cta-banner-rect-beige: "../images/pages/Home/CTABanner/RectangleBeige.svg";
-
-//Cta adoption
-$cta-adoption-top-rect: "../images/pages/Home/CTAAdoption/TopRectangle.svg";
-$cta-adoption-bottom-rect: "../images/Pages/Home/CTAAdoption/BottomRectangle.svg";
-
-/** Hero */
-@media (min-width: 767px) {
-  .hero-section_content::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    left: -20px;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url($hero-img-medium-rect-beige),
-      url($hero-img-bottom-rect-beige);
-    background-repeat: no-repeat;
-    background-position: top left, bottom 65px right 45%;
-  }
-}
-
+/* Hero */
 .hero-section__container {
   position: relative;
   display: grid;
   grid-template-rows: 1fr 3fr;
-}
 
-.hero-section_content {
-  position: relative;
-  z-index: 10;
-  align-self: self-start;
-  height: 100%;
-}
-
-.hero-img__container img {
-  position: absolute;
-  bottom: 0;
-  right: -20%;
-  height: 100%;
-  max-width: none;
-  z-index: 10;
-}
-
-@media (min-width: 762px) {
-  .hero-section__container {
+  @media (min-width: 762px) {
     grid-template-rows: none;
     grid-template-columns: 1fr 1fr;
-
-    img {
-      bottom: -20px;
-      right: -70%;
-      height: 80%;
-    }
-  }
-}
-
-@media (min-width: 870px) {
-  .hero-img__container img {
-    bottom: 0;
-    right: -30%;
-    height: 90%;
-  }
-}
-
-@media (min-width: 1350px) {
-  .hero-img__container img {
-    bottom: -60px;
-    right: -12%;
-    height: 115%;
   }
 }
 
@@ -92,30 +20,72 @@ $cta-adoption-bottom-rect: "../images/Pages/Home/CTAAdoption/BottomRectangle.svg
   bottom: 0;
   width: 100%;
   height: 100%;
-  background-image: url($hero-img-big-rect-beige), url($hero-img-big-rect-blue),
-    url($hero-img-small-rect-blue), url($hero-img-smaller-rect-beige),
-    url($hero-img-small-rect-beige);
-  background-size: 115%, 115%, 15px, 20px, auto;
+  background-image: url(vars.$hero-img-dot-rects), url(vars.$hero-img-big-rects);
   background-repeat: no-repeat;
-  background-position: bottom -15px left -115%, bottom -30px left -70%,
-    top 16% right 12%, top 15% right 11%, top 9.5% right 11%;
-}
+  background-size: 30px, 120%;
+  background-position: top 50px right 18%, bottom -150px left;
 
-@media (min-width: 500px) {
-  .hero-section__container::after {
+  @media (min-width: 470px) {
     right: -15%;
-    background-size: 73%, 73%, 15px, 20px, auto;
-    background-repeat: no-repeat;
-    background-position: bottom -15px right, bottom -45px right,
-      top 19% right 25%, top 17% right 25%, top 10% right 23%;
+    background-size: 30px, 85%;
+    background-position: top 19% right 25%, top 200px right 5%;
+  }
+
+  @media (min-width: 720px) {
+    background-size: 30px, 70%;
+  }
+
+  @media (min-width: 1024px) {
+    background-size: auto, 50%;
+    background-position: top 15% right 65%, top 100px right 45%;
   }
 }
 
-@media (min-width: 1300px) {
-  .hero-section__container::after {
-    background-position: bottom right 43%, bottom -10px right 50%,
-      top 15% right 63%, top 13% right 63%, top 5% right 61%;
-    background-size: auto, auto, 23px, 28px, 18px;
+.hero-section_content {
+  position: relative;
+  z-index: 10;
+  align-self: self-start;
+  height: 100%;
+
+  &::after {
+    @media (min-width: 765px) {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: -20px;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(vars.$hero-img-medium-rect-beige),
+        url(vars.$hero-img-bottom-rect-beige);
+      background-repeat: no-repeat;
+      background-position: top left, bottom 65px right 45%;
+    }
+  }
+}
+
+.hero-img__container img {
+  position: absolute;
+  bottom: 0;
+  right: -15%;
+  height: 100%;
+  max-width: none;
+  z-index: 10;
+
+  @media (min-width: 762px) {
+    bottom: -20px;
+    right: -50%;
+    height: 80%;
+  }
+
+  @media (min-width: 1024px) {
+    bottom: 0;
+    right: -12%;
+    height: 90%;
+  }
+
+  @media (min-width: 1350px) {
+    height: 105%;
   }
 }
 
@@ -125,7 +95,7 @@ $cta-adoption-bottom-rect: "../images/Pages/Home/CTAAdoption/BottomRectangle.svg
   grid-template-rows: 1fr 1fr;
   justify-content: center;
   overflow: hidden;
-  background-image: url($cta-banner-rect-blue);
+  background-image: url(vars.$cta-banner-rect-blue);
   background-repeat: no-repeat;
   background-position: bottom -130px left;
 }
@@ -150,7 +120,7 @@ $cta-adoption-bottom-rect: "../images/Pages/Home/CTAAdoption/BottomRectangle.svg
   right: -25%;
   z-index: -1;
   border-radius: 75px;
-  background-image: url($cta-banner-rect-beige);
+  background-image: url(vars.$cta-banner-rect-beige);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top right;
@@ -197,7 +167,8 @@ $cta-adoption-bottom-rect: "../images/Pages/Home/CTAAdoption/BottomRectangle.svg
 
 /* CTA Adoption bg */
 .cta-adoption__container {
-  background-image: url($cta-adoption-top-rect), url($cta-adoption-bottom-rect);
+  background-image: url(vars.$cta-adoption-top-rect),
+    url(vars.$cta-adoption-bottom-rect);
   background-repeat: no-repeat;
   background-position: center left, bottom right;
 }

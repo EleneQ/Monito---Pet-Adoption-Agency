@@ -5,6 +5,9 @@ import { navLinks } from "../constants/navLinks";
 import { MdOutlineMenuOpen } from "react-icons/md";
 import { Logo } from "../images";
 import { motion } from "framer-motion";
+import resolveConfig from "tailwindcss/resolveConfig";
+import tailwindConfig from "../../tailwind.config";
+import useMediaQuery from "../hooks/useMediaQuery";
 
 interface NavbarProps {
   className?: string;
@@ -13,13 +16,13 @@ interface NavbarProps {
 const Navbar = ({ className }: NavbarProps) => {
   const [mobileNavIsOpen, setMobileNavIsOpen] = useState(false);
 
-  //remove mobile navbar effects above tw md screen
+  const { theme: twTheme } = resolveConfig(tailwindConfig);
+  const isBigScreen = useMediaQuery(`(min-width: ${twTheme.screens.sm})`);
+
+  //remove mobile navbar effects above tw sm screen
   useEffect(() => {
     const handleResize = () => {
-      if (
-        window.innerWidth >= 768 &&
-        document.body.style.overflowY === "hidden"
-      ) {
+      if (isBigScreen && document.body.style.overflowY === "hidden") {
         document.body.style.overflowY = "auto";
         setMobileNavIsOpen(false);
       }
@@ -28,7 +31,7 @@ const Navbar = ({ className }: NavbarProps) => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [isBigScreen]);
 
   const toggleMobileNavbar = () => {
     if (mobileNavIsOpen) {
@@ -45,13 +48,13 @@ const Navbar = ({ className }: NavbarProps) => {
       className={`padding-x flex items-center justify-between py-7 font-roboto text-primary-blue-9 font-semibold w-full ${className}`}
     >
       <Link to="/">
-        <img src={Logo} alt="monito logo" />
+        <img src={Logo} alt="logo" />
       </Link>
 
       <nav>
         {/* Desktop navbar */}
         <ul
-          className="hidden md:flex gap-[1.5rem] lg:gap-[3rem] justify-end items-center"
+          className="hidden sm:flex gap-[1.5rem] lg:gap-[3rem] justify-end items-center"
           id="primary-navigation"
         >
           {navLinks.map((nav) => (
@@ -72,7 +75,7 @@ const Navbar = ({ className }: NavbarProps) => {
         </ul>
 
         {/* Mobile navbar */}
-        <div className="md:hidden flex flex-1 justify-end items-center">
+        <div className="sm:hidden flex flex-1 justify-end items-center">
           <MdOutlineMenuOpen
             className="w-[2rem] h-[2rem] cursor-pointer"
             onClick={() => toggleMobileNavbar()}
@@ -112,7 +115,7 @@ const Navbar = ({ className }: NavbarProps) => {
         </div>
       </nav>
 
-      <Button className={"hidden md:block"} variant="primary">
+      <Button className={"hidden sm:block"} variant="primary">
         Join the community
       </Button>
     </header>

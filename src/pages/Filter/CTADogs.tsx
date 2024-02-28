@@ -12,7 +12,7 @@ const CTADogs = () => {
   const isBigScreen = useMediaQuery(`(min-width: ${twTheme.screens.md})`);
 
   const formatColors = (colors: string[]): string => {
-    if (colors.length >= 3) {
+    if (colors.length > 3) {
       return colors.slice(0, 3).join(", ") + "...";
     }
     return colors.join(", ");

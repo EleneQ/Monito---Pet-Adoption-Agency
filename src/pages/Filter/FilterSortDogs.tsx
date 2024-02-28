@@ -30,7 +30,7 @@ const FilterSortDogs = () => {
 
   useEffect(() => {
     const filteredDogs = filterDogs(filters);
-    const sortedDogs = sortDogs(filters.sort || "", filteredDogs); //could utilize pass by reference
+    const sortedDogs = sortDogs(filters.sort, filteredDogs); //could utilize pass by reference
 
     setDogList(sortedDogs);
     //eslint-disable-next-line react-hooks/exhaustive-deps

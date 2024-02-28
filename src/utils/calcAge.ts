@@ -1,7 +1,6 @@
 export const calcAge = (birthdate: Date): string => {
   const currentDate = new Date();
 
-  // Difference in milliseconds
    const difference = currentDate.getTime() - birthdate.getTime();
 
   // Convert milliseconds to days

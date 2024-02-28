@@ -22,14 +22,14 @@ const Carousel = () => {
         }
       }
     };
-    window.addEventListener("resize", handleResize);
     handleResize();
+    window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const scrollLeft = () => {
-    const newScrollDistance = Math.max(scrollDistance - (cardWidth + 20), 0);
+    const newScrollDistance = Math.max(scrollDistance - (cardWidth + 40), 0);
     setScrollDistance(newScrollDistance);
   };
 
@@ -41,7 +41,7 @@ const Carousel = () => {
     const maxScrollDistance = scrollWidth - containerWidth;
 
     const newScrollDistance = Math.min(
-      scrollDistance + (cardWidth + 20),
+      scrollDistance + (cardWidth + 40),
       maxScrollDistance
     );
     setScrollDistance(newScrollDistance);
@@ -57,7 +57,7 @@ const Carousel = () => {
       />
       <div ref={carouselRef} className="cursor-pointer overflow-hidden">
         <motion.ul
-          className="inline-flex gap-5 md:gap-8 rounded-2xl"
+          className="inline-flex gap-8 rounded-2xl"
           drag="x"
           dragConstraints={{ right: 0, left: -width }}
           animate={{ x: -scrollDistance }}
@@ -65,7 +65,7 @@ const Carousel = () => {
         >
           {petKnowledge.map((info) => (
             <Card
-              className="card | w-[330px] md:w-[300px] rounded-xl"
+              className="card | w-[330px] md:w-[290px] rounded-xl"
               key={info.id}
             >
               <motion.li style={{ borderRadius: "inherit" }}>

@@ -32,26 +32,14 @@ import dog8 from "./shared/Dogs/dog8.png";
 //HOME PAGE
 
 //Hero
-import BigRectangleBeige from "./pages/Home/Hero/BigRectangleBeige.png";
-import BigRectangleBlue from "./pages/Home/Hero/BigRectangleBlue.png";
-import BottomBeigeRectangle from "./pages/Home/Hero/BottomBeigeRectangle.png";
 import HeroImg from "./pages/Home/Hero/Hero.png";
-import MediumRectangleBeige from "./pages/Home/Hero/MediumRectangleBeige.png";
-import SmallerRectangleBeige from "./pages/Home/Hero/SmallerRectangleBeige.png";
-import SmallRectangleBeige from "./pages/Home/Hero/SmallRectangleBeige.png";
-import SmallRectangleBlue from "./pages/Home/Hero/SmallRectangleBlue.png";
-import TopBeigeRectangle from "./pages/Home/Hero/TopBeigeRectangle.png";
 
 //CTA Banner
 import GirlHoldingDog from "./pages/Home/CTABanner/GirlHoldingDog.png";
-import RectangleBeige from "./pages/Home/CTABanner/RectangleBeige.svg";
-import RectangleBlue from "./pages/Home/CTABanner/RectangleBlue.svg";
 
 //CTA Adoption
-import BottomRectangle from "./pages/Home/CTAAdoption/BottomRectangle.svg";
 import Paw from "./pages/Home/CTAAdoption/Paw.svg";
 import ShakingHands from "./pages/Home/CTAAdoption/ShakingHands.png";
-import TopRectangle from "./pages/Home/CTAAdoption/TopRectangle.svg";
 
 //Pet knowledge
 import pet1 from "./pages/Home/PetKnowledge/pet1.png";
@@ -61,8 +49,6 @@ import pet3 from "./pages/Home/PetKnowledge/pet3.png";
 //FILTER PAGE
 
 //CTA Dogs
-import BlueRectangle from "./pages/Filter/CTADogs/BlueRectangle.svg";
-import MobileBlueBottom from "./pages/Filter/CTADogs/MobileBlueBottom.svg";
 import PuppyGroup from "./pages/Filter/CTADogs/PuppyGroup.png";
 
 //DOG PAGE
@@ -101,27 +87,13 @@ export {
   GiftBox,
   Logo,
   HeroImg,
-  BigRectangleBeige,
-  BigRectangleBlue,
-  BottomBeigeRectangle,
-  MediumRectangleBeige,
-  SmallerRectangleBeige,
-  SmallRectangleBeige,
-  SmallRectangleBlue,
-  TopBeigeRectangle,
   GirlHoldingDog,
-  RectangleBeige,
-  RectangleBlue,
-  BottomRectangle,
   Paw,
   ShakingHands,
-  TopRectangle,
   pet1,
   pet2,
   pet3,
   PuppyGroup,
-  BlueRectangle,
-  MobileBlueBottom,
   BigDogCarousel1,
   BigDogCarousel2,
   BigDogCarousel3,

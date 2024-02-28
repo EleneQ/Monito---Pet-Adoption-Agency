@@ -21,7 +21,7 @@ const OneMoreFriend = ({
         <span className="font-bold">Thousands more fun!</span>
       </h1>
       <p className="text-sm md:text-sm mt-2 md:mt-3 md:max-w-[25rem]">
-        Having a pet means you have more joy, a new friend, a happy person who
+        Having a pet means you have more joy, a new friend, a happy doggo who
         will always be with you to have fun. We have 200+ different pets that
         can meet your needs!
       </p>

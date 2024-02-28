@@ -1,8 +1,10 @@
-/** CTA Dogs bg */
+@use "../vars" as vars;
+
+/* CTA Dogs bg */
 .cta-dogs__container {
   display: grid;
   grid-template-rows: 1fr 1fr;
-  background-image: url("../images/pages/Filter/CTADogs/MobileBlueBottom.svg"),
+  background-image: url(vars.$cta-dogs-mobile-bottom),
     linear-gradient(103deg, #fceed5 6.43%, #fceed5 78.33%, #ffe7ba 104.24%);
   background-repeat: no-repeat;
   background-size: 100%, auto;
@@ -14,7 +16,7 @@
   .cta-dogs__container {
     grid-template-rows: none;
     grid-template-columns: repeat(2, 1fr);
-    background-image: url("../images/pages/Filter/CTADogs/BlueRectangle.svg"),
+    background-image: url(vars.$cta-dogs-blue-rect),
       linear-gradient(103deg, #fceed5 6.43%, #fceed5 78.33%, #ffe7ba 104.24%);
     background-size: cover, auto;
     background-position: top right, 0%;

@@ -1,0 +1,24 @@
+// Shared
+$shared-nav-top-beige-rect: "../images/shared/TopBeigeRectangle.svg";
+
+// Hero Images
+$hero-images-path: "../images/pages/Home/Hero/";
+$hero-img-medium-rect-beige: "#{$hero-images-path}MediumRectangleBeige.svg";
+$hero-img-bottom-rect-beige: "#{$hero-images-path}BottomBeigeRectangle.svg";
+$hero-img-big-rects: "#{$hero-images-path}BigRectangles.svg";
+$hero-img-dot-rects: "#{$hero-images-path}DotRectangles.svg";
+
+// CTA Banner Images
+$cta-banner-images-path: "../images/pages/Home/CTABanner/";
+$cta-banner-rect-blue: "#{$cta-banner-images-path}RectangleBlue.svg";
+$cta-banner-rect-beige: "#{$cta-banner-images-path}RectangleBeige.svg";
+
+// CTA Adoption Images
+$cta-adoption-images-path: "../images/pages/Home/CTAAdoption/";
+$cta-adoption-top-rect: "#{$cta-adoption-images-path}TopRectangle.svg";
+$cta-adoption-bottom-rect: "#{$cta-adoption-images-path}BottomRectangle.svg";
+
+// CTA Fogs Images
+$cta-dogs-images-path: "../images/pages/Filter/CTADogs/";
+$cta-dogs-mobile-bottom: "#{$cta-dogs-images-path}MobileBlueBottom.svg";
+$cta-dogs-blue-rect: "#{$cta-dogs-images-path}BlueRectangle.svg";

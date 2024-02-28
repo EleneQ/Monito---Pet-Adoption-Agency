@@ -15,7 +15,7 @@ interface DogDataProviderProps {
 }
 
 export const DogDataContext = createContext<DogDataContextType>({
-  dogList: [],
+  dogList: allDogs,
   setDogList: () => {},
   sortDogs: () => [],
   filterDogs: () => [],

@@ -1,5 +1,7 @@
+@use "../vars" as vars;
+
 .primary-nav {
-  background-image: url("../images/pages/Home/Hero/TopBeigeRectangle.png");
+  background-image: url(vars.$shared-nav-top-beige-rect);
   background-repeat: no-repeat;
   background-position: bottom left 100%;
 }
