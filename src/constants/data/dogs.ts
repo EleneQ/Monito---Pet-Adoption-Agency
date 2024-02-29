@@ -57,10 +57,10 @@ export const dogsInfo: DogInfo[] = [
   {
     id: "ds4232",
     images: [
-      { id: "232ds", img: g1Dog1 },
-      { id: "283ds", img: g1Dog2 },
-      { id: "263ds", img: g1Dog3 },
-      { id: "263ds", img: g1Dog4 },
+      { id: "232ds", img: g1Dog1, desc: "dog standing in field" },
+      { id: "283ds", img: g1Dog2, desc: "dog smiling" },
+      { id: "263ds", img: g1Dog3, desc: "dog standing" },
+      { id: "263ds", img: g1Dog4, desc: "dog standing and smiling" },
     ],
     name: "MO231",
     breed: "shibu inu",
@@ -74,10 +74,14 @@ export const dogsInfo: DogInfo[] = [
   {
     id: "23sd12",
     images: [
-      { id: "242jab", img: g2Dog1 },
-      { id: "293jsb", img: g2Dog2 },
-      { id: "213jbs", img: g2Dog3 },
-      { id: "2f3jss", img: g2Dog4 },
+      { id: "242jab", img: g2Dog1, desc: "very cute puppy" },
+      { id: "293jsb", img: g2Dog2, desc: "very cute puppy in a field" },
+      { id: "213jbs", img: g2Dog3, desc: "very cute puppy in a field" },
+      {
+        id: "2f3jss",
+        img: g2Dog4,
+        desc: "very cute puppy in a field, looking up",
+      },
     ],
     name: "MO502",
     breed: "cocker spaniel",
@@ -91,9 +95,9 @@ export const dogsInfo: DogInfo[] = [
   {
     id: "12vdd12",
     images: [
-      { id: "232jab", img: g3Dog1 },
-      { id: "283jsb", img: g3Dog2 },
-      { id: "263jbs", img: g3Dog3 },
+      { id: "232jab", img: g3Dog1, desc: "dog laying down" },
+      { id: "283jsb", img: g3Dog2, desc: "dog laying down" },
+      { id: "263jbs", img: g3Dog3, desc: "dog laying down" },
     ],
     name: "MO102",
     breed: "german shepherd",
@@ -107,9 +111,9 @@ export const dogsInfo: DogInfo[] = [
   {
     id: "90967",
     images: [
-      { id: "2wdjab", img: g4Dog1 },
-      { id: "2dwsb", img: g4Dog2 },
-      { id: "das13jbs", img: g4Dog3 },
+      { id: "2wdjab", img: g4Dog1, desc: "cute dog" },
+      { id: "2dwsb", img: g4Dog2, desc: "cute dog sitting" },
+      { id: "das13jbs", img: g4Dog3, desc: "cute dog" },
     ],
     name: "MO512",
     breed: "alaskan malamute",
@@ -123,9 +127,9 @@ export const dogsInfo: DogInfo[] = [
   {
     id: "lkolk00",
     images: [
-      { id: "aasa", img: g5Dog1 },
-      { id: "daa", img: g5Dog2 },
-      { id: "htr45", img: g5Dog3 },
+      { id: "aasa", img: g5Dog1, desc: "cute dog" },
+      { id: "daa", img: g5Dog2, desc: "cute dog laying down" },
+      { id: "htr45", img: g5Dog3, desc: "cute dog" },
     ],
     name: "MO231",
     breed: "cocker spaniel",
@@ -139,8 +143,16 @@ export const dogsInfo: DogInfo[] = [
   {
     id: "lssdsd9",
     images: [
-      { id: "asxa23", img: g6Dog1 },
-      { id: "ada212", img: g6Dog2 },
+      {
+        id: "asxa23",
+        img: g6Dog1,
+        desc: "cute dog with a red bow laying down",
+      },
+      {
+        id: "ada212",
+        img: g6Dog2,
+        desc: "cute dog with a red bow laying down",
+      },
     ],
     name: "MO403",
     breed: "shih tzu",
@@ -154,8 +166,8 @@ export const dogsInfo: DogInfo[] = [
   {
     id: "knnmn6",
     images: [
-      { id: "sfc89", img: g7Dog1 },
-      { id: "hfg078", img: g7Dog2 },
+      { id: "sfc89", img: g7Dog1, desc: "cute dog on the beach" },
+      { id: "hfg078", img: g7Dog2, desc: "cute dog in a field" },
     ],
     name: "MO403",
     breed: "shibu inu",
@@ -169,9 +181,9 @@ export const dogsInfo: DogInfo[] = [
   {
     id: "lsmxm3",
     images: [
-      { id: "242342", img: g8Dog1 },
-      { id: "212", img: g8Dog2 },
-      { id: "64er", img: g8Dog3 },
+      { id: "242342", img: g8Dog1, desc: "cute dog" },
+      { id: "212", img: g8Dog2, desc: "cute dog looking up" },
+      { id: "64er", img: g8Dog3, desc: "cute dog sitting in a dog bowl" },
     ],
     name: "MO230",
     breed: "golden retriever",
@@ -185,8 +197,8 @@ export const dogsInfo: DogInfo[] = [
   {
     id: "cdscsd2",
     images: [
-      { id: "23232d", img: g9Dog1 },
-      { id: "dsl545", img: g9Dog2 },
+      { id: "23232d", img: g9Dog1, desc: "cute puppy" },
+      { id: "dsl545", img: g9Dog2, desc: "cute big dog" },
     ],
     name: "MO231",
     breed: "rottweiler",
@@ -200,9 +212,9 @@ export const dogsInfo: DogInfo[] = [
   {
     id: "saaew",
     images: [
-      { id: "2323e4", img: g10Dog1 },
-      { id: "2bdgbm", img: g10Dog2 },
-      { id: "0-76f", img: g10Dog3 },
+      { id: "2323e4", img: g10Dog1, desc: "cute dog" },
+      { id: "2bdgbm", img: g10Dog2, desc: "cute dog in a grass field" },
+      { id: "0-76f", img: g10Dog3, desc: "cute dog in a flower field" },
     ],
     name: "MO502",
     breed: "havanese",
@@ -216,8 +228,8 @@ export const dogsInfo: DogInfo[] = [
   {
     id: "klk,.xc",
     images: [
-      { id: "dthdb", img: g11Dog1 },
-      { id: "awd2", img: g11Dog2 },
+      { id: "dthdb", img: g11Dog1, desc: "cute dog in a grass field" },
+      { id: "awd2", img: g11Dog2, desc: "dog running in mud" },
     ],
     name: "MO102",
     breed: "border collie",
@@ -231,9 +243,9 @@ export const dogsInfo: DogInfo[] = [
   {
     id: "zssew3",
     images: [
-      { id: "dhdb23", img: g12Dog1 },
-      { id: "awd223", img: g12Dog2 },
-      { id: "awd223", img: g12Dog3 },
+      { id: "dhdb23", img: g12Dog1, desc: "cute dog" },
+      { id: "awd223", img: g12Dog2, desc: "cute dog" },
+      { id: "awd223", img: g12Dog3, desc: "cute dog" },
     ],
     name: "MO512",
     breed: "alaskan malamute",
@@ -247,9 +259,9 @@ export const dogsInfo: DogInfo[] = [
   {
     id: ";lkjdx",
     images: [
-      { id: "43vs", img: g13Dog1 },
-      { id: "33vf", img: g13Dog2 },
-      { id: "2e4bg", img: g13Dog3 },
+      { id: "43vs", img: g13Dog1, desc: "cute dog" },
+      { id: "33vf", img: g13Dog2, desc: "cute dog in a grass field" },
+      { id: "2e4bg", img: g13Dog3, desc: "cute dog" },
     ],
     name: "MO231",
     breed: "terrier",
@@ -263,9 +275,13 @@ export const dogsInfo: DogInfo[] = [
   {
     id: "42355xs",
     images: [
-      { id: "34lo", img: g14Dog1 },
-      { id: ";oof", img: g14Dog2 },
-      { id: "'[p4]2'", img: g14Dog3 },
+      {
+        id: "34lo",
+        img: g14Dog1,
+        desc: "cute dog with wind blowing it's hair",
+      },
+      { id: ";oof", img: g14Dog2, desc: "cute dog tilting it's head" },
+      { id: "'[p4]2'", img: g14Dog3, desc: "cute dog in the snow" },
     ],
     name: "MO403",
     breed: "pomeranian",
@@ -279,9 +295,9 @@ export const dogsInfo: DogInfo[] = [
   {
     id: "09hfg",
     images: [
-      { id: "wedw", img: g15Dog1 },
-      { id: ";rfezsd", img: g15Dog2 },
-      { id: "'[ae23]2'", img: g15Dog3 },
+      { id: "wedw", img: g15Dog1, desc: "cute dog on a field" },
+      { id: ";rfezsd", img: g15Dog2, desc: "cute dog on a field" },
+      { id: "'[ae23]2'", img: g15Dog3, desc: "cute dog" },
     ],
     name: "MO403",
     breed: "beagle",
@@ -295,10 +311,10 @@ export const dogsInfo: DogInfo[] = [
   {
     id: "ljhk-090",
     images: [
-      { id: "fwr7u", img: g16Dog1 },
-      { id: ";14", img: g16Dog2 },
-      { id: "'[1q3]2'", img: g16Dog3 },
-      { id: "'[p3qq3]2'", img: g16Dog4 },
+      { id: "fwr7u", img: g16Dog1, desc: "cute dog" },
+      { id: ";14", img: g16Dog2, desc: "cute dog" },
+      { id: "'[1q3]2'", img: g16Dog3, desc: "cute dog" },
+      { id: "'[p3qq3]2'", img: g16Dog4, desc: "cute dog" },
     ],
     name: "MO230",
     breed: "chihuahua",
@@ -312,9 +328,9 @@ export const dogsInfo: DogInfo[] = [
   {
     id: "sa22230",
     images: [
-      { id: "t54fse", img: g17Dog1 },
-      { id: ";se3", img: g17Dog2 },
-      { id: "'[fe;ik]2'", img: g17Dog3 },
+      { id: "t54fse", img: g17Dog1, desc: "cute dog" },
+      { id: ";se3", img: g17Dog2, desc: "cute dog sleeping" },
+      { id: "'[fe;ik]2'", img: g17Dog3, desc: "cute dog sleeping" },
     ],
     name: "MO231",
     breed: "bull terrier",

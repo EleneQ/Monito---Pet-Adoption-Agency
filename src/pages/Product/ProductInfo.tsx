@@ -13,7 +13,7 @@ const ProductInfo = () => {
 
   return (
     <div className="text-[#667479] px-4 md:px-0 rounded-ss-3xl rounded-se-3xl shadow-dark-shadow bg-white md:bg-transparent pt-3 md:pt-0 md:shadow-none md:rounded-none">
-      <div className="md:hidden w-[2.5rem] h-[0.35rem] mb-4 mx-auto rounded-xl bg-[#CCD1D2]"></div>
+      <div className="md:hidden w-[2.5rem] h-[0.35rem] mb-4 mx-auto rounded-xl bg-[#CCD1D2]" />
       <p className="text-[15px] mb-5 md:mb-0 capitalize">
         {`Home & Products & ${currentProduct.name}`}
       </p>
@@ -33,16 +33,42 @@ const ProductInfo = () => {
       <table className="item-info-table | w-full capitalize mt-7 text-left text-sm md:text-base">
         <tbody>
           <tr>
-            <th>Type</th>
-            <td>: {currentProduct.type}</td>
+            <th>
+              {currentProduct.categories.length > 1 ? "Categories" : "Category"}
+            </th>
+            <td>
+              :{" "}
+              {currentProduct.categories.map((category, index) => (
+                <span key={index}>
+                  {category}
+                  {index !== currentProduct.categories.length - 1 ? ", " : ""}
+                </span>
+              ))}
+            </td>
           </tr>
           <tr>
             <th>Cost</th>
-            <td>: {currentProduct.cost}</td>
+            <td>: {currentProduct.cost}$</td>
+          </tr>
+          <tr>
+            <th>Size</th>
+            <td>: {currentProduct.size}</td>
           </tr>
           <tr>
             <th>Discounted</th>
             <td>: Yes</td>
+          </tr>
+          <tr>
+            <th>Made In</th>
+            <td>: {currentProduct.madeIn}</td>
+          </tr>
+          <tr>
+            <th>Shipment</th>
+            <td>: Free</td>
+          </tr>
+          <tr>
+            <th>Views</th>
+            <td>: {currentProduct.views}</td>
           </tr>
           <tr>
             <th>Additional Information</th>

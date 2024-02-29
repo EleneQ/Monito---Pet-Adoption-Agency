@@ -1,6 +1,6 @@
 export interface DogInfo {
   id: string;
-  images: { id: string; img: string }[];
+  images: { id: string; img: string; desc: string }[];
   name: string;
   breed: string;
   birthdate: Date;

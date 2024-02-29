@@ -3,17 +3,11 @@ import ProductPictures from "./ProductPictures";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ProductInfo from "./ProductInfo";
-import { IoIosArrowBack } from "react-icons/io";
 
 const ProductPage = () => {
   return (
     <>
-      <div>
-        <div className="relative">
-          <IoIosArrowBack className="absolute md:hidden top-[2rem] left-[1.3rem] text-[1.6rem] p-1 bg-white sm:bg-black sm:opacity-20 sm:text-white bg-opacity-40 rounded-full z-50" />
-        </div>
-        <Navbar className={"hidden md:flex"} />
-      </div>
+      <Navbar />
 
       <main>
         <section className="max-width-center padding-x md:mt-3">

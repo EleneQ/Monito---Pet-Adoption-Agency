@@ -9,14 +9,14 @@ import customer4 from "./shared/Customers/customer4.png";
 import customer5 from "./shared/Customers/customer5.png";
 
 //Products
-import product1 from "./shared/Products/product1.png";
-import product2 from "./shared/Products/product2.png";
-import product3 from "./shared/Products/product3.png";
-import product4 from "./shared/Products/product4.png";
-import product5 from "./shared/Products/product5.png";
-import product6 from "./shared/Products/product6.png";
-import product7 from "./shared/Products/product7.png";
-import product8 from "./shared/Products/product8.png";
+import product1 from "./shared/Products/product1.jpg";
+import product2 from "./shared/Products/product2.jpg";
+import product3 from "./shared/Products/product3.jpg";
+import product4 from "./shared/Products/product4.jpg";
+import product5 from "./shared/Products/product5.jpg";
+import product6 from "./shared/Products/product6.jpg";
+import product7 from "./shared/Products/product7.jpg";
+import product8 from "./shared/Products/product8.jpg";
 import GiftBox from "./shared/Products/GiftBox.svg";
 
 //Dogs

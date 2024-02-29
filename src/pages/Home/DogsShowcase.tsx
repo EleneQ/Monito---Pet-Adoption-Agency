@@ -40,7 +40,7 @@ const DogsShowcase = () => {
             <Card className="h-full">
               <div className="mb-4">
                 <img
-                  className="w-full object-cover max-h-[250px] rounded-lg"
+                  className="w-full object-cover h-[190px] rounded-lg"
                   src={dog.images[0].img}
                   alt=""
                   loading="lazy"

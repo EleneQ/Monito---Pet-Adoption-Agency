@@ -26,9 +26,9 @@ const ProductDisplay = () => {
             <Card className="h-full">
               <div className="mb-2">
                 <img
-                  className="w-full object-cover max-h-[250px] rounded-lg"
+                  className="w-full object-cover h-[190px] rounded-lg"
                   src={product.img}
-                  alt=""
+                  alt={product.name}
                   loading="lazy"
                 />
               </div>
@@ -36,7 +36,7 @@ const ProductDisplay = () => {
                 {product.name}
               </h3>
               <p className="text-slate-500 text-base flex flex-col sm:block">
-                {`Product: ${product.type}`}
+                {`Product: ${product.categories}`}
                 {product.size && <span>{` \u00B7 Size: ${product.size}`}</span>}
               </p>
               <p className="font-bold">{`Price: ${product.cost} USD`}</p>
