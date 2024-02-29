@@ -121,6 +121,9 @@ import ShakingHands from "./pages/Home/CTAAdoption/ShakingHands.png";
 import pet1 from "./pages/Home/PetKnowledge/pet1.png";
 import pet2 from "./pages/Home/PetKnowledge/pet2.png";
 import pet3 from "./pages/Home/PetKnowledge/pet3.png";
+import pet4 from "./pages/Home/PetKnowledge/pet4.jpg";
+import pet5 from "./pages/Home/PetKnowledge/pet5.jpg";
+import pet6 from "./pages/Home/PetKnowledge/pet6.jpg";
 
 //FILTER PAGE
 
@@ -206,6 +209,9 @@ export {
   pet1,
   pet2,
   pet3,
+  pet4,
+  pet5,
+  pet6,
   PuppyGroup,
   DogImg,
   HeartImg,
