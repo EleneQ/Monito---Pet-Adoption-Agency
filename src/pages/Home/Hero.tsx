@@ -12,9 +12,9 @@ const Hero = () => {
           introBtnVariant="outline"
           exploreBtnVariant="primary"
         />
-        <div className="hero-img__container | h-full relative">
+        <div className="h-full relative">
           <img
-            className="h-full"
+            className="hero-img | h-full"
             src={HeroImg}
             alt="a woman holding a cute dog and smiling"
           />

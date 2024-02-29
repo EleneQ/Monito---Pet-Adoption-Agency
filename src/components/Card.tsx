@@ -1,6 +1,6 @@
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
-  className: string;
+  className?: string;
 }
 
 const Card = ({ children, className, ...rest }: CardProps) => {

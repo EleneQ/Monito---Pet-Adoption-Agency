@@ -5,7 +5,7 @@ import DogsShowcase from "./DogsShowcase";
 import CTABanner from "./CTABanner";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-import PetKnowledgeCarousel from "./PetKnowledgeCarousel/PetKnowledgeCarousel";
+import PetKnowledgeCarousel from "./PetKnowledgeCarousel";
 
 const HomePage = () => {
   return (

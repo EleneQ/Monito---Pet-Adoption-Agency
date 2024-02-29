@@ -1,14 +1,25 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { customerCarouselImages } from "../constants/data/customerCarousel";
-import useCalcDraggableWidth from "../hooks/useCalcDraggableWidth";
 import { motion } from "framer-motion";
 
 const CustomerCarousel = () => {
   const slider = useRef<HTMLDivElement>(null);
+  const [sliderWidth, setSliderWidth] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [scrollDistance, setScrollDistance] = useState(0);
 
-  const width = useCalcDraggableWidth(slider);
+  //calculate slider width
+  useEffect(() => {
+    const updateWidth = () => {
+      if (slider.current) {
+        setSliderWidth(slider.current.scrollWidth - slider.current.offsetWidth);
+      }
+    };
+    updateWidth();
+
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
 
   const handleDotClick = (index: number) => {
     if (!slider.current) return;
@@ -16,10 +27,13 @@ const CustomerCarousel = () => {
     const newScrollDistance =
       index * (slider.current.scrollWidth / customerCarouselImages.length);
 
-    const carouselCenter = width / 2 - slider.current.scrollWidth / 2;
+    const carouselCenter = sliderWidth / 2 - slider.current.scrollWidth / 2;
     const scrollPosition = newScrollDistance + carouselCenter + 120;
 
-    const finalScrollDistance = Math.max(0, Math.min(scrollPosition, width));
+    const finalScrollDistance = Math.max(
+      0,
+      Math.min(scrollPosition, sliderWidth)
+    );
 
     setCurrentSlide(index);
     setScrollDistance(finalScrollDistance);
@@ -33,7 +47,7 @@ const CustomerCarousel = () => {
         <motion.ul
           className="inline-flex gap-5 md:gap-8 rounded-2xl"
           drag="x"
-          dragConstraints={{ right: 0, left: -width }}
+          dragConstraints={{ right: 0, left: -sliderWidth }}
           animate={{ x: -scrollDistance }}
           transition={{ damping: 5, stiffness: 100 }}
         >

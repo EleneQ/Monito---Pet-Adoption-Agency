@@ -64,7 +64,7 @@
   }
 }
 
-.hero-img__container img {
+.hero-img {
   position: absolute;
   bottom: 0;
   right: -15%;
@@ -74,7 +74,7 @@
 
   @media (min-width: 762px) {
     bottom: -20px;
-    right: -50%;
+    right: -70%;
     height: 80%;
   }
 
@@ -125,10 +125,8 @@
   background-size: cover;
   background-position: top right;
   transform: rotate(25deg);
-}
 
-@media (min-width: 500px) {
-  .one-more-friend::before {
+  @media (min-width: 500px) {
     width: 160%;
     height: 200%;
     bottom: -20%;
@@ -142,13 +140,13 @@
     display: flex;
     flex-direction: column;
     background-position: bottom left;
+  }
 
-    .one-more-friend::before {
-      width: 125%;
-      transform: rotate(112deg);
-      left: -50px;
-      bottom: -60px;
-    }
+  .one-more-friend::before {
+    width: 125%;
+    transform: rotate(112deg);
+    left: -50px;
+    bottom: -60px;
   }
 
   .cta-banner__img {
@@ -174,6 +172,45 @@
 }
 
 /* Pet Knowledge */
+.pet-knowledge-carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3) - 11px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  border-radius: 8px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+  }
+
+  @media screen and (max-width: 900px) {
+    grid-auto-columns: calc((100% / 2) - 9px);
+  }
+
+  @media screen and (max-width: 500px) {
+    grid-auto-columns: 100%;
+  }
+}
+
+.card {
+  scroll-snap-align: start;
+  cursor: pointer;
+}
+
+.pet-knowledge-carousel.dragging .card {
+  cursor: grab;
+  user-select: none;
+}
+
 .arrow-btn {
   position: absolute;
   top: 50%;
