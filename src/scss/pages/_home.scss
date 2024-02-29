@@ -22,22 +22,23 @@
   height: 100%;
   background-image: url(vars.$hero-img-dot-rects), url(vars.$hero-img-big-rects);
   background-repeat: no-repeat;
-  background-size: 30px, 120%;
-  background-position: top 50px right 18%, bottom -150px left;
+  background-size: 30px, 115%;
+  background-position: top 50px right 18%, bottom -140px left;
 
-  @media (min-width: 470px) {
+  @media (min-width: 500px) {
     right: -15%;
     background-size: 30px, 85%;
     background-position: top 19% right 25%, top 200px right 5%;
   }
 
-  @media (min-width: 720px) {
-    background-size: 30px, 70%;
+  @media (min-width: 800px) {
+    background-size: 40px, 70%;
+    background-position: top 10% right 65%, top 100px right 7%;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1300px) {
     background-size: auto, 50%;
-    background-position: top 15% right 65%, top 100px right 45%;
+    background-position: top 15% right 65%, top 90px right 40%;
   }
 }
 
@@ -48,7 +49,7 @@
   height: 100%;
 
   &::after {
-    @media (min-width: 765px) {
+    @media (min-width: 800px) {
       content: "";
       position: absolute;
       z-index: -1;
@@ -75,17 +76,15 @@
   @media (min-width: 762px) {
     bottom: -20px;
     right: -70%;
-    height: 80%;
   }
 
   @media (min-width: 1024px) {
     bottom: 0;
-    right: -12%;
-    height: 90%;
+    right: -45%;
   }
 
   @media (min-width: 1350px) {
-    height: 105%;
+    right: -12%;
   }
 }
 
