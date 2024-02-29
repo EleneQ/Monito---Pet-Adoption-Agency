@@ -303,7 +303,7 @@ export const dogsInfo: DogInfo[] = [
     name: "MO230",
     breed: "chihuahua",
     gender: "male",
-    birthdate: new Date("2024-10-24"),
+    birthdate: new Date("2024-01-06"),
     size: "small",
     colors: ["tan", "white"],
     sku: "#1002901",
