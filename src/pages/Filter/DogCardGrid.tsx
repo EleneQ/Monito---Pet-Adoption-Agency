@@ -23,8 +23,8 @@ const CardGrid = ({ dogs }: CardGridProps) => {
           >
             <div className="mb-4">
               <img
-                className="w-full object-cover max-h-[250px]"
-                src={dog.img}
+                className="w-full object-cover h-[190px]"
+                src={dog.images[0].img}
                 alt=""
               />
             </div>

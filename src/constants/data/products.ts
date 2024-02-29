@@ -7,14 +7,7 @@ import { product6 } from "../../images";
 import { product7 } from "../../images";
 import { product8 } from "../../images";
 
-import { BigDogCarousel1 } from "../../images";
-import { BigDogCarousel2 } from "../../images";
-import { BigDogCarousel3 } from "../../images";
-import { BigDogCarousel4 } from "../../images";
-import { BigDogCarousel5 } from "../../images";
-
 import { ProductInfo } from "../../types/entities/Products";
-import { ItemPicture } from "../../types/types";
 
 export const productsInfo: ProductInfo[] = [
   {
@@ -80,28 +73,5 @@ export const productsInfo: ProductInfo[] = [
     type: "toy",
     size: "600gm",
     cost: 15,
-  },
-];
-
-export const productPictures: ItemPicture[] = [
-  {
-    id: "dss232-",
-    img: BigDogCarousel1,
-  },
-  {
-    id: "zxzxcx-",
-    img: BigDogCarousel2,
-  },
-  {
-    id: "swew-",
-    img: BigDogCarousel3,
-  },
-  {
-    id: "2342thgf-",
-    img: BigDogCarousel4,
-  },
-  {
-    id: "gi76jgh;-",
-    img: BigDogCarousel5,
   },
 ];

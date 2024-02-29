@@ -1,11 +1,11 @@
 export interface DogInfo {
   id: string;
-  img: string;
+  images: { id: string; img: string }[];
   name: string;
   breed: string;
-  gender: string;
   birthdate: Date;
-  size: string;
+  gender: "male" | "female";
+  size: "small" | "medium" | "large";
   colors: string[];
   sku: string;
   location: string;

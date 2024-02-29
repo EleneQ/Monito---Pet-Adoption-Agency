@@ -41,7 +41,7 @@ const DogsShowcase = () => {
               <div className="mb-4">
                 <img
                   className="w-full object-cover max-h-[250px] rounded-lg"
-                  src={dog.img}
+                  src={dog.images[0].img}
                   alt=""
                   loading="lazy"
                 />

@@ -2,29 +2,24 @@ import { useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { AnimatePresence, motion } from "framer-motion";
 import { DogInfo } from "../types/entities/Dogs";
-import { ProductInfo } from "../types/entities/Products";
-import { ItemPicture } from "../types/types";
+// import { ProductInfo } from "../types/entities/Products";
 
 interface ItemPicturesProps {
-  itemsInfo: DogInfo[] | ProductInfo[];
+  // itemsInfo: DogInfo[] | ProductInfo[];
+  itemsInfo: DogInfo[];
   itemId: string | undefined;
   itemName: string;
-  itemPictures: ItemPicture[];
 }
 
-const ItemPictures = ({
-  itemsInfo,
-  itemId,
-  itemName,
-  itemPictures,
-}: ItemPicturesProps) => {
+const ItemPictures = ({ itemsInfo, itemId, itemName }: ItemPicturesProps) => {
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
-  const slidesLength = itemPictures.length;
-
   const currentItem = itemsInfo.find((item) => item.id === itemId);
+
   if (!currentItem) {
     return <p>{`${itemName} not fount`}</p>;
   }
+
+  const slidesLength = currentItem.images.length;
 
   const showNext = () => {
     setCurrentImgIndex(
@@ -61,20 +56,20 @@ const ItemPictures = ({
           >
             <img
               style={{ borderRadius: "inherit" }}
-              src={itemPictures[currentImgIndex].img}
+              src={currentItem.images[currentImgIndex].img}
               alt=""
             />
           </motion.div>
         </AnimatePresence>
       </div>
 
-      <div className="flex justify-center gap-3 items-center ml-3 sm:ml-0 overflow-hidden">
-        {itemPictures.map((slide, index: number) => (
+      <div className="flex justify-center md:justify-normal gap-3 items-center overflow-hidden">
+        {currentItem.images.map((slide, index: number) => (
           <img
+            key={slide.id}
             className={`min-w-[60px] w-[100px] aspect-square object-cover rounded-lg cursor-pointer ${
               currentImgIndex === index ? "border-4 border-gold-3-accent" : ""
             }`}
-            key={slide.id}
             src={slide.img}
             alt=""
             onClick={() => setCurrentImgIndex(index)}

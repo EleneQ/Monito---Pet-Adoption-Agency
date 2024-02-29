@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { RiShareLine } from "react-icons/ri";
-import { dogsInfo, dogPictures } from "../../constants/data/dogs";
+import { dogsInfo } from "../../constants/data/dogs";
 import ItemPictures from "../../components/ItemPictures";
 import SocialLinks from "../../components/SocialLinks";
 import { DogImg, HeartImg } from "../../images";
@@ -10,12 +10,7 @@ const DogPictures = () => {
 
   return (
     <div>
-      <ItemPictures
-        itemsInfo={dogsInfo}
-        itemId={dogId}
-        itemName="Dog"
-        itemPictures={dogPictures}
-      />
+      <ItemPictures itemsInfo={dogsInfo} itemId={dogId} itemName="Dog" />
 
       <div className="hidden md:flex gap-5 justify-between items-center text-[13.5px] font-bold text-primary-blue-9 py-2 px-4 bg-light-pink-gradient rounded-xl mt-4">
         <p className="flex gap-1">
@@ -33,6 +28,7 @@ const DogPictures = () => {
           <RiShareLine className="text-lg" />
           <p>Share:</p>
         </div>
+
         <SocialLinks className={"gap-5 text-[#99A2A5]"} iconSize={21} />
       </div>
     </div>
