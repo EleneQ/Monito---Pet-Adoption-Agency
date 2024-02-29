@@ -63,7 +63,7 @@ const DogPictures = () => {
         </AnimatePresence>
       </div>
 
-      <div className="flex justify-center md:justify-normal gap-3 items-center overflow-hidden">
+      <div className="flex justify-center sm:justify-normal gap-3 items-center overflow-hidden">
         {currentDog.images.map((slide, index: number) => (
           <img
             key={slide.id}

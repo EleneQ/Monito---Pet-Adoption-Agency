@@ -15,9 +15,9 @@ const DogInfoComponent = () => {
   if (!currentDog) {
     return <p>Dog not found</p>;
   }
-
+  
   return (
-    <div className="text-[#667479] px-4 md:px-0 rounded-ss-3xl rounded-se-3xl shadow-dark-shadow bg-white md:bg-transparent pt-3 md:pt-0 md:shadow-none md:rounded-none">
+    <div className="text-[#667479] px-4 md:px-0 rounded-3xl shadow-dark-shadow bg-white md:bg-transparent pt-3 md:pt-0 md:shadow-none md:rounded-none">
       <div className="md:hidden w-[2.5rem] h-[0.35rem] mb-4 mx-auto rounded-xl bg-[#CCD1D2]"></div>
       <p className="text-[15px] mb-2 md:mb-0 capitalize">
         {`Home & Dogs & ${currentDog.breed}`}
@@ -26,9 +26,11 @@ const DogInfoComponent = () => {
       <h2 className="text-[#00171F] text-2xl font-bold mb-5 capitalize">
         {currentDog.breed}
       </h2>
-      <div className="flex items-center">
-        <Button variant="primary">Contact us</Button>
-        <Button className={"ml-2 md:ml-5"} variant="outline">
+      <div className="flex flex-col sm:flex-row md:items-center gap-2">
+        <Button className="max-sm:justify-center" variant="primary">
+          Contact us
+        </Button>
+        <Button className="max-sm:justify-center" variant="outline">
           <RiMessage2Line />
           Chat with Monito
         </Button>

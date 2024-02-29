@@ -25,13 +25,10 @@ export default {
       boxShadow: {
         "card-shadow": "0px 8px 24px rgba(149, 157, 165, 0.2)",
         "orange-shadow": "0 7px 15px 0 rgba(255,83,48,.35)",
-        "dark-shadow":
-          "0px 45px 25px rgba(0, 0, 0, 0.2), 0px -12px 20px rgba(0, 0, 0, 0.12), 0px 4px 6px rgba(0, 0, 0, 0.12), 0px 12px 13px rgba(0, 0, 0, 0.17), 0px -3px 5px rgba(0, 0, 0, 0.09)",
+        "dark-shadow": "rgba(100, 100, 111, 0.4) 0px 7px 40px 0px",
       },
       backgroundImage: {
         "primary-beige-gradient":
-          "linear-gradient(103deg, #FCEED5 6.43%, #FCEED5 78.33%, #FFE7BA 104.24%)",
-        "light-pink-gradient":
           "linear-gradient(103deg, #FCEED5 6.43%, #FCEED5 78.33%, #FFE7BA 104.24%)",
       },
     },
