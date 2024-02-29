@@ -30,15 +30,16 @@
   }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 800px) {
   .item-card-grid {
-    grid-template-columns: repeat(3, minmax(9rem, 16rem));
+    column-gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (min-width: 1200px) {
   .item-card-grid {
-    grid-template-columns: repeat(4, minmax(14rem, 16.3rem));
+    grid-template-columns: repeat(4, minmax(14rem, 17.5rem));
   }
 }
 

@@ -23,7 +23,7 @@ export default {
         "gold-3-accent": "#f5bc50",
       },
       boxShadow: {
-        "card-shadow": "0px 8px 24px rgba(149, 157, 165, 0.2)",
+        "card-shadow": "0px 8px 24px rgba(149, 157, 165, 0.25)",
         "orange-shadow": "0 7px 15px 0 rgba(255,83,48,.35)",
         "dark-shadow": "rgba(100, 100, 111, 0.4) 0px 7px 40px 0px",
       },
