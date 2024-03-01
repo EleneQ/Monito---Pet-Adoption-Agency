@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="./src/images/shared/Logo.svg" alt="Logo">
-</p>
-
 # Monito 🐕‍🦺
 
 Monito is a pet adoption agency committed to making adoption accessible worldwide. The website features a user-friendly interface designed to streamline the search process, enabling users to discover their ideal pets effortlessly. Monito helps make pet adoption a straightforward and enjoyable process.
@@ -28,5 +24,5 @@ Credits for the design: [Design Magenest and Sotan](https://www.figma.com/commun
 <!-- Dog Page -->
 <h3 align="center">Dog Details Page</h3>
 
-<!-- Dog Page -->
+<!-- Product Page -->
 <h3 align="center">Product Details Page</h3>
