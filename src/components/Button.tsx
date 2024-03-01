@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { ButtonVariant } from "../types/types";
+import { ButtonVariant } from "../types/components/ButtonTypes";
 
 interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
