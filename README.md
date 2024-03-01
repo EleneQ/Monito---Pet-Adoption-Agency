@@ -1,14 +1,14 @@
 <p align="center">
-  <img src="./src/images/shared/Logo.svg" alt="Logo">
+  <img src="./docs/Logo.svg" alt="Logo">
 </p>
 
-# Monito
+# Monito 🐕‍🦺
 
-Monito is a global dog adoption agency committed to making pet adoption accessible worldwide. Our user-friendly website interface simplifies the search process, empowering users to find their perfect pet with ease. We strive to make pet adoption a delightful experience, minimizing frustration and maximizing joy.
+Monito is a pet adoption agency committed to making adoption accessible worldwide. The website features a user-friendly interface designed to streamline the search process, enabling users to discover their ideal pets effortlessly. Monito helps make pet adoption a straightforward and enjoyable process.
 
 Credits for the design: [Design Magenest and Sotan](https://www.figma.com/community/file/1164046882633361201)
 
-🐕‍🦺 Live Demo: [Monito](https://monito.pages.dev/)
+👩‍💻 Live Demo: [Monito Demo](https://monito.pages.dev/)
 
 ### Built with:
 
@@ -17,6 +17,32 @@ Credits for the design: [Design Magenest and Sotan](https://www.figma.com/commun
 &raquo; Tailwind <br>
 &raquo; Sass / Scss <br>
 
-## Screenshots:
+## Screenshots 📸
 
-<!-- ![Home Page](/relativelink) -->
+<!-- Home Page -->
+<h3 align="center">Home Page</h3>
+
+<p align="center">
+  <img src="./docs/monito-home.png" alt="Logo">
+</p>
+
+<!-- Categories Page -->
+<h3 align="center">Categories Page</h3>
+
+<p align="center">
+  <img src="./docs/monito-categories.png" alt="Logo">
+</p>
+
+<!-- Dog Page -->
+<h3 align="center">Dog Details Page</h3>
+
+<p align="center">
+  <img src="./docs/monito-dog.png" alt="Logo">
+</p>
+
+<!-- Dog Page -->
+<h3 align="center">Product Details Page</h3>
+
+<p align="center">
+  <img src="./docs/monito-product.png" alt="Logo">
+</p>
