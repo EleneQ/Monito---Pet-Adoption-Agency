@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./docs/Logo.svg" alt="Logo">
+  <img src="./src/images/shared/Logo.svg" alt="Logo">
 </p>
 
 # Monito 🐕‍🦺
@@ -22,27 +22,11 @@ Credits for the design: [Design Magenest and Sotan](https://www.figma.com/commun
 <!-- Home Page -->
 <h3 align="center">Home Page</h3>
 
-<p align="center">
-  <img src="./docs/monito-home.png" alt="Logo">
-</p>
-
 <!-- Categories Page -->
 <h3 align="center">Categories Page</h3>
-
-<p align="center">
-  <img src="./docs/monito-categories.png" alt="Logo">
-</p>
 
 <!-- Dog Page -->
 <h3 align="center">Dog Details Page</h3>
 
-<p align="center">
-  <img src="./docs/monito-dog.png" alt="Logo">
-</p>
-
 <!-- Dog Page -->
 <h3 align="center">Product Details Page</h3>
-
-<p align="center">
-  <img src="./docs/monito-product.png" alt="Logo">
-</p>
