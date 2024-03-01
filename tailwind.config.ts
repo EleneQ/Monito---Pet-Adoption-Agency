@@ -30,6 +30,8 @@ export default {
       backgroundImage: {
         "primary-beige-gradient":
           "linear-gradient(103deg, #FCEED5 6.43%, #FCEED5 78.33%, #FFE7BA 104.24%)",
+        "light-pink-gradient":
+          "linear-gradient(103deg, #FCEED5 6.43%, #FCEED5 78.33%, #FFE7BA 104.24%)",
       },
     },
   },

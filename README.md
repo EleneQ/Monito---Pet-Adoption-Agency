@@ -1,6 +1,6 @@
-<div style="text-align: center;">
-    <img src="./src/images/shared/Logo.svg" alt="Logo">
-</div>
+<p align="center">
+  <img src="./src/images/shared/Logo.svg" alt="Logo">
+</p>
 
 # Monito
 
@@ -8,7 +8,7 @@ Monito is a global dog adoption agency committed to making pet adoption accessib
 
 Credits for the design: [Design Magenest and Sotan](https://www.figma.com/community/file/1164046882633361201)
 
-🐕‍🦺 Live Demo: [Monito Demo](https://linktosite)
+🐕‍🦺 Live Demo: [Monito](https://monito.pages.dev/)
 
 ### Built with:
 
