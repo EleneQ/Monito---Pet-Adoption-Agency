@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useMemo } from "react";
 import { dogsInfo } from "../../constants/data/dogs";
+import Card from "../../components/Card";
 import Button from "../../components/Button";
 import { IoIosArrowForward } from "react-icons/io";
 import { calcAge } from "../../utils/calcAge";
@@ -36,10 +37,10 @@ const DogsShowcase = () => {
       <div className="item-card-grid | grid gap-y-4 md:grid-y-5">
         {dogsInfo.slice(0, 8).map((dog) => (
           <Link key={dog.id} to={`/dogs/${dog.id}`}>
-            <div className="relative h-full p-2 pb-[1.5rem] rounded-xl shadow-card-shadow text-black">
+            <Card className="h-full">
               <div className="mb-4">
                 <img
-                  className="w-full object-cover h-[210px] sm:h-[190px] rounded-lg"
+                  className="w-full object-cover h-[220px] sm:h-[190px] rounded-lg"
                   src={dog.images[0].img}
                   alt=""
                   loading="lazy"
@@ -50,7 +51,7 @@ const DogsShowcase = () => {
                 {`Gender: ${dog.gender} \u00B7 `}
                 <span>{`Age: ${cachedAge(dog.birthdate)}`}</span>
               </p>
-            </div>
+            </Card>
           </Link>
         ))}
       </div>
